@@ -12,6 +12,9 @@ app.get("/", (req, res) =>
 app.get("/header", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "partials/header.html"))
 );
+app.get("/product-detail", (req, res) =>
+  res.sendFile(path.join(__dirname, "views", "product-detail.html"))
+);
 
 app.listen(PORT, () =>
   console.log("Server running in http://localhost:" + PORT)
