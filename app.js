@@ -14,7 +14,7 @@ app.get("/header", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "partials/header.html"))
 );
 
-app.get("/header", (req, res) =>
+app.get("/login", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "login.html"))
 );
 

@@ -1,0 +1,121 @@
+.login__main{
+   display: flex;
+   position: relative;
+   justify-content: center;             
+   align-items: flex-start;
+}
+
+.main__login__fondo img{
+    width: 100%;
+}
+
+.main__formulario{
+    display: flex;
+    background-color: var(--darkPrimaryColor);
+    position: absolute;
+    width: 280px;
+    height: 400px;
+    margin: 20px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main__formulario h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.main__formulario input{
+    
+    height: 25px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    background: rgba(255,255,255, 0.5);
+  
+}
+.main__formulario--email{
+    width: 100%;
+}
+
+.main__formulario--contraseña--input{
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.formulario_button--entrar{
+    background-color: rgba(0,0,0,0.4);
+    color: rgba(256,256,256,0.7);
+    border:0;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto; 
+    padding: 15px 45px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all .3s ease;
+}
+
+.main__formulario--recuerdame{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.main__formulario--recuerdame input{
+    vertical-align: sub;
+}
+
+.main__formulario--recuerdame label{
+    
+}
+
+.main__formulario--links{
+    color: black;
+}
+
+.main__formulario--ingresar{
+    font-size: 20px;
+}
+
+.main__formulario--ingresar--iconos{
+    font-size: 30px;
+    text-align: center;
+}
+
+.main__formulario--ingresar--iconos i{
+    margin: 10px 10px;
+}
+
+
+/*tablet*/
+@media (min-width: 481px) {
+    .login__main{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;   
+        position: absolute;   
+     } 
+
+     .main__formulario{
+        /* width: 50%; */
+     }
+       
+}
+
+/*Desktop*/
+@media (min-width: 769px) {
+    .main__formulario{
+         width: 35%;  
+     }
+}
