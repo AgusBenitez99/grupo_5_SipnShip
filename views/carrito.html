@@ -64,7 +64,7 @@
                         <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
                     </div>
                     <div>
-                        <p class="products-txt" >Whisky</p>
+                        <p class="products-txt" >Whisky Botella 75cl</p>
                     </div>
                 </div>
                 <div class="products-btn" >
@@ -85,7 +85,7 @@
                         <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
                     </div>
                     <div>
-                        <p class="products-txt" >Whisky</p>
+                        <p class="products-txt" >Whisky Botella 75cl</p>
                     </div>
                 </div>
                 <div class="products-btn" >
@@ -106,7 +106,7 @@
                         <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
                     </div>
                     <div>
-                        <p class="products-txt" >Whisky</p>
+                        <p class="products-txt" >Whisky Botella 75cl</p>
                     </div>
                 </div>
                 <div class="products-btn" >
@@ -127,7 +127,7 @@
                         <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
                     </div>
                     <div>
-                        <p class="products-txt" >Whisky</p>
+                        <p class="products-txt" >Whisky Botella 75cl</p>
                     </div>
                 </div>
                 <div class="products-btn" >
@@ -150,43 +150,46 @@
         </section>
     
     <!-- ENVIO  -->
-        <section>
-            <h2>Datos de Envio</h2>
+        <section class="home__cart-ship">
+            <h2>Gastos de Envio</h2>
 
                         <!-- FORMULARIO -->
-            <form action="/carrito" method="get">
-                <div>
-                    <label>Selecciona la Provincia</label>
+            <form class="formShip" action="/carrito" method="get">
+                <div class="formShip-prov">
+                    <label>Provincia</label>
                     <select name="provincias">
                         <option value="buenosAires">Buenos Aires</option>
                         <option value="córdoba">Córdoba</option>
                         <option value="santaFe">Santa Fe</option>
                         <option value="mendoza">Mendoza</option>
                     </select>
+                </div>  
+                <div class="formShip-city">               
                     <label for="ciudad">Ciudad</label>
                     <input type="text" name="ciudad" id="ciudad">
-                </div>
-                <div>
+                </div> 
+                <div class="formShip-cp">
                     <label for="cp">Codigo Postal</label>
                     <input type="text" name="codigoPostal" id="cp"> 
-                    <button>Estimacion</button>
-                    <h3>2350,00</h3>
-                </div>
+                </div> 
+                <button class="formShip-button">Estimacion</button>
+                <h3>$2350,00</h3>
             </form>
         </section>
-        <section></section>
-
     <!-- PAGOS  -->  
-        <section>
-            <h2>Datos de Pago</h2>
+        <section class="home__cart-pay">
+            <h2>Detalles de Pago</h2>
+            <div class="pay-totals">
             <h4>Subtotal</h4>
             <h4>$10500,00</h4>
             <h4>Gastos de Envío</h4>
             <h4>$2350,00</h4>
+          </div>
             <label for="cupon">Cupón de Descuento</label>
             <input type="text" name="cupon" id="cupon"> 
-            <label>Formas de Pago</label>
-            <div>
+            <h3>Total : $12850</h3>
+            <label>Medios de Pago</label>
+            <div class="method-pay">
                 <select name="Formas de Pago">
                     <option value="banco">Pago Online</option>
                     <option value="credito">Tarjeta de Credito</option>
@@ -205,10 +208,11 @@
                     <option value="12">12 Cuotas</option>
                 </select>   
                 <span>Descuentos Intereses</span>
-            </div>     
+            </div>   
         </section>
 <!-- CONFIRMAR COMPRA -->
-        <button>CONFIRMAR COMPRA</button>
+      <button class="payconfirm-btn">CONFIRMAR COMPRA</button>  
+       
 
     </main>
                     <!-- FOOTER -->
