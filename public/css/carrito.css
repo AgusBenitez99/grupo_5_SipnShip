@@ -171,7 +171,7 @@ margin: 0 auto;
 }
 
 /* TABLET */
-@media (min-width:481px) {
+@media (min-width: 481px) {
     
             /* SECCION DE PRODUCTOS */
 .home__cart-product .titles-container{padding-left: 9%;}
@@ -236,6 +236,42 @@ width: 150px;
 
             /* SECCION DE PAGOS */
  .home__cart-pay h4{
-font-size: 19px;
-}
+
+font-size: 19px;
+
+}
+}
+
+
+/* DESKTOP */
+@media (min-width:769px) {
+    .home__cart{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .home__cart h1{
+
+width: 100%;
+
+}
+    
+    .home__cart-product{
+width: 48%;
+margin: 0;
+}
+.home__cart-ship{margin: 0;}
+
+.home__cart .carrito_sections-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 40px;
+}
+.home__cart-pay{
+    margin: 0;
+}
 }
