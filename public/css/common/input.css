@@ -13,7 +13,7 @@
     overflow: hidden;
     height: 2em;
 }
-input{
+.main__form__input-field input{
     width: 100%;
     background: transparent;
     border: 0;
@@ -21,7 +21,7 @@ input{
     padding: 18px 0px;
     
 }
-input::placeholder{
+.main__form__input-field input::placeholder{
     color:var(--grisClaro) ;
 
 }
