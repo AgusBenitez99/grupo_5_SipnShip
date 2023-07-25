@@ -1,0 +1,63 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.product__main{
+    background-color: #d1c4e9;
+    color: #212121;
+    padding-bottom: 20px;
+}
+.product__main--go-back{
+    padding: 20px;
+}
+
+.product__main--product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.product__main--image{
+    justify-self: center;
+}
+
+.product__main h3{
+    justify-self: center;
+    font-size: 26px;
+}
+
+.product__main--quantity{
+    align-self: flex-end;
+    padding-right: 20px;
+}
+
+.product__main--price{
+    align-self: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.product__main--button{
+    color: rgb(33, 33, 33);
+    font-size: 18px;
+    line-height: 18px;
+    padding: 9px;
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, rgb(81, 45, 168) 0%, rgb(123, 68, 255) 20%, rgb(179, 198, 191) 100%);
+    box-shadow: rgba(0, 0, 0, 0.58) 5px 5px 9px 3px;
+    border: 2px solid rgb(81, 45, 168);
+    font-weight: bold;
+}
+
+.product__recommended{
+    background-color: #673AB7;
+    color: #212121;
+    padding: 10px;
+}
+
+.product__recommended--title{
+    font-weight: lighter;
+    font-size: 20px;
+}
