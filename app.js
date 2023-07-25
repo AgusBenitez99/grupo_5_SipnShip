@@ -12,6 +12,10 @@ app.get("/", (req, res) =>
 app.get("/header", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "partials/header.html"))
 );
+app.get("/register", (req, res) =>
+  res.sendFile(path.join(__dirname, "views", "register.html"))
+);
+
 
 app.listen(PORT, () =>
   console.log("Server running in http://localhost:" + PORT)

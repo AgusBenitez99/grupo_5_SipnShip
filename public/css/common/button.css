@@ -1,4 +1,31 @@
-.button{
-    background-color: rgb(28, 245, 16);
-    width: 200px;
+
+
+/* form p{
+    color: black;
+    text-align: center;
+    font-size: 13px;
 }
+form p a{
+    color: #ffffff;
+    margin-left: 5px;
+
+} */
+.primary__button{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+    
+}
+.primary__button button{
+    flex-basis: 60%;
+    font-size: 15px;
+    background-color: var(--primaryColor);
+    color: var(--text);
+    height: 2.5em;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition:  background 1s;
+}
+

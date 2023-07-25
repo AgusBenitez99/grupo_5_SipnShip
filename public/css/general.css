@@ -2,6 +2,9 @@
     --grisOscuro:#757575;
     --grisClaro: #BDBDBD;
     --darkPrimaryColor:#512da8;
+    --primaryColor:#673AB7;
+    --text: #ffffff;
+    --lightPrimaryColor:#d1c4e9;
 }
 *{
     box-sizing: border-box;
