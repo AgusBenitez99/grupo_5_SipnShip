@@ -1,3 +1,6 @@
 @import './general.css';
 @import 'common/index.css';
 @import './header.css';
+@import './home.css';
+@import './carousel_swiper.css';
+@import './banner.css'
