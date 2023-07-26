@@ -1,4 +1,5 @@
 @import './general.css';
 @import 'common/index.css';
 @import './header.css';
-@import './login.css';
+@import './footer.css';
+@import './carrito.css';

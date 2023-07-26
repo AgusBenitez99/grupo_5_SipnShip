@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e5b61c4010.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>SipnShip | Carrito</title>
+  </head>
+  <body>
+                        <!-- HEADER -->
+    <header class="home__header">
+      <div class="home__header--burger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <picture>
+        <img
+          class="home__header--logo"
+          src="/img/logo.png"
+          alt="Logo sip n ship"
+        />
+      </picture>
+
+      <nav>
+        <form action="" class="home__header--search">
+          <input
+            type="search"
+            id="buscador"
+            placeholder="Buscar productos..."
+          />
+        </form>
+        <ul class="home__header__nav--links">
+          <li><a href="/">Cerveza</a></li>
+          <li><a href="/">Vinos</a></li>
+          <li><a href="/">Combos</a></li>
+          <li><a href="/">Snacks</a></li>
+          <li><a href="/">Promociones</a></li>
+        </ul>
+      </nav>
+      <div class="home__header__nav--menu">
+        <a href="/user"><i class="fa-regular fa-user"></i></a>
+        <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </header>
+                        <!-- CARRITO HOME -->
+    <main class="home__cart">
+        <h1>Mi Pedido</h1>
+
+    <!-- PRODUCTOS -->
+        <section class="home__cart-product">
+            <div class="titles-container">
+                <h3>Producto</h3>
+                <h3>Cantidad</h3>
+                <h3>Total</h3>
+            </div>
+
+                    <!-- ARTICULO 1 -->
+            <article class="products-articles">
+                <div class="products-descriptions" >
+                    <div class="products-img" >
+                        <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
+                    </div>
+                    <div>
+                        <p class="products-txt" >Whisky</p>
+                    </div>
+                </div>
+                <div class="products-btn" >
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                    <button class="btn-trash"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="products-price" >
+                    <span>$2350,00</span>
+                </div>
+            </article>
+
+                    <!-- ARTICULO 2 -->
+            <article class="products-articles">
+                <div class="products-descriptions" >
+                    <div class="products-img" >
+                        <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
+                    </div>
+                    <div>
+                        <p class="products-txt" >Whisky</p>
+                    </div>
+                </div>
+                <div class="products-btn" >
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                    <button class="btn-trash"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="products-price" >
+                    <span>$2350,00</span>
+                </div>
+            </article>
+
+                      <!-- ARTICULO 3 -->
+            <article class="products-articles">
+                <div class="products-descriptions" >
+                    <div class="products-img" >
+                        <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
+                    </div>
+                    <div>
+                        <p class="products-txt" >Whisky</p>
+                    </div>
+                </div>
+                <div class="products-btn" >
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                    <button class="btn-trash"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="products-price" >
+                    <span>$2350,00</span>
+                </div>
+            </article>
+
+                    <!-- ARTICULO 4 -->
+            <article class="products-articles">
+                <div class="products-descriptions" >
+                    <div class="products-img" >
+                        <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky">
+                    </div>
+                    <div>
+                        <p class="products-txt" >Whisky</p>
+                    </div>
+                </div>
+                <div class="products-btn" >
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                    <button class="btn-trash"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="products-price" >
+                    <span>$2350,00</span>
+                </div>
+            </article>
+
+                     <!-- FILA TOTALES -->
+            <div class="products-totals"> 
+                    <h3>Total</h3>
+                    <h3>4</h3>
+                    <h3>$10500,00</h3>
+            </div>
+        </section>
+    
+    <!-- ENVIO  -->
+        <section>
+            <h2>Datos de Envio</h2>
+
+                        <!-- FORMULARIO -->
+            <form action="/carrito" method="get">
+                <div>
+                    <label>Selecciona la Provincia</label>
+                    <select name="provincias">
+                        <option value="buenosAires">Buenos Aires</option>
+                        <option value="córdoba">Córdoba</option>
+                        <option value="santaFe">Santa Fe</option>
+                        <option value="mendoza">Mendoza</option>
+                    </select>
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" name="ciudad" id="ciudad">
+                </div>
+                <div>
+                    <label for="cp">Codigo Postal</label>
+                    <input type="text" name="codigoPostal" id="cp"> 
+                    <button>Estimacion</button>
+                    <h3>2350,00</h3>
+                </div>
+            </form>
+        </section>
+        <section></section>
+
+    <!-- PAGOS  -->  
+        <section>
+            <h2>Datos de Pago</h2>
+            <h4>Subtotal</h4>
+            <h4>$10500,00</h4>
+            <h4>Gastos de Envío</h4>
+            <h4>$2350,00</h4>
+            <label for="cupon">Cupón de Descuento</label>
+            <input type="text" name="cupon" id="cupon"> 
+            <label>Formas de Pago</label>
+            <div>
+                <select name="Formas de Pago">
+                    <option value="banco">Pago Online</option>
+                    <option value="credito">Tarjeta de Credito</option>
+                    <option value="transferencia">Transferencia</option>
+                    <option value="debito">Tarjeta de Débito</option>
+                </select>   
+                <select name="Banco">
+                    <option value="frances">BBVBA Frances</option>
+                    <option value="nacion">Banco Nación</option>
+                    <option value="provincia">Banco Provincia</option>
+                </select>               
+                <select name="Cuotas">
+                    <option value="1">1 Cuota</option>
+                    <option value="3">3 Cuotas</option>
+                    <option value="6">6 Cuotas</option>
+                    <option value="12">12 Cuotas</option>
+                </select>   
+                <span>Descuentos Intereses</span>
+            </div>     
+        </section>
+<!-- CONFIRMAR COMPRA -->
+        <button>CONFIRMAR COMPRA</button>
+
+    </main>
+                    <!-- FOOTER -->
+    <footer>
+      <footer class="footer">
+        <h3 class="footer-titulo">Contactanos</h3>
+        <div class="footer-datos">
+          <div class="footer-logo">
+            <img src="/img/logo.png" alt="Logo sip n ship" />
+          </div>
+          <nav class="footer-contactos">
+            <ul>
+              <li><i class="fa-solid fa-phone"></i>111111</li>
+              <li><i class="fa-regular fa-envelope"></i>lorem@gmail.com</li>
+              <li><i class="fa-solid fa-location-dot"></i>calle falsa 1234</li>
+            </ul>
+          </nav>
+          <nav class="footer-redes">
+            <ul>
+              <li><i class="fa-brands fa-square-facebook"></i></li>
+              <li><i class="fa-brands fa-instagram"></i></li>
+              <li><i class="fa-brands fa-whatsapp"></i></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </footer>
+  </body>
+</html>
