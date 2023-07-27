@@ -26,6 +26,9 @@ app.get("/register", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "register.html"))
 );
 
+app.get("/product-detail", (req, res) =>
+  res.sendFile(path.join(__dirname, "views", "product-detail.html"))
+);
 
 app.listen(PORT, () =>
   console.log("Server running in http://localhost:" + PORT)
