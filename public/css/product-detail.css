@@ -49,10 +49,10 @@
     font-weight: bold;
     font-size: 25px;
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #212121;
-    color: #d1c4e9;
+    top: 8%;
+    right: 10%;
+    background-color: #ffc107;
+    color: #212121;
     text-align: center;
     border-radius: 40px;
 }
@@ -63,13 +63,12 @@
     line-height: 18px;
     padding: 9px;
     border-radius: 25px;
-    background-image: linear-gradient(45deg, rgb(81, 45, 168) 0%, rgb(123, 68, 255) 20%, rgb(179, 198, 191) 100%);
     box-shadow: rgba(0, 0, 0, 0.58) 5px 5px 9px 3px;
     border: 2px solid rgb(81, 45, 168);
     font-weight: bold;
     position: absolute;
-    top: 60%;
-    left: 25%;
+    bottom: 20%;
+    left: 15%;
 }
 
 .product__recommended{
@@ -93,14 +92,18 @@
     justify-self: center;
 }
 
+.product__recommended--drink-name{
+    font-size: 24px;
+}
 .product__related{
-   width: 100%;
+    width: 100%;
     background-color: #d1c4e9;
     color: #212121;
 }
 
 .product__related--title{
     font-weight: lighter;
+    padding: 10px;
 }
 
 .product__related--data {
@@ -112,23 +115,24 @@
 .swiper {
     width: 100%;
     height: 100%;
-  }
+}
 
-  .swiper-slide {
+.swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    border-radius: 25px;
+}
 
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
 
 
 @media (min-width: 768px){
@@ -146,6 +150,10 @@
 }
 
 @media (min-width: 1024px){
-  
+    .product__main--quantity{
+        position: absolute;
+        right: 50px;
+        bottom: 1px;
+    }
 }
 
