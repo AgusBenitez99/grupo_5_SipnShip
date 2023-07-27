@@ -1,12 +1,7 @@
-.main__form__input-group{
-    height: auto;
-}
 .main__form__input-field{
     background-color: var(--text);
     margin: 15px 0;
     border-radius: 10px;
-    /* border: 2px solid var(--primaryColor); */
-    /* box-shadow: 0px 0px 10px rgb(100, 100, 100); */
     display: flex;
     align-items: center;
     transition: max-height 05s;
@@ -29,24 +24,7 @@
     margin: 0px 10px;
     color: var(--darkPrimaryColor);
 }
-.main__form__checkbox{
-    display: flex;
-    align-items: center;
-    margin: 15px 0;
-    width: 100%;
-}
-.main__form__checkbox input{
-    height: 1em;
-    width: 1em;
-    border-radius: 3px;
-    border: solid 2px red;
-    text-align: left;
-}
-.main__form__checkbox p{
-    margin-left: 3px;
-    color: var( --text);
-    font-size: 15px;
-}
+
 /*tablet*/
 @media (min-width: 481px) {
     .main__form__input-field{
