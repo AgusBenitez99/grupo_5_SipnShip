@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script
+      src="https://kit.fontawesome.com/e5b61c4010.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="login__body">
+  <header class="home__header">
+    <div class="home__header--burger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="home__header--logo">
+      <img src="/img/logo.png" alt="Logo sip n ship" />
+    </div>
+
+    <nav>
+      <form action="" class="home__header--search">
+        <input
+          type="search"
+          id="buscador"
+          placeholder="Buscar productos..."
+        />
+      </form>
+      <ul class="home__header__nav--links">
+        <li><a href="/">Cerveza</a></li>
+        <li><a href="/">Vinos</a></li>
+        <li><a href="/">Combos</a></li>
+        <li><a href="/">Snacks</a></li>
+        <li><a href="/">Promociones</a></li>
+      </ul>
+    </nav>
+    <div class="home__header__nav--menu">
+      <a href="/user"><i class="fa-regular fa-user"></i></a>
+      <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </header>
+    <main class="login__main">
+        <div class="main__login__fondo">
+            <img src="/img/fondo_botellas.jpg" alt="botellas" >
+        </div>
+        <div class="main__formulario">
+            <form action="">
+                <h2>Bienvenido</h2> 
+                <p class="main__formulario--email">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="text" name="usuario" id="" placeholder="Email o usuario">
+                    
+                </p>
+                <p class="main__formulario--contraseña">
+                    <i class="fa-solid fa-lock "></i>
+                    <input class="main__formulario--contraseña--input" type="password" name="contraseña" placeholder="Contraseña">
+                </p>
+                <p class="main__formulario--recuerdame">
+                    <input type="checkbox" name="recuerdame">
+                    <label for="recuerdame">Recuerdame</label>
+                </p>
+                <p class="main__formulario--links">
+                    <a href="">Olvido su contraseña?</a> 
+                    /
+                    <a href="">Registrarse</a>
+                </p>
+                <button class="formulario_button--entrar">Entrar</button>
+                <p class="main__formulario--ingresar">Ingresar con:
+                
+                <div class="main__formulario--ingresar--iconos">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-google"></i>
+                </div>
+                </p>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+      <h3 class="footer-titulo">Contactanos</h3>
+      <div class="footer-datos">
+        <div class="footer-logo">
+          <img src="/img/logo.png" alt="Logo sip n ship" />
+        </div>
+        <nav class="footer-contactos">
+          <ul>
+            <li><i class="fa-solid fa-phone"></i>111111</li>
+            <li><i class="fa-regular fa-envelope"></i>lorem@gmail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i>calle falsa 1234</li>
+          </ul>
+        </nav>
+        <nav class="footer-redes">
+          <ul>
+            <li><i class="fa-brands fa-square-facebook"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-whatsapp"></i></li>
+          </ul>
+        </nav>
+      </div>
+    </footer> 
+</body>
+</html>

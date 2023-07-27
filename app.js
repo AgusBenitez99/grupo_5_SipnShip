@@ -15,6 +15,9 @@ app.get("/header", (req, res) =>
 app.get("/footer", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "partials/footer.html"))
 );
+app.get("/login", (req, res) =>
+  res.sendFile(path.join(__dirname, "views", "login.html"))
+);
 
 app.get("/carrito", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "carrito.html"))
