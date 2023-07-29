@@ -19,7 +19,7 @@
       <i class="fas fa-bars"></i>
     </div>
     <div class="home__header--logo">
-      <img src="/img/logo.png" alt="Logo sip n ship" />
+      <a href="/"><img src="/img/logo.png" alt="Logo sip n ship" /></a>
     </div>
 
     <nav>
@@ -39,44 +39,41 @@
       </ul>
     </nav>
     <div class="home__header__nav--menu">
-      <a href="/user"><i class="fa-regular fa-user"></i></a>
+      <a href="/login"><i class="fa-regular fa-user"></i></a>
       <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
   </header>
-    <main class="login__main">
-        <div class="main__login__fondo">
-            <img src="/img/fondo_botellas.jpg" alt="botellas" >
-        </div>
-        <div class="main__formulario">
-            <form action="">
-                <h2>Bienvenido</h2> 
-                <p class="main__formulario--email">
-                <i class="fa-regular fa-envelope"></i>
-                <input type="text" name="usuario" id="" placeholder="Email o usuario">
-                    
-                </p>
-                <p class="main__formulario--contraseña">
-                    <i class="fa-solid fa-lock "></i>
-                    <input class="main__formulario--contraseña--input" type="password" name="contraseña" placeholder="Contraseña">
-                </p>
-                <p class="main__formulario--recuerdame">
-                    <input type="checkbox" name="recuerdame">
-                    <label for="recuerdame">Recuerdame</label>
-                </p>
-                <p class="main__formulario--links">
-                    <a href="">Olvido su contraseña?</a> 
-                    /
-                    <a href="">Registrarse</a>
-                </p>
-                <button class="formulario_button--entrar">Entrar</button>
-                <p class="main__formulario--ingresar">Ingresar con:
-                
-                <div class="main__formulario--ingresar--iconos">
-                  <i class="fa-brands fa-facebook"></i>
-                  <i class="fa-brands fa-google"></i>
-                </div>
-                </p>
-            </form>
+    <main class="main__login">
+        <div class="main__form">
+          <h1 id="title">Bienvenido</h1>
+          <form action="">
+            <div class="main__form__input-group">
+              <div class="main__form__input-field">
+                <i class="far fa-envelope"></i>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div class="main__form__input-field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Contraseña" />
+                <i class="fa-regular fa-eye-slash"></i>
+              </div>
+              
+              
+              <div class="main__form__checkbox">
+                <input type="checkbox" />
+                <p>Recuerdame</p>
+              </div>
+            </div>
+            <p>O ingresar con</p>
+            <div class="main__form__links">
+              <button><i class="fab fa-google"></i></button>
+              <button><i class="fab fa-facebook"></i></button>
+            </div>
+            <div class="primary__button">
+              <button id="signUp" type="submit">Registrarse</button>
+            </div>
+            <a href="/register">Olvido su contraseña?/Registrarse</a>
+          </form>
         </div>
     </main>
     <footer class="footer">

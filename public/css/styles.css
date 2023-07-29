@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './carousel_swiper.css';
 @import './general.css';
 @import 'common/index.css';
 @import './header.css';
+@import './home.css';
+@import './banner.css';
 @import './footer.css';
 @import './carrito.css';
 @import './register.css';
-@import './login.css';
+/* @import './login.css'; */
 @import './product-detail.css';

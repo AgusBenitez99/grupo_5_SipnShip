@@ -1,151 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/2ef97f3f76.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/2ef97f3f76.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Detalle de producto</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="home__header">
-        <div class="home__header--burger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <picture>
-            <img class="home__header--logo" src="/img/logo.png" alt="Logo sip n ship"/>
-        </picture>
-        <nav>
-            <form action="" class="home__header--search">
-                <input type="search" id="buscador" placeholder="Buscar productos..." />
-            </form>
-            <ul class="home__header__nav--links">
-                <li><a href="/">Cerveza</a></li>
-                <li><a href="/">Vinos</a></li>
-                <li><a href="/">Combos</a></li>
-                <li><a href="/">Snacks</a></li>
-                <li><a href="/">Promociones</a></li>
-            </ul>
-        </nav>
-        <div class="home__header__nav--menu">
-            <a href="/user"><i class="fa-regular fa-user"></i></a>
-            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
+      <div class="home__header--burger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="home__header--logo">
+        <a href="/"><img src="/img/logo.png" alt="Logo sip n ship" /></a>
+      </div>
+
+      <nav>
+        <form action="" class="home__header--search">
+          <input
+            type="search"
+            id="buscador"
+            placeholder="Buscar productos..."
+          />
+        </form>
+        <ul class="home__header__nav--links">
+          <li><a href="/">Cerveza</a></li>
+          <li><a href="/">Vinos</a></li>
+          <li><a href="/">Combos</a></li>
+          <li><a href="/">Snacks</a></li>
+          <li><a href="/">Promociones</a></li>
+        </ul>
+      </nav>
+      <div class="home__header__nav--menu">
+        <a href="/login"><i class="fa-regular fa-user"></i></a>
+        <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
     </header>
 
     <!-- contenido detalle de producto -->
-    <div class="product__main--go-back">
+    <main>
+      <div class="product__main--go-back">
         <i class="fa-solid fa-arrow-left-long"></i> <span>Volver</span>
-    </div>
-    <div class="product" >
-    <section class="product__main">
-        <article class="product__main--product">
+      </div>
+      <div class="product">
+        <section class="product__main">
+          <article class="product__main--product">
             <div class="product__main--image">
-                <img src="/img/BRANCA-FERNET-1000ML.png" alt="fernet branca 1000ml" width="100%">
+              <img
+                src="/img/BRANCA-FERNET-1000ML.png"
+                alt="fernet branca 1000ml"
+                width="100%"
+              />
             </div>
             <h3>Fernet Branca</h3>
             <p class="product__main--quantity">1000ml</p>
             <p class="product__main--price">$1700</p>
             <button class="product__main--button">Agregar</button>
-        </article>
-    </section>
-    <section class="product__recommended">
-        <h3 class="product__recommended--title">Tragos recomendados</h3>
-        <span><a href="">Ver más</a></span>
-        <img src="/img/fernet-coca.jpg" alt="fernet con coca cola" width="100%">
-        <h4 class="product__recommended--drink-name">Fernet con cola</h4>
-    </section>
-    <section class="product__related">
-        <h3 class="product__related--title">Productos relacionados</h3>
+          </article>
+        </section>
+        <section class="product__recommended">
+          <h3 class="product__recommended--title">Tragos recomendados</h3>
+          <span><a href="">Ver más</a></span>
+          <img
+            src="/img/fernet-coca.jpg"
+            alt="fernet con coca cola"
+            width="100%"
+          />
+          <h4 class="product__recommended--drink-name">Fernet con cola</h4>
+        </section>
+        <section class="product__related">
+          <h3 class="product__related--title">Productos relacionados</h3>
 
-        <div class="swiper mySwiper">
+          <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="product__related--data">
-                        <img src="/img/cocaCola2L.png" alt="coca cola 2.5L" width="100%">
-                        <h4>Coca Cola Original 1.5L</h4>
-                    </div>
-                
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/img/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 1.5L</h4>
                 </div>
-                <div class="swiper-slide">
-                    <div class="product__related--data">
-                        <img src="/img/cocaCola2L.png" alt="coca cola 2.5L" width="100%">
-                        <h4>Coca Cola Original 2.5L</h4>
-                    </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/img/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 2.5L</h4>
                 </div>
-                <div class="swiper-slide">
-                    <div class="product__related--data">
-                        <img src="/img/cocaCola2L.png" alt="coca cola 2.5L" width="100%">
-                        <h4>Coca Cola Original 3.5L</h4>
-                    </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/img/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 3.5L</h4>
                 </div>
-                <div class="swiper-slide">
-                    <div class="product__related--data">
-                        <img src="/img/cocaCola2L.png" alt="coca cola 2.5L" width="100%">
-                        <h4>Coca Cola Original 4.5L</h4>
-                    </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/img/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 4.5L</h4>
                 </div>
-                <div class="swiper-slide">
-                    <div class="product__related--data">
-                        <img src="/img/cocaCola2L.png" alt="coca cola 2.5L" width="100%">
-                        <h4>Coca Cola Original 5.5L</h4>
-                    </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/img/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 5.5L</h4>
                 </div>
+              </div>
             </div>
             <div class="swiper-pagination"></div>
-        </div>
-    </section>
-</div>
+          </div>
+        </section>
+      </div>
+    </main>
     <footer class="footer">
-        <h3 class="footer-titulo">Contactanos</h3>
-        <div class="footer-datos">
+      <h3 class="footer-titulo">Contactanos</h3>
+      <div class="footer-datos">
         <div class="footer-logo">
-            <img src="/img/logo.png" alt="Logo sip n ship" />
+          <img src="/img/logo.png" alt="Logo sip n ship" />
         </div>
         <nav class="footer-contactos">
-            <ul>
-                <li><i class="fa-solid fa-phone"></i>111111</li>
-                <li><i class="fa-regular fa-envelope"></i>lorem@gmail.com</li>
-                <li><i class="fa-solid fa-location-dot"></i>calle falsa 1234</li>
-            </ul>
+          <ul>
+            <li><i class="fa-solid fa-phone"></i>111111</li>
+            <li><i class="fa-regular fa-envelope"></i>lorem@gmail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i>calle falsa 1234</li>
+          </ul>
         </nav>
         <nav class="footer-redes">
-            <ul>
-                <li><i class="fa-brands fa-square-facebook"></i></li>
-                <li><i class="fa-brands fa-instagram"></i></li>
-                <li><i class="fa-brands fa-whatsapp"></i></li>
-            </ul>
+          <ul>
+            <li><i class="fa-brands fa-square-facebook"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-whatsapp"></i></li>
+          </ul>
         </nav>
-        </div>
+      </div>
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<script>
-    var swiper = new Swiper(".mySwiper", {
+    <script>
+      var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 30,
         pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+          el: ".swiper-pagination",
+          clickable: true,
         },
         breakpoints: {
-
-        768: {
+          768: {
             slidesPerView: 3,
             spaceBetween: 40,
-        },
-        1024: {
+          },
+          1024: {
             slidesPerView: 4,
             spaceBetween: 50,
+          },
         },
-        },
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

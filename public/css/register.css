@@ -1,3 +1,8 @@
+.main__login{
+  background-image: url('/img/fondo_botellas.jpg');
+  background-repeat: no-repeat;
+  padding: 10px;
+}
 .main__form {
   display: flex;
   flex-direction: column;

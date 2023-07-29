@@ -1,0 +1,38 @@
+/* ROBOTO MONO */
+.main {
+    background-color: #d1c4e9;
+    position: relative;    
+}
+
+
+
+
+.main h2 {
+    font-size: 20px;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 15px;
+    text-transform: uppercase;
+}
+
+.main_section_contenedor {
+    border: 1px solid var(--grisClaro);
+    background-color: var(--darkPrimaryColor);
+    box-shadow: 0 2px 4px rgba(255, 252, 252, 0.1);
+    /* padding: 10px; */
+    border-radius: 10px;
+    /* margin: 5px; */
+}
+
+.main_section_contenedor img {
+    max-width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.main_section_contenedor h4 {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
