@@ -14,4 +14,4 @@
 - Motivarnos entre los compañeros para dedicarle suficiente tiempo al proyecto
 
 **Dejar de hacer:**
-- Dejar para el final del sprint los problemas que surjan con el código
+- Dejar para el final del sprint los problemas que surjan con el código.

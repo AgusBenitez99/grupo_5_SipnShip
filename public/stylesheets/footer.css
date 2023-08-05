@@ -3,7 +3,7 @@
 .footer{
     background-color: var(--darkPrimaryColor);
     width: 100%;
-    padding: 10px 15px 0px;
+    padding: 10px 20px 0px;
     color: #ffffff;
 }
 
@@ -24,7 +24,7 @@ font-weight: 300;
     justify-content: space-between;
     align-items: center;
 }
-.footer-logo{width: 40%;margin-left: -30px;}
+.footer-logo{width: 30%;margin-left: -30px;}
 
 .footer-logo img{
     width: 100%;
@@ -46,12 +46,11 @@ font-weight: 300;
 /*tablet*/
 @media (min-width: 481px) {
 
-.footer-datos{
-margin-top: 0;
-}
+.footer-datos{margin-top: 0;}
 .footer-logo{
     width: 30%;
     margin-left: -40px;
+    margin-top: -80px;
 }
 .footer-redes{
     width: 30%;

@@ -1,46 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/e5b61c4010.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <title>SipnShip | Carrito</title>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header class="home__header">
-      <div class="home__header--burger-menu">
-        <i class="fas fa-bars"></i>
-      </div>
-      <div class="home__header--logo">
-        <a href="/"><img src="/img/logo.png" alt="Logo sip n ship" /></a>
-      </div>
 
-      <nav>
-        <form action="" class="home__header--search">
-          <input
-            type="search"
-            id="buscador"
-            placeholder="Buscar productos..."
-          />
-        </form>
-        <ul class="home__header__nav--links">
-          <li><a href="/">Cerveza</a></li>
-          <li><a href="/">Vinos</a></li>
-          <li><a href="/">Combos</a></li>
-          <li><a href="/">Snacks</a></li>
-          <li><a href="/">Promociones</a></li>
-        </ul>
-      </nav>
-      <div class="home__header__nav--menu">
-        <a href="/login"><i class="fa-regular fa-user"></i></a>
-        <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-      </div>
-    </header>
+<%- include('partials/head', {
+  title: 'CART'
+}) %>
+
+
+  <body>
+    
+    <!-- HEADER -->
+    <%- include('./partials/header') %>
+
     <!-- CARRITO HOME -->
     <main class="home__cart">
       <h1>Mi Pedido</h1>
@@ -57,7 +27,7 @@
         <article class="products-articles">
           <div class="products-descriptions">
             <div class="products-img">
-              <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky" />
+              <img src="/images/johnnie-walker-gold.jpg" alt="Img-Whisky" />
             </div>
             <div>
               <p class="products-txt">Whisky</p>
@@ -78,7 +48,7 @@
         <article class="products-articles">
           <div class="products-descriptions">
             <div class="products-img">
-              <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky" />
+              <img src="/images/johnnie-walker-gold.jpg" alt="Img-Whisky" />
             </div>
             <div>
               <p class="products-txt">Whisky</p>
@@ -99,7 +69,7 @@
         <article class="products-articles">
           <div class="products-descriptions">
             <div class="products-img">
-              <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky" />
+              <img src="/images/johnnie-walker-gold.jpg" alt="Img-Whisky" />
             </div>
             <div>
               <p class="products-txt">Whisky</p>
@@ -120,7 +90,7 @@
         <article class="products-articles">
           <div class="products-descriptions">
             <div class="products-img">
-              <img src="/img/johnnie-walker-gold.jpg" alt="Img-Whisky" />
+              <img src="/images/johnnie-walker-gold.jpg" alt="Img-Whisky" />
             </div>
             <div>
               <p class="products-txt">Whisky</p>
@@ -211,29 +181,7 @@
       <button class="payconfirm-btn">CONFIRMAR COMPRA</button>
     </main>
     <!-- FOOTER -->
-    <footer>
-      <footer class="footer">
-        <h3 class="footer-titulo">Contactanos</h3>
-        <div class="footer-datos">
-          <div class="footer-logo">
-            <img src="/img/logo.png" alt="Logo sip n ship" />
-          </div>
-          <nav class="footer-contactos">
-            <ul>
-              <li><i class="fa-solid fa-phone"></i>111111</li>
-              <li><i class="fa-regular fa-envelope"></i>lorem@gmail.com</li>
-              <li><i class="fa-solid fa-location-dot"></i>calle falsa 1234</li>
-            </ul>
-          </nav>
-          <nav class="footer-redes">
-            <ul>
-              <li><i class="fa-brands fa-square-facebook"></i></li>
-              <li><i class="fa-brands fa-instagram"></i></li>
-              <li><i class="fa-brands fa-whatsapp"></i></li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
-    </footer>
+    <%- include('./partials/footer') %>
+
   </body>
 </html>
