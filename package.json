@@ -1,16 +1,17 @@
 {
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "name": "grupo_5_sipnship",
-  "description": "Somos un grupo de desarrolladores web encargados del desarrollo del e-commerce de venta de bebidas alcohólicas y snacks, llamado Sip N' Ship. Además, ofrecemos tragos recomendados que se pueden armar con el producto seleccionado; esto va a variar a medida que se seleccionan distintas bebidas. Este e-commerce está orientado a cualquier persona mayor de edad (en nuestro país, mayores de 18 años).",
-  "version": "1.0.0",
-  "main": "app.js",
-  "devDependencies": {},
+  "name": "src",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/bin/www",
+    "dev": "nodemon ./src/bin/www"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  }
 }
