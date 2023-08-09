@@ -1,9 +1,13 @@
 const express = require('express');
-const productsControllers=require('../controllers/productController')
+const {edit,detail,trolley}=require('../controllers/productController')
 const router = express.Router();
 
 /* /product */
-router.get('/detail', productsControllers.detail);
-router.get('/trolley', productsControllers.trolley);
+
+router.get('/edit', edit);
+// router.get('/new', new);
+// router.get('/view', view);
+router.get('/detail', detail);
+router.get('/trolley', trolley);
 
 module.exports = router;

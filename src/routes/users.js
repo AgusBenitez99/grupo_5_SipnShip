@@ -1,9 +1,9 @@
 const express = require('express');
-const usersControllers=require('../controllers/userController')
+const {register,login}=require('../controllers/userController')
 const router = express.Router();
 
 /* /user */
-router.get('/register', usersControllers.register);
-router.get('/login', usersControllers.login);
+router.get('/register', register);
+router.get('/login', login);
 
 module.exports = router;
