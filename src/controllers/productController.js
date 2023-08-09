@@ -1,8 +1,11 @@
 module.exports={
+    edit:(req,res)=>{
+        return res.render('product/edit')
+    },
     detail:(req,res)=>{
-        return res.render('productDetail')
+        return res.render('product/detail')
     },
     trolley:(req,res)=>{
-        return res.render('carrito')
+        return res.render('product/trolley')
     }
 }
