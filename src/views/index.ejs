@@ -20,7 +20,7 @@
         <img class="d-block w-100" src="/images/cerveza.webp" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="/images/vino.jpg" alt="Second slide">
+        <img class="d-block w-100" src="/images/fernet-coca.jpg" alt="Second slide">
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="/images/cerveza.webp" alt="Third slide">
@@ -40,293 +40,59 @@
     <h2>Productos Destacados</h2>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
+        <% products.forEach(product => { %>
+          <div class="swiper-slide">
+            <div class="main_section_contenedor">
+              <a href="/product/detail">
+                <img src="/images/cerveza.webp" alt="">
+                <h4><%= product.name %></h4>
+                <h4>555ml</h4>
+                <h4>$2.500</h4>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
+        <% }) %>
       </div>
-      <!-- <div class="swiper-pagination"></div> -->
     </div>
     <h2>Ofertas</h2>
     <div class="swiper mySwiper2">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
+    <div class="swiper-wrapper">
+    <% products.forEach(product => { %>
+      <div class="swiper-slide">
+        <div class="main_section_contenedor">
+          <a href="/product/detail">
+            <img src="/images/cerveza.webp" alt="">
+            <h4><%= product.name %></h4>
+            <h4>555ml</h4>
+            <h4>$2.500</h4>
+          </a>
         </div>
       </div>
+    <% }) %>
     </div>
+  </div>
+    
     <h2>Combos Especiales</h2>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
+      <% products.forEach(product => { %>
         <div class="swiper-slide">
           <div class="main_section_contenedor">
             <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
+              <img src=<%= product.image %> alt="">
+              <h4><%= product.name %></h4>
               <h4>555ml</h4>
               <h4>$2.500</h4>
             </a>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/vino.jpg" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="main_section_contenedor">
-            <a href="/product/detail">
-              <img src="/images/cerveza.webp" alt="">
-              <h4>nombre del producto</h4>
-              <h4>555ml</h4>
-              <h4>$2.500</h4>
-            </a>
-          </div>
-        </div>
+      <% }) %>
       </div>
-      <!--   <div class="swiper-pagination"></div> -->
     </div>
+ 
     <!-- footer -->
     <%- include('./partials/footer') %>
-    
+      
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
