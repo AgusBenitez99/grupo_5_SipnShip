@@ -4,10 +4,13 @@
    justify-content: center;             
    align-items: flex-start;
    font-family: 'Roboto', sans-serif;
+   
 }
 
 .main__login__fondo img{
-    width: 100%;
+    object-fit: cover;
+    width: 50%;
+    height: 600px;
 }
 
 .main__formulario{
@@ -30,8 +33,6 @@
     font-size: 35px;
     color: #512DA8;
     font-weight: bold;
-    /* margin-bottom: ;
-    background-color: ; */
 }
 
 .main__formulario input{
@@ -89,10 +90,6 @@
     margin: 0px;
 }
 
-.main__formulario--recuerdame label{
-    
-}
-
 .main__formulario--links a{
     font-size: 14px;
     color: #673ab7;
@@ -113,19 +110,24 @@
     margin: 10px 10px;
 }
 
-
 /*tablet*/
 @media (min-width: 481px) {
     .login__main{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;   
-        position: absolute;   
+        
      } 
 
-     .main__formulario{
-        /* width: 50%; */
-     }
+  /*    .main__login__fondo img{
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+ */
+     /* .main__formulario{
+        height: 200px;
+     } */
        
 }
 
