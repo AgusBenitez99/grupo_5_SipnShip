@@ -1,0 +1,14 @@
+#carouselExampleIndicators {
+    height: 320; /* Altura específica para el carrusel */
+    position: relative;
+    overflow: hidden;
+}
+
+  .carousel-item img {
+    max-height: 50vh; /* Las imágenes ocupan todo el alto del carrusel */
+    width: 100%; /* Ajustar el ancho proporcionalmente */
+    object-fit: contain;
+    object-position: center;
+}
+
+  

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {
+  title: 'PRODUCT DETAIL'
+}) %>
+
+  <body>
+
+    <%- include('../partials/header') %>
+
+    <!-- contenido detalle de producto -->
+    <main>
+      <div class="product__main--go-back">
+        <i class="fa-solid fa-arrow-left-long"></i> <span>Volver</span>
+      </div>
+      <div class="product">
+        <section class="product__main">
+          <article class="product__main--product">
+            <div class="product__main--image">
+              <img
+                src="/images/BRANCA-FERNET-1000ML.png"
+                alt="fernet branca 1000ml"
+                width="100%"
+              />
+            </div>
+            <h3>Fernet Branca</h3>
+            <p class="product__main--quantity">1000ml</p>
+            <p class="product__main--price">$1700</p>
+            <button class="product__main--button">Agregar</button>
+          </article>
+        </section>
+        <section class="product__recommended">
+          <h3 class="product__recommended--title">Tragos recomendados</h3>
+          <span><a href="">Ver más</a></span>
+          <img
+            src="/images/fernet-coca.jpg"
+            alt="fernet con coca cola"
+            width="100%"
+          />
+          <h4 class="product__recommended--drink-name">Fernet con cola</h4>
+        </section>
+        <section class="product__related">
+          <h3 class="product__related--title">Productos relacionados</h3>
+
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/images/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 1.5L</h4>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/images/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 2.5L</h4>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/images/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 3.5L</h4>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/images/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 4.5L</h4>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product__related--data">
+                  <img
+                    src="/images/cocaCola2L.png"
+                    alt="coca cola 2.5L"
+                    width="100%"
+                  />
+                  <h4>Coca Cola Original 5.5L</h4>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
