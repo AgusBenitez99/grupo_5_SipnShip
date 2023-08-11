@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('../partials/head', { title: 'HOME' }) %>
+  <%- include('../partials/head', { title: 'HOME' }) %>
 
   <body>
     <%- include('../partials/header') %>
-      <main>
-        <div class="container">
-          <h1>Editar Producto</h1>
-          <form>
-            <div class="container_nombreProducto">
-              <label for="nombre">Nombre de Producto:</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre del Producto" required>
+    <main>
+      <div class="main__form">
+        <h1>Editar Producto</h1>
+        <form>
+          <div class="main__form__body">
+            <div class="main__form__input2">
+              <label for="nombre">Nombre de Producto</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingrese Nombre del Producto"
+                required
+              />
             </div>
-            <div class="container_description_precio">
-              <div class="container_categoria">
-                <label for="categoria">Categoría:</label>
+            
+              <div class="main__form__input2">
+                <label for="categoria">Categoría</label>
                 <select>
                   <option value="Cervezas">Cervezas</option>
                   <option value="Vinos" selected>Vinos</option>
@@ -22,37 +29,52 @@
                   <option value="Tragos">Tragos</option>
                 </select>
               </div>
-              <div class="container_precio">
-                <label for="precio">Precio:</label>
-                <input type="number" id="precio" name="precio" placeholder="Ingrese un precio">
+              <div class="main__form__input2">
+                <label for="precio">Precio</label>
+                <input
+                  type="number"
+                  id="precio"
+                  name="precio"
+                  placeholder="Ingrese un precio"
+                />
               </div>
+            
+            
+              <div class="main__form__input2">
+                <label for="tamaño">Tamaño</label>
+                <input
+                  type="text"
+                  id="tamaño"
+                  name="tamaño"
+                  placeholder="Ingrese un tamaño"
+                />
+              </div>
+              <div class="main__form__input2">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  name="descripcion"
+                  id="descripcion"
+                  cols="22"
+                  rows="2"
+                ></textarea>
+              </div>
+            
+            <div class="main__form__input2">
+              <label for="imagen">Imagen</label>
+              <input type="file" id="imagen" name="imagen" />
             </div>
-            <div class="container_tamaño_categoria">
-              <div class="container_tamaño">
-                <label for="tamaño">Tamaño:</label>
-                <input type="text" id="tamaño" name="tamaño" placeholder="Ingrese un tamaño">
-              </div>
-              <div class="container_descripcion">
-                <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" id="descripcion" cols="22" rows="2"></textarea>
-              </div>
+            <div class="main__form__links">
+             
+                <button type="submit">Cancelar</button>
+              
+             
+                <button type="submit">Guardar</button>
+             
             </div>
-            <div class="container_imagen">
-              <label for="imagen">Imagen:</label>
-              <input type="file" id="imagen" name="imagen">
-            </div>
-            <div class="container_button_2">
-              <div class="container_button">
-                <button type="submit">Editar Producto</button>
-              </div>
-              <div class="container_button">
-                <button type="submit">Buscar Producto</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </main>
-      <%- include('../partials/footer') %>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
   </body>
-
 </html>
