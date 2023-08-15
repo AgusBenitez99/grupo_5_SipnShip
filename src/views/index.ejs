@@ -44,10 +44,10 @@
           <div class="swiper-slide">
             <div class="main_section_contenedor">
               <a href="/product/detail">
-                <img src="/images/cerveza.webp" alt="">
+                <img src="<%= product.image %>" alt="">
                 <h4><%= product.name %></h4>
                 <h4>555ml</h4>
-                <h4>$2.500</h4>
+                <h4>$<%= product.price %></h4>
               </a>
             </div>
           </div>
@@ -61,10 +61,10 @@
       <div class="swiper-slide">
         <div class="main_section_contenedor">
           <a href="/product/detail">
-            <img src="/images/cerveza.webp" alt="">
+            <img src="<%= product.image %>" alt="">
             <h4><%= product.name %></h4>
             <h4>555ml</h4>
-            <h4>$2.500</h4>
+            <h4>$<%= product.price %></h4>
           </a>
         </div>
       </div>
@@ -82,7 +82,7 @@
               <img src=<%= product.image %> alt="">
               <h4><%= product.name %></h4>
               <h4>555ml</h4>
-              <h4>$2.500</h4>
+              <h4>$<%= product.price %></h4>
             </a>
           </div>
         </div>

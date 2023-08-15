@@ -108,8 +108,19 @@
 
 .product__related--data {
     padding-bottom: 30px;
+    background-color: var(--darkPrimaryColor);
+    color: white;
+    border: 1px solid var(--grisClaro);
+    box-shadow: 0 2px 4px rgba(255, 252, 252, 0.1);
+    border-radius: 10px;
+    padding: 1;
 }
 
+element.style {
+}
+.product__related--data h4{
+    padding: 10px;
+}
 
 /* styles swiper  */
 /* .swiper {
