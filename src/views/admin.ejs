@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {
+        title: 'ADMIN'
+      }) %>
+<body class="admin">
+        
+        <aside>
+            <ul id="opciones">
+                <li data-target="div1"><p>Dashboard</p></li>
+                <li data-target="div2"><p>Usuarios</p></li>
+                <li data-target="div3"><p>Productos</p></li> 
+                <li><p>Favoritos</p></li>
+                <li><p>Salir</p></li>
+              </ul>
+        </aside>
+        <main class="main__admin">
+            <header class="main__admin__header">
+               <div class="main__admin__header-text">
+                <h1>Panel de administracion</h1>
+                <p>En este panel va a poder realizar toda la configuracion necesaria</p>
+               </div> 
+               <div class="main__admin__header-icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeE49t-u-MwSe5Ia4mL_IzNjsE_EP3gf-27JaSuxJnOQ&s" alt="">
+                <i class="fa-solid fa-gear "></i>
+               </div>
+               
+            </header>
+            <div id="div3" class="table__container-oculto">
+                <h2 class="lista__title">Tabla de Productos</h2>
+                <table>
+                    
+                    <tr>
+                        <th>#</th>
+                      <th>Imagen</th>
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th>Categoria</th>
+                      <th></th>
+                    </tr>
+                    <% products.forEach(product => { %>
+                        <tr>
+                            <td><%= product.id %></td>
+                            <td><img class="product-image" src="/images/fernet.png" alt="Producto 1"></td>
+                            <td><%= product.name %></td>
+                            <td><strong>$<%= product.price %></strong></td>
+                            <td><%= product.brand %></td>
+                            <td><div class="actions">
+                                <a href=""><i class="far fa-eye"></i></a>
+                                <a href=""> <i class="fas fa-edit"></i></a>
+                                <a href=""><i class="fas fa-trash-alt"></i></a>
+                                
+                               
+                                
+                            </div></td>
+                          </tr>
+                        <% }) %>
+                   
+                  </table>
+                
+            </div>
+            <div id="div2" class="table__container-oculto">
+                <h2 class="lista__title">Tabla de Usuarios</h2>
+                <table>
+                    
+                    <tr>
+                      <th>Imagen</th>
+                      <th>Nombre</th>
+                      <th>permisos</th>
+                      <th>lala</th>
+                    </tr>
+                    <% products.forEach(product => { %>
+                        <tr>
+                            <td><img class="product-image" src="/images/fernet.png" alt="Producto 1"></td>
+                            <td><%= product.name %></td>
+                            <td><strong>$<%= product.price %></strong></td>
+                            <td><%= product.brand %></td>
+                          </tr>
+                        <% }) %>
+                   
+                  </table>
+                
+            </div>
+        </main>
+       <script >
+        document.addEventListener("DOMContentLoaded", function() {
+    var opciones = document.getElementById("opciones").getElementsByTagName("li");
+    for (var i = 0; i < opciones.length; i++) {
+        opciones[i].addEventListener("click", function() {
+            var targetDivId = this.getAttribute("data-target");
+            var targetDiv = document.getElementById(targetDivId);
+
+            // Oculta todos los divs
+            var divs = document.querySelectorAll("div");
+            divs.forEach(function(div) {
+                div.classList.remove("table__container-vista");
+            });
+
+            // Muestra el div seleccionado
+            targetDiv.classList.add("table__container-vista");
+        });
+    }
+});
+       </script>
+</body>
+</html>
