@@ -1,0 +1,140 @@
+:root {
+  --verdeOscuro: #0a8772;
+  --negro: #071311;
+  --gris: #c7c7c7;
+  --verde: #13c5a5;
+  --verdeIntermedio: #0fa88e;
+}
+.admin {
+  display: flex;
+  /* flex-direction: column; */
+}
+.main__admin {
+  background-color: #171821;
+  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.20);
+  display: flex;
+  width: 85vw;
+  height: 100vh;
+  flex-direction: column;
+}
+.main__admin__header {
+  /* background-color: var(--verde); */
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+
+}
+.main__admin__header-text{
+  color: #FFF;
+  width: 50%;
+  /* background-color: #21222D; */
+}
+.main__admin__header-icon{
+  text-align: center;
+  width: 20%;
+ 
+}
+.main__admin__header-icon img{
+  height: 40px;
+  width: 40px;
+  border-radius: 29px;
+  margin-right: 2em;
+}
+.main__admin__header-icon i{
+ font-size: 1.5em;
+ color: #FFF;
+}
+
+
+aside {
+  width: 15vw;
+  height: 100vh;
+  display: block;
+  background-color: #171821;
+  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.20);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+aside ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2em;
+  align-items: center;
+}
+aside ul li {
+  margin-top: 2em;
+}
+aside ul li p {
+  color: var(--gris);
+  font-size: 1.2em;
+  font-weight: 600;
+  
+  padding: 15px;
+}
+aside ul li p:hover {
+  color: var(--negro);
+  background-color: var(--verde);
+  border-radius: 5px;
+  
+}
+
+
+/*css de la tabla*/
+  /* Estilos para la tabla */
+  div.table__container-oculto{
+    display: none;
+  }
+  div.table__container-vista {
+    display: block;
+    background-color: #21222D;
+    height: 80%;
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 10px;
+    overflow-y: auto;
+    /* Estilos de scroll personalizados */
+    scrollbar-width: thin; 
+    /*scrollbar-color: #888888 #f2f2f2;  Color del scroll (funciona en Firefox) */
+  }
+  .table__container-vista::-webkit-scrollbar {
+    width: 10px; /* Anchura del scroll */
+  }
+  .table__container-vista::-webkit-scrollbar-thumb {
+    background-color: #171821; /* Color del thumb (barra de desplazamiento) */
+  }
+  .lista__title{
+    text-align: center;
+    color: #FFF;
+    margin: 10px 0px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    
+    text-align: left;
+    padding: 8px;
+    color: #FFF;
+  }
+
+  th {
+    background-color: #21222D;
+  }
+  .actions{
+    display: flex;
+    gap: 15px;
+  }
+
+  /* Estilos adicionales */
+  .product-image {
+    max-width: 50px;
+    max-height: 100px;
+    border-radius: 50%;
+  }
