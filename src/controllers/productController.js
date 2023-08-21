@@ -24,7 +24,7 @@ module.exports={
 			 	product.size = size
 				product.brand = brand			    
                 product.description = description.trim()
-                product.image = req.file ? req.file.filename : null
+                product.image = req.file ? req.file.filename : product.image
 			}	
 
 			return product
