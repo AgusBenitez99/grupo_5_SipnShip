@@ -4,7 +4,7 @@ const Product = require("../data/Product");
 module.exports={
     edit:(req,res)=>{
        const products = readJSON('products.json')
-        const product = products.find(product => product.id === +req.params.id)
+        const product = products.find(product => product.id === req.params.id)
         return res.render('product/edit', {
             ...product,
             products
@@ -18,7 +18,7 @@ module.exports={
 
 		const productModify = products.map(product =>{
 
-			if (product.id === +req.params.id) {
+			if (product.id === req.params.id) {
 			 	product.name = name.trim()
 				product.price = +price
 			 	product.size = size
