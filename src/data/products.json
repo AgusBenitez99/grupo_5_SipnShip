@@ -1,72 +1,79 @@
 [
-    {
-        "id":1,
-        "name":"Coca cola",
-        "price":900,
-        "brand":"gaseosa",
-        "image":"/images/cocaCola2L-fondo.png"
-    },
-    {
-        "id":2,
-        "name":"Fernet Branca",
-        "price":2800,
-        "brand":"aperitivo",
-        "image":"/images/fernet-fondo.png"
-    },
-    {
-        "id":3,
-        "name":"Whisky J.Walker",
-        "price":1700,
-        "brand":"whisky",
-        "image":"/images/johnnie-walker-gold.jpg"
-    },
-    {
-        "id":4,
-        "name":"Aperol",
-        "price":2300,
-        "brand":"aperitivo",
-        "image":"/images/aperol.jpg"
-    },
-    {
-        "id":5,
-        "name":"Bombay Gin",
-        "price":12000,
-        "brand":"gin",
-        "image":"/images/bombay-gin.jpg"
-    },
-    {
-        "id":6,
-        "name":"Baileys Licor",
-        "price":6700,
-        "brand":"licor",
-        "image":"/images/baileys-licor.jpg"
-    },
-    {
-        "id":7,
-        "name":"Aconcagua Gin",
-        "price":5000,
-        "brand":"gin",
-        "image":"/images/gin-aconcagua.jpg"
-    },
-    {
-        "id":8,
-        "name":"Cerveza",
-        "price":1500,
-        "brand":"cerveza",
-        "image":"/images/cerveza.webp"
-    },
-    {
-        "id":9,
-        "name":"BullDog Gin",
-        "price":13500,
-        "brand":"gin",
-        "image":"/images/gin-bullDog.jpg"
-    },
-    {
-        "id":10,
-        "name":"Malibu Ron",
-        "price":4500,
-        "brand":"ron",
-        "image":"/images/malibu-ron.jpg"
-    }
+   {
+      "id": 1,
+      "name": "Coca cola",
+      "price": 900,
+      "brand": "gaseosa",
+      "tamaño": 700,
+      "image": null,
+      "description": "",
+      "size": ""
+   },
+   {
+      "id": 2,
+      "name": "Fernet Branca",
+      "price": 2800,
+      "brand": "aperitivo",
+      "image": null,
+      "description": ""
+   },
+   {
+      "id": 3,
+      "name": "Whisky J.Walker",
+      "price": 1700,
+      "brand": "whisky",
+      "image": null,
+      "description": "",
+      "size": "750"
+   },
+   {
+      "id": 4,
+      "name": "Aperol",
+      "price": 2300,
+      "brand": "aperitivo",
+      "image": "/images/aperol.jpg",
+      "description": ""
+   },
+   {
+      "id": 5,
+      "name": "Bombay Gin",
+      "price": 12000,
+      "brand": "gin",
+      "image": "/images/bombay-gin.jpg"
+   },
+   {
+      "id": 6,
+      "name": "Baileys Licor",
+      "price": 6700,
+      "brand": "licor",
+      "image": "/images/baileys-licor.jpg"
+   },
+   {
+      "id": 7,
+      "name": "Aconcagua Gin",
+      "price": 5000,
+      "brand": "gin",
+      "image": "/images/gin-aconcagua.jpg"
+   },
+   {
+      "id": 8,
+      "name": "Cerveza",
+      "price": 1500,
+      "brand": "cerveza",
+      "image": "/images/cerveza.webp"
+   },
+   {
+      "id": 9,
+      "name": "BullDog Gin",
+      "price": 13500,
+      "brand": "gin",
+      "image": "/images/gin-bullDog.jpg"
+   },
+   {
+      "id": 10,
+      "name": "Malibu Ron",
+      "price": 4500,
+      "brand": "ron",
+      "image": "/images/malibu-ron.jpg"
+   }
 ]

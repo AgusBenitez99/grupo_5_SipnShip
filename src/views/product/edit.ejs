@@ -6,53 +6,54 @@
     <%- include('../partials/header') %>
     <main>
       <div class="main__form">
-        <h1>Editar Producto</h1>
-        <form>
+        <h1>Editar Producto <%= id %></h1>
+        <form action="/product/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="main__form__body">
             <div class="main__form__input2">
-              <label for="nombre">Nombre de Producto</label>
+              <label for="name"></label>
               <input
                 type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Ingrese Nombre del Producto"
+                id="name"
+                name="name"
+                value="<%= name %>"
                 required
               />
             </div>
             
               <div class="main__form__input2">
                 <label for="categoria">Categoría</label>
-                <select>
-                  <option value="Cervezas">Cervezas</option>
-                  <option value="Vinos" selected>Vinos</option>
-                  <option value="Combos">Combos</option>
-                  <option value="Tragos">Tragos</option>
+                <select name="brand">
+                   <% products.forEach(item => { %>
+                    <option <%= item.brand === brand ? "selected" : null %> value="<%= item.brand %>"><%= item.brand %> </option>
+                   <% }) %>
                 </select>
               </div>
               <div class="main__form__input2">
-                <label for="precio">Precio</label>
+                <label for="price">Precio</label>
                 <input
                   type="number"
-                  id="precio"
-                  name="precio"
-                  placeholder="Ingrese un precio"
+                  id="price"
+                  name="price"
+                  value=<%= price %>
                 />
               </div>
             
             
               <div class="main__form__input2">
-                <label for="tamaño">Tamaño</label>
+                <label for="size">Tamaño</label>
                 <input
                   type="text"
-                  id="tamaño"
-                  name="tamaño"
+                  id="size"
+                  name="size"
                   placeholder="Ingrese un tamaño"
-                />
+                  value= 
+                  >
               </div>
+
               <div class="main__form__input2">
-                <label for="descripcion">Descripción</label>
+                <label for="description">Descripción</label>
                 <textarea
-                  name="descripcion"
+                  name="description"
                   id="descripcion"
                   cols="22"
                   rows="2"
@@ -60,8 +61,8 @@
               </div>
             
             <div class="main__form__input2">
-              <label for="imagen">Imagen</label>
-              <input type="file" id="imagen" name="imagen" />
+              <label for="image">Imagen</label>
+              <input type="file" id="image" name="image" />
             </div>
             <div class="main__form__links">
              

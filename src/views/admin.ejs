@@ -11,7 +11,7 @@
                 <li data-target="div2"><p>Usuarios</p></li>
                 <li data-target="div3"><p>Productos</p></li> 
                 <li><p>Favoritos</p></li>
-                <li><p>Salir</p></li>
+                <li><a href="/"><p>Salir</p></li></a>
               </ul>
         </aside>
         <main class="main__admin">
@@ -47,7 +47,7 @@
                             <td><%= product.brand %></td>
                             <td><div class="actions">
                                 <a href=""><i class="far fa-eye"></i></a>
-                                <a href=""> <i class="fas fa-edit"></i></a>
+                                <a href="/product/edit/<%= product.id %>"> <i class="fas fa-edit"></i></a>
                                 <a href=""><i class="fas fa-trash-alt"></i></a>
                                 
                                
