@@ -1,72 +1,92 @@
 [
-    {
-        "id":1,
-        "name":"Coca cola",
-        "price":900,
-        "brand":"gaseosa",
-        "image":"/images/cocaCola2L-fondo.png"
-    },
-    {
-        "id":2,
-        "name":"Fernet Branca",
-        "price":2800,
-        "brand":"aperitivo",
-        "image":"/images/fernet-fondo.png"
-    },
-    {
-        "id":3,
-        "name":"Whisky J.Walker",
-        "price":1700,
-        "brand":"whisky",
-        "image":"/images/johnnie-walker-gold.jpg"
-    },
-    {
-        "id":4,
-        "name":"Aperol",
-        "price":2300,
-        "brand":"aperitivo",
-        "image":"/images/aperol.jpg"
-    },
-    {
-        "id":5,
-        "name":"Bombay Gin",
-        "price":12000,
-        "brand":"gin",
-        "image":"/images/bombay-gin.jpg"
-    },
-    {
-        "id":6,
-        "name":"Baileys Licor",
-        "price":6700,
-        "brand":"licor",
-        "image":"/images/baileys-licor.jpg"
-    },
-    {
-        "id":7,
-        "name":"Aconcagua Gin",
-        "price":5000,
-        "brand":"gin",
-        "image":"/images/gin-aconcagua.jpg"
-    },
-    {
-        "id":8,
-        "name":"Cerveza",
-        "price":1500,
-        "brand":"cerveza",
-        "image":"/images/cerveza.webp"
-    },
-    {
-        "id":9,
-        "name":"BullDog Gin",
-        "price":13500,
-        "brand":"gin",
-        "image":"/images/gin-bullDog.jpg"
-    },
-    {
-        "id":10,
-        "name":"Malibu Ron",
-        "price":4500,
-        "brand":"ron",
-        "image":"/images/malibu-ron.jpg"
-    }
+   {
+      "id": "617aed2f-f74e-4b60-aabb-6d2da7e0ba05",
+      "name": "Johnny Walker",
+      "brand": "Whisky",
+      "price": 28000,
+      "size": "750ml",
+      "description": "Johnnie Walker Gold Label Reserve es la mezcla perfecta para una celebración indulgente. Lujoso, cremoso y con notas de miel, es un gran tributo a la unión armoniosa entre los whiskies de Speyside y Highland con vestigios de madera ahumada de la costa oeste. Johnnie Walker Gold Label Reserve está hecho para compartir esas noches inolvidables con amigos increíbles.",
+      "image": "1692577099081_products_.jpg",
+      "created": "2023-08-21T00:18:19.086Z"
+   },
+   {
+      "id": "d23c2c56-3f85-497a-b016-995c41a41d28",
+      "name": "Jack Daniel's Old No. 7 Estados Unidos",
+      "brand": "Whisky",
+      "price": 18400,
+      "size": "750ml",
+      "description": "Suavizado gota a gota a través de tres metros de carbón de arce de azúcar, tras lo cual es madurado en barriles hechos a mano por nosotros. Y nuestro Tennessee Whiskey no sigue un calendario. Está listo cuando los catadores lo dicen. Juzgamos por su apariencia. Por su aroma. Y, por supuesto, por su sabor. Así lo hacía Jack Daniel en persona un siglo atrás. Y así lo seguimos haciendo hoy.",
+      "image": "1692577399921_products_.jpg",
+      "created": "2023-08-21T00:23:19.923Z"
+   },
+   {
+      "id": "3c9cbe6e-14ab-49e1-be52-a55c2d8732bc",
+      "name": "Gin Aconcagua Handcrafted London Dry",
+      "brand": "Gin",
+      "price": 5400,
+      "size": "750ml",
+      "description": "",
+      "image": "1692577923953_products_.jpg",
+      "created": "2023-08-21T00:32:03.960Z"
+   },
+   {
+      "id": "95367be5-1111-4374-beca-6b2e8ac47979",
+      "name": "Bombay Sapphire London Dry",
+      "brand": "Gin",
+      "price": 12300,
+      "size": "750ml",
+      "description": "",
+      "image": "1692578048169_products_.jpg",
+      "created": "2023-08-21T00:34:08.172Z"
+   },
+   {
+      "id": "20e87354-3c64-4a1b-b1c1-22318fe944b5",
+      "name": "Fernet branca",
+      "brand": "Aperitivo",
+      "price": 3400,
+      "size": "750ml",
+      "description": "Ideal como digestivo, tiene un aroma intenso a toques vegetales, y un sabor amargo y leve a hierbas.",
+      "image": "1692578622683_products_.png",
+      "created": "2023-08-21T00:43:42.685Z"
+   },
+   {
+      "id": "49559c13-489e-4501-b518-f74ecf4c903d",
+      "name": "Aperol",
+      "brand": "Aperitivo",
+      "price": 2300,
+      "size": "750ml",
+      "description": "Es el aperitivo por excelencia, deleita con su tonalidad naranja y sus notas de naranjas dulces, en una deliciosa combinación de hierbas y raices que se integran con destellos de vainilla, es ligeramente agridulce y salado con un final prolongado.",
+      "image": null,
+      "created": "2023-08-21T00:46:18.242Z"
+   },
+   {
+      "id": "9af5d371-944f-4caa-8a91-f3e0fbdd5738",
+      "name": "Corona",
+      "brand": "Cerveza",
+      "price": 600,
+      "size": "330ml",
+      "description": "",
+      "image": "1692578924225_products_.webp",
+      "created": "2023-08-21T00:48:44.228Z"
+   },
+   {
+      "id": "4e8cc8a5-2890-4764-aa45-0e080ecc5e6f",
+      "name": "Absolute azul",
+      "brand": "Vodka",
+      "price": 4400,
+      "size": "750ml",
+      "description": "Absolut, es un vodka atrevido, original y creativo, elaborado con agua sueca y trigo de invierno, destilado en varias ocasiones para lograr la pureza en sus notas y su suavidad, presenta ligeros toque de caramelo y vainilla con un final fresco y afrutado.",
+      "image": "1692579176258_products_.jpg",
+      "created": "2023-08-21T00:52:56.260Z"
+   },
+   {
+      "id": "ece2353f-8311-4757-b3a4-178deda3ae86",
+      "name": "Skyy",
+      "brand": "Vodka",
+      "price": 2500,
+      "size": "750ml",
+      "description": "Producto de cuatro procesos de destilación, tiene un sabor cremoso a notas de anís, cilantro con un ligero toque de pimienta y un aroma a cítricos y especias.",
+      "image": "1692597828011_products_.jpg",
+      "created": "2023-08-21T06:03:48.016Z"
+   }
 ]
