@@ -7,61 +7,63 @@
     <main>
       <div class="main__form">
         <h1>Crear Producto</h1>
-        <form>
+        <form  action="/product/created" method="POST"  enctype="multipart/form-data">
           <div class="main__form__body">
             <div class="main__form__input2">
-              <label for="nombre">Nombre de Producto</label>
+              <label for="name">Nombre de Producto</label>
               <input
                 type="text"
-                id="nombre"
-                name="nombre"
+                id="name"
+                name="name"
                 placeholder="Ingrese Nombre del Producto"
                 required
               />
             </div>
             
               <div class="main__form__input2">
-                <label for="categoria">Categoría</label>
-                <select>
-                  <option value="Cervezas">Cervezas</option>
-                  <option value="Vinos" selected>Vinos</option>
-                  <option value="Combos">Combos</option>
-                  <option value="Tragos">Tragos</option>
+                <label for="brand">Categoría</label>
+                <select name="brand">
+                  <option value="Cerveza">Cerveza</option>
+                  <option value="Vino" selected>Vino</option>
+                  <option value="Whisky">Whisky</option>
+                  <option value="Gin">Gin</option>
+                  <option value="Aperitivo">Aperitivo</option>
+                  <option value="Vodka">Vodka</option>
                 </select>
               </div>
               <div class="main__form__input2">
-                <label for="precio">Precio</label>
+                <label for="price">Precio</label>
                 <input
                   type="number"
-                  id="precio"
-                  name="precio"
+                  id="price"
+                  name="price"
                   placeholder="Ingrese un precio"
                 />
               </div>
             
             
               <div class="main__form__input2">
-                <label for="tamaño">Tamaño</label>
+                <label for="size">Tamaño</label>
                 <input
                   type="text"
-                  id="tamaño"
-                  name="tamaño"
+                  id="size"
+                  name="size"
                   placeholder="Ingrese un tamaño"
                 />
               </div>
               <div class="main__form__input2">
-                <label for="descripcion">Descripción</label>
+                <label for="description">Descripción</label>
                 <textarea
-                  name="descripcion"
-                  id="descripcion"
+                  name="description"
+                  id="description"
                   cols="22"
                   rows="2"
                 ></textarea>
               </div>
             
             <div class="main__form__input2">
-              <label for="imagen">Imagen</label>
-              <input type="file" id="imagen" name="imagen" />
+              <label for="image">Imagen</label>
+              <input type="file" id="image" name="image" />
             </div>
             <div class="main__form__links">
              

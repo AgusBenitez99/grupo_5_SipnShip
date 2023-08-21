@@ -1,17 +1,16 @@
 const express = require('express');
-const {edit,create,detail,trolley, update}=require('../controllers/productController');
-const upload = require('../middlewares/upload');
+const productController=require('../controllers/productController')
 const router = express.Router();
+const upload = require('../middlewares/upload');
 
 /* /product */
 
-router
-    .get('/edit/:id', edit)
-    .get('/new', create)
-// .get('/view', view)
-    .get('/detail', detail)
-    .get('/trolley', trolley)
-    .put('/update/:id', upload.single('image'), update)
+router.get('/edit', productController.edit);
+router.get('/new', productController.new);
+router.post('/created', upload.single('image'), productController.create)
+router.get('/detail/:id', productController.detail);
+router.get('/trolley', productController.trolley);
+.put('/update/:id', upload.single('image'), productController.update)
 
 
 module.exports = router;

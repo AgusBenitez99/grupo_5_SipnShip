@@ -27,7 +27,10 @@
                
             </header>
             <div id="div3" class="table__container-oculto">
-                <h2 class="lista__title">Tabla de Productos</h2>
+                <div class="table__container-header">
+                    <h2 class="lista__title">Tabla de Productos</h2>
+                    <a href="/product/new">Agregar producto</a>
+                </div>
                 <table>
                     
                     <tr>
@@ -38,15 +41,16 @@
                       <th>Categoria</th>
                       <th></th>
                     </tr>
-                    <% products.forEach(product => { %>
+                    <% products.forEach((product,index) => { %>
                         <tr>
-                            <td><%= product.id %></td>
-                            <td><img class="product-image" src="/images/fernet.png" alt="Producto 1"></td>
+                            <td><%= index + 1 %></td>
+                            <td><img class="product-image" src="/images/<%= product.image %>" alt="Producto 1"></td>
                             <td><%= product.name %></td>
                             <td><strong>$<%= product.price %></strong></td>
                             <td><%= product.brand %></td>
                             <td><div class="actions">
-                                <a href=""><i class="far fa-eye"></i></a>
+                                
+                                <a href="/product/detail/<%= product.id %>"><i class="far fa-eye"></i></a>
                                 <a href="/product/edit/<%= product.id %>"> <i class="fas fa-edit"></i></a>
                                 <a href=""><i class="fas fa-trash-alt"></i></a>
                                 
