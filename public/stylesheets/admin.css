@@ -105,10 +105,14 @@ aside ul li p:hover {
   .table__container-vista::-webkit-scrollbar-thumb {
     background-color: #171821; /* Color del thumb (barra de desplazamiento) */
   }
-  .lista__title{
+  .table__container-header{
+    display: flex;
     text-align: center;
     color: #FFF;
     margin: 10px 0px;
+    justify-content: center;
+    gap: 4em;
+
   }
   table {
     border-collapse: collapse;

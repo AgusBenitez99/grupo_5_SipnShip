@@ -19,14 +19,14 @@
           <article class="product__main--product">
             <div class="product__main--image">
               <img
-                src="/images/fernet.png"
+                src="/images/<%= product.image %>"
                 alt="fernet branca 1000ml"
                 width="100%"
               />
             </div>
-            <h3>Fernet Branca</h3>
+            <h3><%= product.name %></h3>
             <p class="product__main--quantity">1000ml</p>
-            <p class="product__main--price">$1700</p>
+            <p class="product__main--price">$<%= product.price %></p>
             <button class="product__main--button">Agregar</button>
           </article>
         </section>
