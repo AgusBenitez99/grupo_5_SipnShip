@@ -5,5 +5,8 @@ module.exports={
     },
     admin:(req,res)=>{
         return res.render('admin',{products})
+    },
+    results:(req,res)=>{
+        return res.render('results',{products})
     }
 }
