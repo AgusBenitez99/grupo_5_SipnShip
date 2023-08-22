@@ -1,4 +1,5 @@
 const { readJSON, writeJSON } = require("../data");
+const { unlinkSync, existsSync } = require("fs");
 const Product = require("../data/Product");
 
 module.exports={
@@ -65,5 +66,16 @@ module.exports={
       },
     trolley:(req,res)=>{
         return res.render('product/trolley')
+    }, 
+    remove: (req,res)=>{
+
+      const products = readJSON('products.json');
+      const id= req.params.id;
+      const product = products.find(product => product.id === id)
+      const productoModificado = products.filter(product => product.id !== id);
+      existsSync(`./public/images/${product.image}`) &&
+      unlinkSync(`./public/images/${product.image}`);
+      writeJSON(productoModificado, 'products.json')
+      return res.redirect('/admin')
     }
 }

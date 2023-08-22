@@ -40,26 +40,6 @@
       "created": "2023-08-21T00:34:08.172Z"
    },
    {
-      "id": "20e87354-3c64-4a1b-b1c1-22318fe944b5",
-      "name": "Fernet branca",
-      "brand": "Aperitivo",
-      "price": 3400,
-      "size": "750ml",
-      "description": "Ideal como digestivo, tiene un aroma intenso a toques vegetales, y un sabor amargo y leve a hierbas.",
-      "image": "1692578622683_products_.png",
-      "created": "2023-08-21T00:43:42.685Z"
-   },
-   {
-      "id": "49559c13-489e-4501-b518-f74ecf4c903d",
-      "name": "Aperol",
-      "brand": "Aperitivo",
-      "price": 2300,
-      "size": "750ml",
-      "description": "Es el aperitivo por excelencia, deleita con su tonalidad naranja y sus notas de naranjas dulces, en una deliciosa combinación de hierbas y raices que se integran con destellos de vainilla, es ligeramente agridulce y salado con un final prolongado.",
-      "image": "1692657652319_products_.jpeg",
-      "created": "2023-08-21T00:46:18.242Z"
-   },
-   {
       "id": "9af5d371-944f-4caa-8a91-f3e0fbdd5738",
       "name": "Corona",
       "brand": "Cerveza",
@@ -68,25 +48,5 @@
       "description": "",
       "image": "1692578924225_products_.webp",
       "created": "2023-08-21T00:48:44.228Z"
-   },
-   {
-      "id": "4e8cc8a5-2890-4764-aa45-0e080ecc5e6f",
-      "name": "Absolute azul",
-      "brand": "Vodka",
-      "price": 4400,
-      "size": "750ml",
-      "description": "Absolut, es un vodka atrevido, original y creativo, elaborado con agua sueca y trigo de invierno, destilado en varias ocasiones para lograr la pureza en sus notas y su suavidad, presenta ligeros toque de caramelo y vainilla con un final fresco y afrutado.",
-      "image": "1692579176258_products_.jpg",
-      "created": "2023-08-21T00:52:56.260Z"
-   },
-   {
-      "id": "ece2353f-8311-4757-b3a4-178deda3ae86",
-      "name": "Skyy",
-      "brand": "Vodka",
-      "price": 2500,
-      "size": "750ml",
-      "description": "Producto de cuatro procesos de destilación, tiene un sabor cremoso a notas de anís, cilantro con un ligero toque de pimienta y un aroma a cítricos y especias.",
-      "image": "1692597828011_products_.jpg",
-      "created": "2023-08-21T06:03:48.016Z"
    }
 ]
