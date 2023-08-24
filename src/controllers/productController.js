@@ -65,5 +65,21 @@ module.exports={
       },
     trolley:(req,res)=>{
         return res.render('product/trolley')
+    },
+    list:(req,res)=>{
+      const products = readJSON("products.json");
+      const query = req.query.query;
+      const productsFilter = products.filter(product => {
+      return product.name.includes(query);
+      });
+      res.render('results', { productsFilter });
+    },
+    search:(req,res)=>{
+      const products = readJSON("products.json");
+      const query = req.query.query;
+      const productsFilter = products.filter(product => {
+        return product.name.includes(query);
+      });
+      res.render('results', { productsFilter });
     }
 }

@@ -9,4 +9,5 @@ module.exports={
     results:(req,res)=>{
         return res.render('results',{products})
     }
+    
 }
