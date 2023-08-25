@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', {
+  title: 'Detalles'
+}) %>
+
+<body class="home">
+    
+  <%- include('./partials/header') %>
+
+  <main class="main">
+    <h2>Detalle del producto</h2>
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <% productsFilter.forEach(product => { %>
+          <div class="swiper-slide">
+            <div class="main_section_contenedor">
+              <a href="/product/detail/<%= product.id %>">
+                <img src="/images/<%= product.image %>" alt="">
+                <h4><%= result.name %></h4>
+                <h4><%= result.size %></h4>
+                <h4>$<%= result.price %></h4>
+              </a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+  
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+      
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!--  <script src="/js/carousel_swiper.js"></script> -->
+  <script src="/javascripts/carousel_swiper2.js"></script>
+</body>
+
+</html>
