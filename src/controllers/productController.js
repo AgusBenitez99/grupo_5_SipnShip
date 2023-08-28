@@ -4,7 +4,7 @@ const Product = require("../data/Product");
 
 module.exports={
     edit:(req,res)=>{
-       const products = readJSON('products.json')
+        const products = readJSON('products.json')
         const product = products.find(product => product.id === req.params.id)
         return res.render('product/edit', {
             ...product,
