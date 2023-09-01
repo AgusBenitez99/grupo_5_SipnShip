@@ -1,36 +1,17 @@
 /* contenedor padre */
  .swiper {
   margin: 10px;
+
 }
-/* contenedor de las tarjetas 
-.swiper-wrapper{
-  width: 100%;
-} */
 
 /* contenedor tarjeta */
 .swiper-slide {
-  text-align: left;
-  font-size: 18px;
+  text-align: center;
   display: flex;
-  background: #ffffff;
-  border-radius: 25px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 }
-/* contenedor imagen de la tarjeta */
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-} 
 
-
-/* funcionalidad cuando va cambiando la imagen */
-.mySwiper2 .swiper-slide img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-} 
 
 
