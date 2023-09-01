@@ -4,5 +4,20 @@ module.exports={
     },
     login:(req,res)=>{
         return res.render('user/login')
-    }
+    },
+    profile:(req,res)=>{
+        return res.render('user/profile')
+    },
+    logout:(req,res)=>{
+        return res.redirect('/')
+    },
+    processLogin:(req,res)=>{
+        return res.redirect('/')
+    },
+    processRegister:(req,res)=>{
+        return res.redirect('/')
+    },
+    updateProfile: (req,res)=>{
+        return res.send(req.body)
+    },
 }
