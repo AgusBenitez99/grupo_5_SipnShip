@@ -59,10 +59,12 @@ module.exports={
     
         const id = req.params.id;
         const product = products.find((product) => product.id === id);
-    
         return res.render("product/detail", {
-          product,
-        });
+
+           products,
+          ...product   
+                 
+                  });
       },
     trolley:(req,res)=>{
         return res.render('product/trolley')
