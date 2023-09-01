@@ -19,7 +19,7 @@
     display: none;
     }
 
-    .prodetail__description {padding: 15px;margin: 0 auto;}
+    .prodetail__description {padding: 15px;margin: 0 auto;text-align: center;}
 
     .prodetail__description h5 {
         font-weight: 900;
@@ -38,7 +38,20 @@
 
     .prodetail__description p{
         font-size: 13px;
+        text-align: left;
     }
+
+    .prodetail__description button{
+        width: 250px;
+        margin: 25px 0px;
+        background-color: black;
+        border: none;
+        border-radius:10px;
+        padding: 8px 40px;
+        font-size: 12px;
+        font-weight: 900;
+    }
+
 
     
 
@@ -150,5 +163,9 @@
 @media (min-width:769px) {
     .home__prodetail{
         width: 60%;
+    }
+
+    .prodetail__description h5 {
+        font-size: 18px;
     }
 }
