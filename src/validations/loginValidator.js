@@ -8,11 +8,12 @@ module.exports = [
         .isEmail().withMessage('Capo.. tiene que ser un email!').bail(),
     body('password')
         .notEmpty().withMessage('Aca va la pass amigo!').bail()
+
         .custom((value, {req}) => {
             const users = readJSON('user.json');
             const user = users.find(user => user.email === req.body.email);
 
-            if( !user || !compareSync(value, user.password)) {
+            if( !user || value != user.password /* !compareSync(value, user.password) */) {
                 return false
             }
                 return true
