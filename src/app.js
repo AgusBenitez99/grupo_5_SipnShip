@@ -24,7 +24,9 @@ app.use(express.static(path.join(__dirname, '../','public')));
 app.use(methodOverride('_method'));
 
 app.use(session({
-  secret : "S1p&Zh1P" 
+  secret : "S1p&Zh1P", 
+  resave : true,
+  saveUninitialized : true
 }));
 
 app.use('/', indexRouter);
