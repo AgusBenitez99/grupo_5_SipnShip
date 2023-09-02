@@ -12,7 +12,7 @@ module.exports = [
             const users = readJSON('user.json');
             const user = users.find(user => user.email === req.body.email);
 
-            if( !user || !compareSync(value, user.passwood)) {
+            if( !user || !compareSync(value, user.password)) {
                 return false
             }
                 return true
