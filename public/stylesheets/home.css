@@ -1,6 +1,7 @@
 /* ROBOTO MONO */
 main {
     background-color: var(--backgroundColor);
+    padding-top: 20px;
 }
 
 main h2{

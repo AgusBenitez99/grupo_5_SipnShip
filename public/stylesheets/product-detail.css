@@ -1,11 +1,13 @@
 .home__prodetail{
+    background-color: ;
+    color: #ffffff;
     }
     
-    .prodetail__collage{margin: 20px auto 0px;padding: 15px;display: flex;flex-direction: column-reverse;text-align: center;row-gap: 15px;}
+    .prodetail__collage{margin: 0 auto;padding: 15px;padding-top: 30px;display: flex;flex-direction: column-reverse;text-align: center;row-gap: 15px;}
     
     .prodetail__collage-images{width: 100%;display: flex;flex-wrap: nowrap;flex-direction: row;justify-content: space-around;}
     
-    .prodetail__collage-images img{width: 30%;}
+    .prodetail__collage-images img{border-radius: 10px;width: 30%;}
     
     .prodetail__collage-mainImage{
 
@@ -13,7 +15,9 @@
     
     .prodetail__collage-mainImage img{
 
-    }
+border-radius: 15px;
+
+}
     
     .prodetail__collage-mainImage h2{
     display: none;
@@ -41,32 +45,42 @@
         text-align: left;
     }
 
-    .prodetail__description button{
+    .prodetail__description a{
+        display: block;
         width: 250px;
-        margin: 25px 0px;
-        background-color: black;
+        margin: 30px auto;
         border: none;
-        border-radius:10px;
+        font-weight: 900;
         padding: 8px 40px;
         font-size: 12px;
-        font-weight: 900;
+        background-color:black;
+        color: var(--text);
+        border-radius: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: .3s ease;
     }
+    
 
+    .prodetail__description:hover a {
+        background: var(--text);
+        color: var(--primaryColor);
+    }
 
     
 
 /* TABLET */
 @media (min-width: 481px) {
-    .home__prodetail{width: 60%;margin: 40px auto;border: 1px solid gray;border-radius: 7px;}
+    .home__prodetail{width: 60%;margin: 0px auto;border: 1px solid gray;border-radius: 7px;}
     
-    .prodetail__collage{padding: 15px 0;width: 60%;}
+    .prodetail__collage{padding: 15px 0;width: 60%;margin-top: 40px;}
     
     .prodetail__collage-images{
 }
     
     .prodetail__collage-images img{
 
-    }
+}
     
     .prodetail__collage-mainImage{}
     
@@ -75,8 +89,8 @@
 }
     
     .prodetail__collage-mainImage h2{
+        margin-top: 7px;
         display: block;
-      
     }
 
     .prodetail__description {
@@ -121,10 +135,11 @@
 }
     
     .prodetail__collage-images {
-        width: 30%;
+        width: 28%;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        gap: 10%;
         }
     
     .prodetail__collage-images img{width: 100%;}
@@ -160,9 +175,10 @@
     }
 }
 
-@media (min-width:769px) {
+@media (min-width:1220px) {
     .home__prodetail{
-        width: 60%;
+        margin: 10px auto;
+        width: 55%;
     }
 
     .prodetail__description h5 {
