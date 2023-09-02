@@ -44,7 +44,10 @@ module.exports={
     
         const data = {
           ...req.body,
-          image : req.file ? req.file.filename : null
+          mainImage: req.files.mainImage ? req.files.mainImage[0].filename : null,
+          images :  req.files.images
+                   ? req.files.images.map((image) => image.filename)
+                   : [],
         }
     
         let newProduct = new Product(data);
@@ -61,8 +64,7 @@ module.exports={
         const id = req.params.id;
         const product = products.find((product) => product.id === id);
         return res.render("product/detail", {
-
-           products,
+          products,
           ...product   
                  
                   });
@@ -75,10 +77,24 @@ module.exports={
       const products = readJSON('products.json');
       const id= req.params.id;
       const product = products.find(product => product.id === id)
-      const productoModificado = products.filter(product => product.id !== id);
-      existsSync(`./public/images/${product.image}`) &&
-      unlinkSync(`./public/images/${product.image}`);
-      writeJSON(productoModificado, 'products.json')
+      const productModify = products.filter(product => product.id !== id);
+
+        if (product.images ) {
+          product.images.forEach(image => {
+            const imagePath = `./public/images/${image}`;
+            
+            if (existsSync(imagePath)) {
+              unlinkSync(imagePath);
+            }
+          });
+        }
+         
+       existsSync(`./public/images/${product.mainImage}`) &&  unlinkSync(`./public/images/${product.mainImage}`)
+        
+      
+      
+     
+      writeJSON(productModify, 'products.json')
       return res.redirect('/admin')
     }
 }

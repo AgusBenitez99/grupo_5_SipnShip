@@ -19,15 +19,21 @@
               <!-- Varias Imagenes -->
                   <div class="prodetail__collage-images">
                           <!--  aca va for each array images -->
-                          <img width="100%" src="/images/<%= image || 'logo.png' %>" alt="">
-                          <img width="100%" src="/images/<%= image || 'logo.png' %>" alt="">
-                          <img width="100%" src="/images/<%= image || 'logo.png' %>" alt="">
+                          <% if (images) { %>
+                           <% images?.forEach(images => { %>
+                            <img width="100%" src="/images/<%= images || 'default-image.jpg' %>" alt="">
+                          <% }) %>
+                          <% }else{  %>
+                            <img width="100%" src="/images/default-image.jpg" alt="">
+                          <% } %>
+                         
+                          
                         <!-- cierra for each -->
                   </div>
 
                 <!-- Imagen Main -->
                   <div class="prodetail__collage-mainImage">
-                        <img class="img-fluid" src="/images/<%= image || 'logo.png' %>" alt="">
+                        <img class="img-fluid" src="/images/<%= mainImage || 'logo.png' %>" alt="">
                         <h2><%= name %></h2>
                   </div>
         </article>
@@ -49,16 +55,9 @@
 
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
-        <% products.forEach(producto => { %>
+        <% products.forEach(product => { %>
           <div class="swiper-slide">
-            <div class="main_section_contenedor">
-              <a href="/product/detail/<%= producto.id %>">
-                <img src="/images/<%= producto.image %>" alt="">
-                <h4><%= producto.name %></h4>
-                <h4><%= producto.size %></h4>
-                <h4>$<%= producto.price %></h4>
-              </a>
-            </div>
+            <%- include('../partials/cards',{product}) %>
           </div>
         <% }) %>
       </div>
