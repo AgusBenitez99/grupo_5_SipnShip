@@ -1,3 +1,6 @@
+const { readJSON, writeJSON } = require('../../data');
+const {validationResult} = require('express-validator')
+
 module.exports={
     register:(req,res)=>{
         return res.render('user/register')

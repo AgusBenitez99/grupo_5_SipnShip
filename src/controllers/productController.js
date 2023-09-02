@@ -1,6 +1,7 @@
 const { readJSON, writeJSON } = require("../data");
 const { unlinkSync, existsSync } = require("fs");
 const Product = require("../data/Product");
+const {validationResult} = require('express-validator')
 
 module.exports={
     edit:(req,res)=>{
