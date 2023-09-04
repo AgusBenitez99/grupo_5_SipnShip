@@ -14,10 +14,23 @@ module.exports={
     },
     update:(req,res) => {
         const products = readJSON('products.json')
-
-        const {name, price, size, description, brand } = req.body;
-        const file = req.file;
-
+        const product = products.find((product) => product.id === req.params.id);
+        const {name, price, size, description, brand, } = req.body;
+    
+        // una imagen
+        if (req.files.mainImage) {
+            existsSync(`./public/images/${product.mainImage}`) &&
+            unlinkSync(`./public/images/${product.mainImage}`);
+          
+          
+        }
+        //varias imagenes
+        if (req.files.images) {
+          product.images.forEach((image) => {
+            existsSync(`./public/images/${image}`) &&
+              unlinkSync(`./public/images/${image}`);
+          });
+        }
 		const productModify = products.map(product =>{
 
 			if (product.id === req.params.id) {
@@ -25,8 +38,11 @@ module.exports={
 				product.price = +price
 			 	product.size = size
 				product.brand = brand			    
-                product.description = description.trim()
-                product.image = req.file ? req.file.filename : product.image
+        product.description = description.trim()
+        product.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : product.mainImage
+        product.images = req.files.images
+                ? req.files.images.map((file) => file.filename)
+                : product.images;
 			}	
 
 			return product

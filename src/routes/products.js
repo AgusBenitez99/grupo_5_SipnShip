@@ -16,7 +16,12 @@ router.post('/created', upload.fields([{
 
 router.get('/detail/:id', productController.detail);
 router.get('/trolley', productController.trolley);
-router.put('/update/:id', upload.single('image'), productController.update)
+router.put('/update/:id', upload.fields([{
+  name: "mainImage",
+},
+{
+  name: "images",
+},]), productController.update)
 router.delete('/delete/:id', productController.remove)
 
 module.exports = router;
