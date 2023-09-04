@@ -18,9 +18,9 @@
                 <li>
                     <p>Favoritos</p>
                 </li>
-                <li><a href="/">
+                <!-- <li><a href="/">
                         <p>Salir</p>
-                </li></a>
+                </li></a> -->
             </ul>
         </aside>
         <main class="main__admin">
@@ -32,7 +32,7 @@
                 <div class="main__admin__header-icon">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeE49t-u-MwSe5Ia4mL_IzNjsE_EP3gf-27JaSuxJnOQ&s"
                         alt="">
-                    <i class="fa-solid fa-gear "></i>
+                        <a href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
 
             </header>
@@ -56,7 +56,7 @@
                             <td>
                                 <%= index + 1 %>
                             </td>
-                            <td><img class="product-image" src="/images/<%= product.image %>" alt="Producto 1"></td>
+                            <td><img class="product-image" src="/images/<%= product.mainImage %>" alt="Producto 1"></td>
                             <td>
                                 <%= product.name %>
                             </td>

@@ -1,6 +1,6 @@
 const {v4 : uuidv4} = require('uuid');
 
-const Product = function({name,brand,price,size,discount,description,image}){
+const Product = function({name,brand,price,size,discount,description,mainImage,images}){
     
     this.id = uuidv4();
     this.name = name.trim();
@@ -9,7 +9,8 @@ const Product = function({name,brand,price,size,discount,description,image}){
     this.size=size.trim();
     // this.discount = +discount;
     this.description = description.trim()
-    this.image = image
+    this.mainImage=mainImage
+    this.images = images
     this.created = new Date();
     // this.modified = new Date();
 }

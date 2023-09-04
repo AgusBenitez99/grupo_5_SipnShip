@@ -49,7 +49,16 @@
                   value= "<%= size %>"
                   >
               </div>
-
+ 
+            
+              <div class="main__form__input2">
+                <label for="mainImage">Imagen principal</label>
+                <input type="file" id="mainImage" name="mainImage" />
+              </div>
+            <div class="main__form__input2">
+              <label for="images">Imagenes</label>
+              <input multiple type="file" id="images" name="images" />
+            </div>
               <div class="main__form__input2">
                 <label for="description">Descripción</label>
                 <textarea 
@@ -60,11 +69,7 @@
                   rows="2"
                 ><%= description %></textarea>
               </div>
-            
-            <div class="main__form__input2">
-              <label for="image">Imagen</label>
-              <input type="file" id="image" name="image" />
-            </div>
+           
             <div class="main__form__links">
              
                 <button type="submit">Cancelar</button>
