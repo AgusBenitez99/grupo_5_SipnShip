@@ -1,6 +1,6 @@
 <div class="card--content ">
   <figure>
-    <img src="../images/<%= product.image %>" alt="" />
+    <img src="../images/<%= product.mainImage || 'default-image.jpg' %>" alt="" />
   </figure>
   <h3><%= product.name %></h3>
   <p>$<%= product.price %></p>

@@ -1,7 +1,7 @@
 
 /*mobile*/
 .footer{
-    background-color: var(--darkPrimaryColor);
+    background-color: var(--backgroundColor);
     width: 100%;
     padding: 10px 20px 0px;
     color: #ffffff;
