@@ -14,9 +14,29 @@ module.exports={
     logout:(req,res)=>{
         return res.redirect('/')
     },
+
+
     processLogin:(req,res)=>{
-        return res.redirect('/')
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            const users = readJSON('user.json');
+            const user = users.find(user => user.email === req.body.email);
+            const {id, name, rol} = user;
+        
+            req.session.userLogin = {
+                id,
+                name,
+                rol
+            }
+
+            return res.redirect('/');
+
+        } else {  
+            return res.render( 'user/login', {errors : errors.mapped()} )
+        }
     },
+
     processRegister:(req,res)=>{
         return res.redirect('/')
     },
