@@ -13,7 +13,7 @@
         "firstName": "Rodrigo",
         "lastName": "Alvarez",
         "email": "rodrigoalvarez@gmail.com",
-        "password": 34567890,
+        "password": 456,
         "rol": "usuario",
         "image": null
     },
@@ -22,7 +22,7 @@
         "firstName": "Gonzalo",
         "lastName": "Armoa",
         "email": "gonzaloarmoa@gmail.com",
-        "password": 56789012,
+        "password": 123,
         "rol": "admin",
         "image": null
     },

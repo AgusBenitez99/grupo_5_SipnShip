@@ -12,16 +12,17 @@ const {
 } = require('../controllers/userController');//requiere usercontroller
 
 const loginValidator = require('../validations/loginValidator');
+const checkUserLogin = require('../middlewares/checkUserLogin');
 
 
 /* /user */
 
 /* get */
-router.get('/register', register);
+router.get('/register', checkUserLogin, register);
 router.post('/register', processRegister)
-router.get('/login', login);
+router.get('/login', checkUserLogin, login);
 router.post('/login', loginValidator, processLogin)
-router.get('/profile', profile)
+router.get('/profile', checkUserLogin, profile)
 router.put('/update-profile', updateProfile)
 router.get('/logout', logout)
 

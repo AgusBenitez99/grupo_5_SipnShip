@@ -8,7 +8,8 @@ const session = require('express-session')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const localsCheck = require('./middlewares/localsCheck');
 
 const app = express();
 
@@ -28,6 +29,8 @@ app.use(session({
   resave : true,
   saveUninitialized : true
 }));
+
+app.use(localsCheck);
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);

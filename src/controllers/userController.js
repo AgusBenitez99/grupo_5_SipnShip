@@ -9,7 +9,7 @@ module.exports={
         return res.render('user/login')
     },
     profile:(req,res)=>{
-        return res.render('user/profile')
+        return res.send ('Este es tu Perfil')
     },
     logout:(req,res)=>{
         return res.redirect('/')
@@ -20,15 +20,22 @@ module.exports={
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
+
+            
             const users = readJSON('user.json');
+            const {email, remember} = req.body
             const user = users.find(user => user.email === req.body.email);
-            const {id, name, rol} = user;
-        
-            req.session.userLogin = {
+            const {id, firstName, rol} = user;
+           
+            req.session.userData = {
                 id,
-                name,
+                firstName,
                 rol
             }
+
+            remember !== undefined && res.cookie('Ship&ShipsUserData', req,session.userLogin, {
+                maxAge : 1000 * 60
+            })
 
             return res.redirect('/');
 
@@ -40,7 +47,13 @@ module.exports={
     processRegister:(req,res)=>{
         return res.redirect('/')
     },
+
     updateProfile: (req,res)=>{
         return res.send(req.body)
     },
+
+    logout :(req,res) => {
+        req.session.destroy();
+        return res.redirect('/')
+    }
 }

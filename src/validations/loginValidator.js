@@ -4,10 +4,10 @@ const {compareSync} = require('bcryptjs')
 
 module.exports = [
     check('email')
-        .notEmpty().withMessage('Coloca tu email papu!').bail()
-        .isEmail().withMessage('Capo.. tiene que ser un email!').bail(),
+        .notEmpty().withMessage('Se requiere una dirección de e-mail').bail()
+        .isEmail().withMessage('La direccion debe ser del tipo e-mail').bail(),
     body('password')
-        .notEmpty().withMessage('Aca va la pass amigo!').bail()
+        .notEmpty().withMessage('Se requiere una constraseña').bail()
 
         .custom((value, {req}) => {
             const users = readJSON('user.json');
@@ -17,6 +17,6 @@ module.exports = [
                 return false
             }
                 return true
-        }).withMessage ('Acá hay algo raaaroo ... revisa los datos o registrate !')
+        }).withMessage ('Credenciales invalidas')
 
 ]
