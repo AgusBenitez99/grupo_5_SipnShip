@@ -116,4 +116,7 @@
   .home__header__nav--menu a i {
     font-size: 30px;
   }
+  .home__header__nav--menu a i:hover {
+    color: var(--primaryColor);
+  }
 }

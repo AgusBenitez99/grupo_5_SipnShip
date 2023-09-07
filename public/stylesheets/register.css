@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-
+  border: 1px solid var(--text);
   background-color: var(--lightPrimaryColor);
   padding: 20px;
   margin: 15px auto;
@@ -18,7 +18,7 @@
 }
 .main__form h1 {
   font-size: 30px;
-  color: var(--primaryColor);
+  color: var(--text);
   position: relative;
   margin: 0;
 }
@@ -37,7 +37,6 @@
     height: 1em;
     width: 1em;
     border-radius: 3px;
-    border: solid 2px red;
     text-align: left;
 }
 .main__form__checkbox p{
@@ -67,13 +66,13 @@
   width: 100%;
 }
 .main__form p {
-  color: var(--primaryColor);
+  color: var(--text);
   line-height: 20px;
   margin-top: 15px;
 }
 .main__form form a {
   display: block;
-  color: var(--primaryColor);
+  color: var(--text);
 }
 
 .text-validations {

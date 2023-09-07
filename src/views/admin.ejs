@@ -69,9 +69,7 @@
 
                                     <a href="/product/detail/<%= product.id %>"><i class="far fa-eye"></i></a>
                                     <a href="/product/edit/<%= product.id %>"> <i class="fas fa-edit"></i></a>
-                                    <!-- <a href="/product/delete/<%= product.id %>?_method=DELETE"><i
-                                            class="fas fa-trash-alt"></i></a> -->
-                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                    <button type="button"  data-bs-toggle="modal"
                                         data-bs-target="#modalDelete<%=product.id%>">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
@@ -105,12 +103,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
-
-                                        <button type="submit"> <i class="fas fa-trash-alt"></i></button>
-
-                                    </form> -->
-
 
                                 </div>
                             </td>
