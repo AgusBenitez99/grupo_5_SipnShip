@@ -18,17 +18,15 @@
 
               <!-- Varias Imagenes -->
                   <div class="prodetail__collage-images">
-                          <!--  aca va for each array images -->
                           <% if (images) { %>
-                           <% images?.forEach(images => { %>
-                            <img width="100%" src="/images/<%= images || 'default-image.jpg' %>" alt="">
+                           <% images.forEach(imagen => { %>
+                            <img width="100%" src="/images/<%= imagen || 'default-image.jpg' %>" alt="">
                           <% }) %>
                           <% }else{  %>
                             <img width="100%" src="/images/default-image.jpg" alt="">
                           <% } %>
                          
-                          
-                        <!-- cierra for each -->
+
                   </div>
 
                 <!-- Imagen Main -->

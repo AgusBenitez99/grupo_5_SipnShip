@@ -36,9 +36,15 @@
 }
 .home__header__nav--menu a i {
   padding: 5px;
-}
-.home__header__nav--menu a i {
   color: #ffffff;
+}
+.home__header__nav--menu a {
+  padding: 5px;
+  color: #ffffff;
+}
+
+.home__header__nav--menu ul {
+  background-color: var(--primaryColor);
 }
 /*tablet*/
 @media (min-width: 481px) {
@@ -115,5 +121,8 @@
   }
   .home__header__nav--menu a i {
     font-size: 30px;
+  }
+  .home__header__nav--menu a i:hover {
+    color: var(--primaryColor);
   }
 }

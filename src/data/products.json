@@ -6,7 +6,12 @@
       "price": 30000,
       "size": "750ml",
       "description": "Johnnie Walker Gold Label Reserve es la mezcla perfecta para una celebración indulgente. Lujoso, cremoso y con notas de miel, es un gran tributo a la unión armoniosa entre los whiskies de Speyside y Highland con vestigios de madera ahumada de la costa oeste. Johnnie Walker Gold Label Reserve está hecho para compartir esas noches inolvidables con amigos increíbles.",
-      "image": "1692577099081_products_.jpg",
+      "mainImage": "1692577099081_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692577099081_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:18:19.086Z"
    },
    {
@@ -16,7 +21,12 @@
       "price": 18400,
       "size": "750ml",
       "description": "Suavizado gota a gota a través de tres metros de carbón de arce de azúcar, tras lo cual es madurado en barriles hechos a mano por nosotros. Y nuestro Tennessee Whiskey no sigue un calendario. Está listo cuando los catadores lo dicen. Juzgamos por su apariencia. Por su aroma. Y, por supuesto, por su sabor. Así lo hacía Jack Daniel en persona un siglo atrás. Y así lo seguimos haciendo hoy.",
-      "image": "1692577399921_products_.jpg",
+      "mainImage": "1692577399921_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692577399921_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:23:19.923Z"
    },
    {
@@ -26,7 +36,12 @@
       "price": 5400,
       "size": "750ml",
       "description": "",
-      "image": "1692577923953_products_.jpg",
+      "mainImage": "1692577923953_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692577923953_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:32:03.960Z"
    },
    {
@@ -36,7 +51,12 @@
       "price": 12300,
       "size": "750ml",
       "description": "",
-      "image": "1692578048169_products_.jpg",
+      "mainImage": "1692578048169_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692578048169_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:34:08.172Z"
    },
    {
@@ -46,7 +66,12 @@
       "price": 600,
       "size": "330ml",
       "description": "",
-      "image": "1692578924225_products_.webp",
+      "mainImage": "1692578924225_products_.webp",
+      "images": [
+         "default-image.jpg",
+         "1692578924225_products_.webp",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:48:44.228Z"
    }
 ]

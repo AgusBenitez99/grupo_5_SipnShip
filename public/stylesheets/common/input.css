@@ -1,33 +1,42 @@
-.main__form__input-field{
-    background-color: var(--text);
-    margin: 15px 0;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    transition: max-height 05s;
-    overflow: hidden;
-    height: 2em;
+.main__form__input-field {
+  background-color: var(--backgroundColor);
+  /* border-radius: 10px; */
+  border-bottom: 1.5px solid var(--text);
+  display: flex;
+  align-items: center;
+  transition: max-height 05s;
+  overflow: hidden;
+  height: 2em;
+  margin-top: 20px;
 }
-.main__form__input-field input{
-    width: 100%;
-    background: transparent;
-    border: 0;
-    outline: none;
-    padding: 18px 0px;
-    
+.main__form__input-field input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  padding: 0 10px;
+  color: var(--text);
 }
-.main__form__input-field input::placeholder{
-    color:var(--grisClaro) ;
+.main__form__input-field input::placeholder {
+  color: var(--text);
+}
+.main__form__input-field i {
+  margin: 0px 10px;
+  color: var(--text);
+}
+.main__form__input-field i:hover {
+  color: var(--primaryColor);
+}
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Cambia el color a inverso (blanco sobre negro) */
 }
-.main__form__input-field i{
-    margin: 0px 10px;
-    color: var(--darkPrimaryColor);
+.main__form__input-field:hover {
+  border-bottom: 3px solid var(--primaryColor);
 }
-
 /*tablet*/
 @media (min-width: 481px) {
-    .main__form__input-field{
-        height: 3em;
-    }
+  .main__form__input-field {
+    height: 3em;
+  }
 }
