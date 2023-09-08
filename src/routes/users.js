@@ -13,13 +13,14 @@ const {
 
 const loginValidator = require('../validations/loginValidator');
 const checkUserLogin = require('../middlewares/checkUserLogin');
+const registerValidator = require('../validations/registerValidator');
 
 
 /* /user */
 
 /* get */
 router.get('/register', checkUserLogin, register);
-router.post('/register', processRegister)
+router.post('/register',registerValidator, processRegister)
 router.get('/login', checkUserLogin, login);
 router.post('/login', loginValidator, processLogin)
 router.get('/profile', checkUserLogin, profile)

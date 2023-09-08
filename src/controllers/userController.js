@@ -23,7 +23,7 @@ module.exports={
         if(errors.isEmpty()){
 
             
-            const users = readJSON('user.json');
+            const users = readJSON('users.json');
             const {email, remember} = req.body
             const user = users.find(user => user.email === req.body.email);
             const {id, firstName, rol} = user;
@@ -50,16 +50,16 @@ module.exports={
 
         if(errors.isEmpty()){
             const users = readJSON('users.json')
-
+            
             let newUser = new User(req.body);
-
+            
             users.push(newUser);
 
             writeJSON(users,'users.json');
 
             return res.redirect('/');
         }else{
-            res.render('register',{
+            res.render('user/register',{
                 old: req.body,
                 errors: errors.mapped()
             })

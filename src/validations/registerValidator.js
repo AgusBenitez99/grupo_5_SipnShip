@@ -2,9 +2,9 @@ const {check, body} = require('express-validator');
 const {readJSON} = require('../data');
 
 module.exports = [
-    check("name")
-        .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail()
-        .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),        
+    check("nombre")
+        .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail(),
+       /*  .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),      */   
 
     check("apellido")
     .isLength({min:2}).withMessage("Debe tener como minimo 2 letras").bail()
@@ -26,11 +26,11 @@ module.exports = [
     check("password")
         .isLength({min:6, max:12 }).withMessage("Debe tener entre 6 y 12 caracteres"),
 
-    body("passwordConfirmacion")
+    body("password2")
     .custom((value,{req})=>{
         if(value !== req.body.password){
             return false
         }
         return true
-    }).withMessage("Las contraseñas coinciden")
+    }).withMessage("Las contraseñas no coinciden")
 ]

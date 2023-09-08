@@ -15,18 +15,21 @@
               <!-- div nombre -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user  fa-lg"></i>
-                <input type="text" name="name" placeholder="Ingrese su nombre" />
+                <input type="text" name="nombre" placeholder="Ingrese su nombre" />
               </div>
+              <small class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
               <!-- div apellido -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user fa-lg"></i>
                 <input type="text" name="apellido" placeholder="Ingrese su apellido" />
               </div>
+              <small class="text-validations"><%= locals.errors && (errors.apellido && errors.apellido.msg); %></small>
               <!-- div email -->
               <div class="main__form__input-field">
                 <i class="far fa-envelope"></i>
                 <input type="email" name="email" placeholder="Email" />
               </div>
+              <small class="text-validations"><%= locals.errors && (errors.email && errors.email.msg); %></small>
               <!-- fin -->
               <!-- div contraseña -->
               <div class="main__form__input-field">
@@ -34,13 +37,15 @@
                 <input type="password" name="password" placeholder="Contraseña" />
                 <i class="fa-regular fa-eye-slash"></i>
               </div>
+              <small class="text-validations"><%= locals.errors && (errors.password && errors.password.msg); %></small>
               <!-- fin -->
               <!-- div confirmar contraseña -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="passwordConfirmacion" placeholder="Confirmar contraseña" />
+                <input type="password" name="password2" placeholder="Confirmar contraseña" />
                 <i class="fa-regular fa-eye-slash"></i>
               </div>
+              <small class="text-validations"><%= locals.errors && (errors.password2 && errors.password2.msg); %></small>
               <!-- fin -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
@@ -49,7 +54,7 @@
               <!-- div fecha -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-calendar-days"></i>
-                <input type="text"  placeholder="Ingrese su fecha de nacimiento" />
+                <input type="date"  placeholder="Ingrese su fecha de nacimiento" />
               </div>
               <!-- fin -->
               <!-- checj -->
