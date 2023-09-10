@@ -51,7 +51,12 @@ module.exports={
         if(errors.isEmpty()){
             const users = readJSON('users.json')
             
-            let newUser = new User(req.body);
+            const data = {
+                ...req.body,
+                image: req.file ? req.file.filename : null,
+              }
+          
+            let newUser = new User(data);
             
             users.push(newUser);
 
@@ -64,6 +69,7 @@ module.exports={
                 errors: errors.mapped()
             })
         }
+
     },
 
     updateProfile: (req,res)=>{

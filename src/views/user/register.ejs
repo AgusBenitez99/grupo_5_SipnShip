@@ -10,7 +10,7 @@
       <main class="main__login">
         <div class="main__form">
           <h1 id="title">Registro</h1>
-          <form action="" method="POST">
+          <form action="/user/register" method="POST" enctype="multipart/form-data" >
             <div class="main__form__input-group">
               <!-- div nombre -->
               <div class="main__form__input-field">
@@ -49,7 +49,7 @@
               <!-- fin -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
-                <input type="file" />
+                <input type="file" id="image" name="image"/>
               </div>
               <!-- div fecha -->
               <div class="main__form__input-field">

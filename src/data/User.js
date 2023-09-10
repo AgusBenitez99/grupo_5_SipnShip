@@ -5,11 +5,12 @@ const{hashSync}= require('bcryptjs')
 
 
 
-const User = function({nombre, apellido, email, password}){
+const User = function({nombre, apellido, email, password,image}){
     this.id= uuidv4();
     this.firstName = nombre.trim();
     this.lastName = apellido.trim();
-    this.email= email.trim()
+    this.email= email.trim();
+    this.image = image;
     this.password = hashSync(password.trim(),10);
 }
 
