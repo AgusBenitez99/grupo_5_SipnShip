@@ -66,6 +66,7 @@ module.exports={
     trolley:(req,res)=>{
         return res.render('product/trolley')
     },
+<<<<<<< HEAD
     list:(req,res)=>{
       const products = readJSON("products.json");
       const query = req.query.query;
@@ -83,4 +84,8 @@ module.exports={
       console.log(productsFilter);
       res.render('results', { productsFilter });
     }
+=======
+   
+    
+>>>>>>> 7c68f7370714338efeb9706a8726761b5527d2a3
 }

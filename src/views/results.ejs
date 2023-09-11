@@ -10,17 +10,17 @@
   <%- include('./partials/header') %>
 
   <main class="main">
-    <h2>Resultado de busqueda</h2>
+    <h2>Resultado de busqueda <%= locals.keywords?keywords:null %></h2>
     <div class="swiper mySwiper2">
       <div class="swiper-wrapper">
-        <% productsFilter.forEach(product => { %>
+        <% product.forEach(product => { %>
           <div class="swiper-slide">
             <div class="main_section_contenedor">
               <a href="/product/detail/<%= product.id %>">
                 <img src="/images/<%= product.image %>" alt="">
-                <h4><%= result.name %></h4>
-                <h4><%= result.size %></h4>
-                <h4>$<%= result.price %></h4>
+                <h4><%= product.name %></h4>
+                <h4><%= product.size %></h4>
+                <h4>$<%= product.price %></h4>
               </a>
             </div>
           </div>
