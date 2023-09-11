@@ -1,7 +1,3 @@
-module.exports = (req,res,next) => {
-    if(!req.session.userLogin){
-        next()
-    } else {
-        return res.redirect('/users/profile')
-    }
-}
+module.exports = (req, res, next) => {
+  return req.session.userData ? next() : res.redirect("/user/login");
+};
