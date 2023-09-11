@@ -10,7 +10,7 @@ module.exports = [
         .notEmpty().withMessage('Se requiere una constraseña').bail()
 
         .custom((value, {req}) => {
-            const users = readJSON('user.json');
+            const users = readJSON('users.json');
             const user = users.find(user => user.email === req.body.email);
 
             if( !user || value != user.password /* !compareSync(value, user.password) */) {
