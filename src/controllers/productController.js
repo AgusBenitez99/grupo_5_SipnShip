@@ -76,10 +76,11 @@ module.exports={
     },
     search:(req,res)=>{
       const products = readJSON("products.json");
-      const query = req.query.query;
+      const query = req.query.keywords;
       const productsFilter = products.filter(product => {
-        return product.name.includes(query);
+        return product.name.toLowerCase().includes(query.toLowerCase());
       });
+      console.log(productsFilter);
       res.render('results', { productsFilter });
     }
 }
