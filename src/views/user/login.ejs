@@ -9,7 +9,7 @@
 
     <%- include('../partials/header') %>
     
-    <main class="main__login">
+    <main class="main">
         <div class="main__form">
           <h1 id="title">Bienvenido</h1>
 
@@ -31,7 +31,9 @@
 
               <div class="main__form__checkbox">
                 <input type="checkbox" name="remember" />
-                <p>Recuerdame</p>
+                <label  for="remember">
+                  Recuerdame
+                </label
               </div>
             </div>
 
@@ -42,7 +44,7 @@
             </div>
 
             <div class="primary__button">
-              <button id="signUp" type="" >Registrarse</button>
+              <button id="signUp" type="submit" >Ingresar</button>
             </div>
             <a href="/user/register">Olvido su contraseña?/Registrarse</a>
           </form>
