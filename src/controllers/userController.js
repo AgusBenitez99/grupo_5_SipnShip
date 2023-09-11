@@ -18,7 +18,7 @@ module.exports={
 
     processLogin:(req,res)=>{
         const errors = validationResult(req);
-
+    
         if(errors.isEmpty()){
 
             
@@ -33,9 +33,11 @@ module.exports={
                 rol
             }
 
-            remember !== undefined && res.cookie('Ship&ShipsUserData', req,session.userLogin, {
+            remember !== undefined &&
+               res.cookie('remember', req.session.userData, {
                 maxAge : 1000 * 60
-            })
+            }) 
+            
 
             return res.redirect('/');
 
@@ -54,6 +56,7 @@ module.exports={
 
     logout :(req,res) => {
         req.session.destroy();
+        res.clearCookie('remember'); 
         return res.redirect('/')
     }
 }

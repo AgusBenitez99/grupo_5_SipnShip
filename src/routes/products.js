@@ -2,11 +2,12 @@ const express = require('express');
 const productController = require('../controllers/productController')
 const router = express.Router();
 const upload = require('../middlewares/upload');
-
+const checkUserLogin = require('../middlewares/checkUserLogin');
+const checkUserAdmin = require('../middlewares/checkUserAdmin');
 /* /product */
 
-router.get('/edit/:id', productController.edit);
-router.get('/new', productController.new);
+router.get('/edit/:id',checkUserAdmin, productController.edit);
+router.get('/new',checkUserAdmin, productController.new);
 router.post('/created', upload.fields([{
   name: "mainImage",
 },
@@ -15,7 +16,7 @@ router.post('/created', upload.fields([{
 },]), productController.create)
 
 router.get('/detail/:id', productController.detail);
-router.get('/trolley', productController.trolley);
+router.get('/trolley', checkUserLogin,productController.trolley);
 router.put('/update/:id', upload.fields([{
   name: "mainImage",
 },

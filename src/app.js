@@ -10,6 +10,7 @@ const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const methodOverride = require('method-override');
 const localsCheck = require('./middlewares/localsCheck');
+const cookieCheck = require('./middlewares/cookieCheck');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use(session({
   saveUninitialized : true
 }));
 
+app.use(cookieCheck);
 app.use(localsCheck);
 
 app.use('/', indexRouter);
