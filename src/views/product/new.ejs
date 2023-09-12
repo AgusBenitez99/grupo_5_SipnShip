@@ -4,7 +4,7 @@
 
   <body>
     <%- include('../partials/header') %>
-    <main>
+    <main class="main">
       <div class="main__form">
         <h1>Crear Producto</h1>
         <form  action="/product/created" method="POST"  enctype="multipart/form-data">
@@ -51,19 +51,24 @@
                   placeholder="Ingrese un tamaño"
                 />
               </div>
-              <div class="main__form__input2">
-                <label for="description">Descripción</label>
-                <textarea
-                  name="description"
-                  id="description"
-                  cols="22"
-                  rows="2"
-                ></textarea>
-              </div>
+              
             
             <div class="main__form__input2">
-              <label for="image">Imagen</label>
-              <input type="file" id="image" name="image" />
+              <label for="mainImage">Imagen principal</label>
+              <input type="file" id="mainImage" name="mainImage" />
+            </div>
+            <div class="main__form__input2">
+              <label for="images">Imagenes</label>
+              <input multiple type="file" id="images" name="images" />
+            </div>
+            <div class="main__form__input2">
+              <label for="description">Descripción</label>
+              <textarea
+                name="description"
+                id="description"
+                cols="22"
+                rows="2"
+              ></textarea>
             </div>
             <div class="main__form__links">
              

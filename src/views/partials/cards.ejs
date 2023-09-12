@@ -1,0 +1,9 @@
+<div class="card--content ">
+  <figure>
+    <img src="../images/<%= product.mainImage || 'default-image.jpg' %>" alt="" />
+  </figure>
+  <h3><%= product.name %></h3>
+  <p>$<%= product.price %></p>
+  <p><%= product.size %></p>
+  <a href="/product/detail/<%= product.id %>">agregar</a>
+</div>

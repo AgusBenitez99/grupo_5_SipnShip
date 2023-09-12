@@ -9,122 +9,67 @@
 
     <%- include('../partials/header') %>
 
+  <main class="main">
     <!-- contenido detalle de producto -->
-    <main>
-      <div class="product__main--go-back">
-        <i class="fa-solid fa-arrow-left-long"></i> <span>Volver</span>
-      </div>
-      <div class="product">
-        <section class="product__main">
-          <article class="product__main--product">
-            <div class="product__main--image">
-              <img
-                src="/images/<%= product.image %>"
-                alt="fernet branca 1000ml"
-                width="100%"
-              />
-            </div>
-            <h3><%= product.name %></h3>
-            <p class="product__main--quantity">1000ml</p>
-            <p class="product__main--price">$<%= product.price %></p>
-            <button class="product__main--button">Agregar</button>
-          </article>
-        </section>
-        <section class="product__recommended">
-          <h3 class="product__recommended--title">Tragos recomendados</h3>
-          <span><a href="">Ver más</a></span>
-          <img
-            src="/images/fernet-coca.jpg"
-            alt="fernet con coca cola"
-            width="100%"
-          />
-          <h4 class="product__recommended--drink-name">Fernet con cola</h4>
-        </section>
-        <section class="product__related">
-          <h3 class="product__related--title">Productos relacionados</h3>
+ <section class="home__prodetail">
 
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="product__related--data">
-                  <img
-                    src="/images/cocaCola2L.png"
-                    alt="coca cola 2.5L"
-                    width="100%"
-                  />
-                  <h4>Coca Cola Original 1.5L</h4>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product__related--data">
-                  <img
-                    src="/images/cocaCola2L.png"
-                    alt="coca cola 2.5L"
-                    width="100%"
-                  />
-                  <h4>Coca Cola Original 2.5L</h4>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product__related--data">
-                  <img
-                    src="/images/cocaCola2L.png"
-                    alt="coca cola 2.5L"
-                    width="100%"
-                  />
-                  <h4>Coca Cola Original 3.5L</h4>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product__related--data">
-                  <img
-                    src="/images/cocaCola2L.png"
-                    alt="coca cola 2.5L"
-                    width="100%"
-                  />
-                  <h4>Coca Cola Original 4.5L</h4>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="product__related--data">
-                  <img
-                    src="/images/cocaCola2L.png"
-                    alt="coca cola 2.5L"
-                    width="100%"
-                  />
-                  <h4>Coca Cola Original 5.5L</h4>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
+      <!-- Seccion que muesta Collage de Imagenes -->
+        <article class="prodetail__collage">
+
+              <!-- Varias Imagenes -->
+                  <div class="prodetail__collage-images">
+                          <% if (images) { %>
+                           <% images.forEach(imagen => { %>
+                            <img width="100%" src="/images/<%= imagen || 'default-image.jpg' %>" alt="">
+                          <% }) %>
+                          <% }else{  %>
+                            <img width="100%" src="/images/default-image.jpg" alt="">
+                          <% } %>
+                         
+
+                  </div>
+
+                <!-- Imagen Main -->
+                  <div class="prodetail__collage-mainImage">
+                        <img class="img-fluid" src="/images/<%= mainImage || 'logo.png' %>" alt="">
+                        <h2><%= name %></h2>
+                  </div>
+        </article>
+
+      <!-- Seccion que muesta Descripcion -->          
+        <article class="prodetail__description">                   
+                              <h5 class="col-12"><%= brand %></h5>                    
+                              <h4 class="col-12 fw-bold"><%= name %> <%= size %></h4>
+                              <hr>
+                              <p class="fs-6"><%= description %></h4>
+                              <h4 class="col-12"><%= `$ ${price}`%></h4> 
+                              <a href="/product/trolley">AGREGAR</a>                        
+</article>
+  </section>
+
+                     
+                  
+         
+
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <% products.forEach(product => { %>
+          <div class="swiper-slide">
+            <%- include('../partials/cards',{product}) %>
           </div>
-        </section>
+        <% }) %>
       </div>
-    </main>
+    </div>
+</main>
+ 
     
     <%- include('../partials/footer') %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        },
-      });
-    </script>
+    <!--  <script src="/js/carousel_swiper.js"></script> -->
+    <script src="/javascripts/carousel_swiper2.js"></script>
   </body>
 </html>

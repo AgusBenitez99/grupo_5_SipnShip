@@ -3,10 +3,15 @@
       "id": "617aed2f-f74e-4b60-aabb-6d2da7e0ba05",
       "name": "Johnny Walker",
       "brand": "Whisky",
-      "price": 28000,
+      "price": 30000,
       "size": "750ml",
       "description": "Johnnie Walker Gold Label Reserve es la mezcla perfecta para una celebración indulgente. Lujoso, cremoso y con notas de miel, es un gran tributo a la unión armoniosa entre los whiskies de Speyside y Highland con vestigios de madera ahumada de la costa oeste. Johnnie Walker Gold Label Reserve está hecho para compartir esas noches inolvidables con amigos increíbles.",
-      "image": "1692577099081_products_.jpg",
+      "mainImage": "1692577099081_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692577099081_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:18:19.086Z"
    },
    {
@@ -16,7 +21,12 @@
       "price": 18400,
       "size": "750ml",
       "description": "Suavizado gota a gota a través de tres metros de carbón de arce de azúcar, tras lo cual es madurado en barriles hechos a mano por nosotros. Y nuestro Tennessee Whiskey no sigue un calendario. Está listo cuando los catadores lo dicen. Juzgamos por su apariencia. Por su aroma. Y, por supuesto, por su sabor. Así lo hacía Jack Daniel en persona un siglo atrás. Y así lo seguimos haciendo hoy.",
-      "image": "1692577399921_products_.jpg",
+      "mainImage": "1692577399921_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692577399921_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:23:19.923Z"
    },
    {
@@ -26,7 +36,12 @@
       "price": 5400,
       "size": "750ml",
       "description": "",
-      "image": "1692577923953_products_.jpg",
+      "mainImage": "1692577923953_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692577923953_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:32:03.960Z"
    },
    {
@@ -36,28 +51,13 @@
       "price": 12300,
       "size": "750ml",
       "description": "",
-      "image": "1692578048169_products_.jpg",
+      "mainImage": "1692578048169_products_.jpg",
+      "images": [
+         "default-image.jpg",
+         "1692578048169_products_.jpg",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:34:08.172Z"
-   },
-   {
-      "id": "20e87354-3c64-4a1b-b1c1-22318fe944b5",
-      "name": "Fernet branca",
-      "brand": "Aperitivo",
-      "price": 3400,
-      "size": "750ml",
-      "description": "Ideal como digestivo, tiene un aroma intenso a toques vegetales, y un sabor amargo y leve a hierbas.",
-      "image": "1692578622683_products_.png",
-      "created": "2023-08-21T00:43:42.685Z"
-   },
-   {
-      "id": "49559c13-489e-4501-b518-f74ecf4c903d",
-      "name": "Aperol",
-      "brand": "Aperitivo",
-      "price": 2300,
-      "size": "750ml",
-      "description": "Es el aperitivo por excelencia, deleita con su tonalidad naranja y sus notas de naranjas dulces, en una deliciosa combinación de hierbas y raices que se integran con destellos de vainilla, es ligeramente agridulce y salado con un final prolongado.",
-      "image": null,
-      "created": "2023-08-21T00:46:18.242Z"
    },
    {
       "id": "9af5d371-944f-4caa-8a91-f3e0fbdd5738",
@@ -66,27 +66,48 @@
       "price": 600,
       "size": "330ml",
       "description": "",
-      "image": "1692578924225_products_.webp",
+      "mainImage": "1692578924225_products_.webp",
+      "images": [
+         "default-image.jpg",
+         "1692578924225_products_.webp",
+         "default-image.jpg"
+      ],
       "created": "2023-08-21T00:48:44.228Z"
    },
    {
-      "id": "4e8cc8a5-2890-4764-aa45-0e080ecc5e6f",
-      "name": "Absolute azul",
+      "id": "89a41d94-ca09-4655-8e88-a9a0d6af88fb",
+      "name": "Absenta",
       "brand": "Vodka",
-      "price": 4400,
-      "size": "750ml",
-      "description": "Absolut, es un vodka atrevido, original y creativo, elaborado con agua sueca y trigo de invierno, destilado en varias ocasiones para lograr la pureza en sus notas y su suavidad, presenta ligeros toque de caramelo y vainilla con un final fresco y afrutado.",
-      "image": "1692579176258_products_.jpg",
-      "created": "2023-08-21T00:52:56.260Z"
+      "price": 50000,
+      "size": "750",
+      "description": "bebida que te hace ver duendes",
+      "mainImage": "1694205547607_products_.jpg",
+      "images": [],
+      "created": "2023-09-08T20:39:07.610Z"
    },
    {
-      "id": "ece2353f-8311-4757-b3a4-178deda3ae86",
-      "name": "Skyy",
-      "brand": "Vodka",
+      "id": "3bbcf3f1-7e65-4e0e-a6eb-55613bfcd862",
+      "name": "fernet",
+      "brand": "Aperitivo",
       "price": 2500,
-      "size": "750ml",
-      "description": "Producto de cuatro procesos de destilación, tiene un sabor cremoso a notas de anís, cilantro con un ligero toque de pimienta y un aroma a cítricos y especias.",
-      "image": "1692597828011_products_.jpg",
-      "created": "2023-08-21T06:03:48.016Z"
+      "size": "750",
+      "description": "fernet con coca",
+      "mainImage": "1694205727046_products_.jpeg",
+      "images": [
+         "1694205727047_products_.jpg",
+         "1694205727049_products_.jpg"
+      ],
+      "created": "2023-09-08T20:42:07.052Z"
+   },
+   {
+      "id": "583ca0a5-2cf7-4139-b9df-c0bb9ca3b97d",
+      "name": "Gancia",
+      "brand": "Aperitivo",
+      "price": 1500,
+      "size": "750",
+      "description": "",
+      "mainImage": "1694384688838_products_.jpg",
+      "images": [],
+      "created": "2023-09-10T22:24:48.850Z"
    }
 ]

@@ -1,17 +1,11 @@
-:root {
-  --verdeOscuro: #0a8772;
-  --negro: #071311;
-  --gris: #c7c7c7;
-  --verde: #13c5a5;
-  --verdeIntermedio: #0fa88e;
-}
+
 .admin {
   display: flex;
   /* flex-direction: column; */
 }
 .main__admin {
-  background-color: #171821;
-  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.20);
+  background-color: var(--backgroundColor);
+  /* box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.20); */
   display: flex;
   width: 85vw;
   height: 100vh;
@@ -53,8 +47,7 @@ aside {
   width: 15vw;
   height: 100vh;
   display: block;
-  background-color: #171821;
-  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.20);
+  background-color: var(--backgroundColor);
   border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 aside ul {
@@ -68,15 +61,15 @@ aside ul li {
   margin-top: 2em;
 }
 aside ul li p {
-  color: var(--gris);
+  color: var(--text);
   font-size: 1.2em;
   font-weight: 600;
   
   padding: 15px;
 }
 aside ul li p:hover {
-  color: var(--negro);
-  background-color: var(--verde);
+  color: var(--darkColor);
+  background-color: var(--primaryColor);
   border-radius: 5px;
   
 }
@@ -89,7 +82,8 @@ aside ul li p:hover {
   }
   div.table__container-vista {
     display: block;
-    background-color: #21222D;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--text);
     height: 80%;
     width: 90%;
     margin: 10px auto;
@@ -98,17 +92,18 @@ aside ul li p:hover {
     /* Estilos de scroll personalizados */
     scrollbar-width: thin; 
     /*scrollbar-color: #888888 #f2f2f2;  Color del scroll (funciona en Firefox) */
+    
   }
   .table__container-vista::-webkit-scrollbar {
     width: 10px; /* Anchura del scroll */
   }
   .table__container-vista::-webkit-scrollbar-thumb {
-    background-color: #171821; /* Color del thumb (barra de desplazamiento) */
+    background-color: var(--text); /* Color del thumb (barra de desplazamiento) */
   }
   .table__container-header{
     display: flex;
     text-align: center;
-    color: #FFF;
+    color: var(--text);
     margin: 10px 0px;
     justify-content: center;
     gap: 4em;
@@ -127,9 +122,19 @@ aside ul li p:hover {
     padding: 8px;
     color: #FFF;
   }
-
+  td button{
+    background-color: var(--backgroundColor);
+    border: none;
+   
+  }
+  td button i{
+   color: var(--text);
+  }
+  i:hover{
+    color: var(--primaryColor);
+  }
   th {
-    background-color: #21222D;
+    background-color: var(--backgroundColor);
   }
   .actions{
     display: flex;

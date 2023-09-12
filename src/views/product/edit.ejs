@@ -4,13 +4,13 @@
 
   <body>
     <%- include('../partials/header') %>
-    <main>
+    <main class="main">
       <div class="main__form">
-        <h1>Editar Producto <%= id %></h1>
+        <h1>Editar Producto</h1>
         <form action="/product/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="main__form__body">
             <div class="main__form__input2">
-              <label for="name"></label>
+              <label for="name">Nombre de Producto</label>
               <input
                 type="text"
                 id="name"
@@ -46,24 +46,30 @@
                   id="size"
                   name="size"
                   placeholder="Ingrese un tamaño"
-                  value= 
+                  value= "<%= size %>"
                   >
               </div>
-
+ 
+            
+              <div class="main__form__input2">
+                <label for="mainImage">Imagen principal</label>
+                <input type="file" id="mainImage" name="mainImage" />
+              </div>
+            <div class="main__form__input2">
+              <label for="images">Imagenes</label>
+              <input multiple type="file" id="images" name="images" />
+            </div>
               <div class="main__form__input2">
                 <label for="description">Descripción</label>
-                <textarea
+                <textarea 
+                
                   name="description"
                   id="descripcion"
                   cols="22"
                   rows="2"
-                ></textarea>
+                ><%= description %></textarea>
               </div>
-            
-            <div class="main__form__input2">
-              <label for="image">Imagen</label>
-              <input type="file" id="image" name="image" />
-            </div>
+           
             <div class="main__form__links">
              
                 <button type="submit">Cancelar</button>

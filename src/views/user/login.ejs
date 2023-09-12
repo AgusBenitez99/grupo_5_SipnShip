@@ -9,37 +9,46 @@
 
     <%- include('../partials/header') %>
     
-    <main class="main__login">
+    <main class="main">
         <div class="main__form">
           <h1 id="title">Bienvenido</h1>
-          <form action="">
+
+          <form action="/user/login" method="POST">
+
             <div class="main__form__input-group">
               <div class="main__form__input-field">
                 <i class="far fa-envelope"></i>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" name="email"/>
               </div>
+              <small class="text-validations"><%= locals.errors && (errors.email && errors.email.msg); %></small>
+
               <div class="main__form__input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Contraseña" />
+                <input type="password" placeholder="Contraseña" name="password" />
                 <i class="fa-regular fa-eye-slash"></i>
               </div>
-              
-              
+              <small class="text-validations"><%= locals.errors && (errors.password && errors.password.msg); %></small>
+
               <div class="main__form__checkbox">
-                <input type="checkbox" />
-                <p>Recuerdame</p>
+                <input type="checkbox" name="remember" />
+                <label  for="remember">
+                  Recuerdame
+                </label
               </div>
             </div>
+
             <p>O ingresar con</p>
             <div class="main__form__links">
               <button><i class="fab fa-google"></i></button>
               <button><i class="fab fa-facebook"></i></button>
             </div>
+
             <div class="primary__button">
-              <button id="signUp" type="submit">Registrarse</button>
+              <button id="signUp" type="submit" >Ingresar</button>
             </div>
             <a href="/user/register">Olvido su contraseña?/Registrarse</a>
           </form>
+
         </div>
     </main>
 

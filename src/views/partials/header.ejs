@@ -3,7 +3,7 @@
     <i class="fas fa-bars"></i>
   </div>
   <div class="home__header--logo">
-    <a href="/admin"><img src="/images/logo.png" alt="Logo sip n ship" /></a>
+    <a href="/"><img src="/images/logo.png" alt="Logo sip n ship" /></a>
   </div>
 
   <nav>
@@ -22,8 +22,32 @@
       <li><a href="/">Promociones</a></li>
     </ul>
   </nav>
-  <div class="home__header__nav--menu">
-    <a href="/user/login"><i class="fa-regular fa-user"></i></a>
+
+            <!-- COMPRABACION DE USUARIO LOGUEADO -->
+  <% if (!locals.userData) { %>
+
+      <!-- Si el usuario NO esta logueado. -->
+    <div class="home__header__nav--menu"> 
+      <a href="/user/login"><i class="fa-regular fa-user"></i></a>
+      <a href=" /product/trolley"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+   
+  <% } else { %>
+    <!-- Si el usuario SI estalogueado -->  
+ <li class="home__header__nav--menu  nav-item dropdown">
     <a href=" /product/trolley"><i class="fa-solid fa-cart-shopping"></i></a>
-  </div>
+    <a role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-gear "></i></a>
+    <ul class="dropdown-menu">
+      <li> <a href="#" class="dropdown-item">Hola! .. <%= userData.firstName %></a></li>
+      <li><a class="dropdown-item" href="/user/profile">Mi perfil</a></li>  
+        <% if (userData.rol === "admin") { %>
+          <li><a class="dropdown-item" href="/admin">Menu ADMIN</a></li>
+      <% } %>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/logout">Cerrar Sesion</a></li>
+    </ul>
+ </li>
+ <% } %>
+
 </header>
