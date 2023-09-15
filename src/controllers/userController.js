@@ -1,4 +1,5 @@
 const { readJSON, writeJSON } = require('../data');
+const { unlinkSync, existsSync } = require("fs");
 const {validationResult} = require('express-validator');
 const User = require("../data/User")
 
@@ -10,7 +11,27 @@ module.exports={
         return res.render('user/login')
     },
     profile:(req,res)=>{
-        return res.send ('Este es tu Perfil')
+
+        const users = readJSON("users.json");
+
+        const id = req.params.id;
+        const user = users.find((user) => user.id === id);
+        return res.render("user/profile", {
+          users,
+          ...user
+    
+        });
+
+        
+    },
+    editProfile:(req,res)=>{
+        const users = readJSON('users.json')
+        const user = users.find(user => user.id === req.params.id)
+        return res.render('user/update-profile', {
+      ...user,
+      users
+    })
+        
     },
     logout:(req,res)=>{
         return res.redirect('/')
@@ -75,7 +96,28 @@ module.exports={
     },
 
     updateProfile: (req,res)=>{
-        return res.send(req.body)
+        const users = readJSON('users.json')
+        
+        const { nombre, apellido, email, password, password2 } = req.body;
+        
+        const userModify = users.map(user => {
+
+        if (user.id === req.params.id) {
+            user.firstName = nombre.trim()
+            user.lastName = apellido.trim()
+            user.email= email.trim();
+            user.password = hashSync(password.trim(),10);
+            user.password = hashSync(password2.trim(),10);
+            user.image = req.files.image ? req.files.image[0].filename : user.image
+            
+            }
+
+        return user
+        })
+
+    writeJSON(userModify, 'users.json')
+
+    return res.redirect('/user/profile/:id')
     },
 
     logout :(req,res) => {
