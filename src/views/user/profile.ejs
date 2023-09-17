@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title: 'PROFILE' }) %>
+
+  <body>
+
+    <%- include('../partials/header') %>
+
+      <main class="main">
+        <h2>Este es tu perfil</h2>
+
+      
+        <div>
+          <button><a href="/user/update-profile/<%= userData.id %>">Editar perfil</i></a></button>
+        </div>
+        
+      </main>
+
+      <%- include('../partials/footer') %>
+    
+  </body>
+
+</html>

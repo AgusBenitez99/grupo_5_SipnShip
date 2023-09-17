@@ -32,7 +32,7 @@
       "lastName": "Bustos",
       "email": "maurobustos@gmail.com",
       "password": 78901234,
-      "rol": "usuario",
+      "rol": "admin",
       "image": null
    }
 ]
