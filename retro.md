@@ -93,7 +93,7 @@
 - Dailys por mensaje en el grupo, como para tener conocimiento del avance del proyecto.
 - Cumplir con las fechas establecidas del Sprint.
 - Incorporar fecha de entrega de Sprint para presentación con el grupo, mínimo 2 días antes de la fecha de entrega del Sprint.
-- Dar mayor importancia a los Sprinter.
+- Dar mayor importancia a los Sprints.
 
 
 **Dejar de hacer:**
