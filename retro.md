@@ -72,7 +72,7 @@
 - Entregar el Sprint fuera de Terminó.
 
 
- Sprint 5:
+ # Sprint 5:
 
 **Hacer más:**
 - Motivarnos entre los compañeros para dedicarle suficiente tiempo al proyecto.
