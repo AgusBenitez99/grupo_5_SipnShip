@@ -9,34 +9,36 @@
 
       <main class="main">
           <div class="main__form">
-            <h1 id="title">PERFIL</h1>
+            <h1 id="title">Mi Perfil</h1>
+            <div>
+              <img src="/images/users/<%= image || 'default.png' %>" alt="" style="max-width: 100px;">
+            </div>
             <form action="/user/profile/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
               <div class="main__form__input-group">
-                <!-- div nombre -->
+                
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-circle-user  fa-lg"></i>
-                  <input type="text" name="firstName" placeholder="Ingrese su nombre"  value="<%= firstName && firstName %>"/>
+                  <input type="text" name="firstName" placeholder="Ingrese su nombre"  value="<%= firstName && firstName %>" />
                 </div>
                 <small class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
-                <!-- div apellido -->
-                <div class="main__form__input-field">
+                
+                 <div class="main__form__input-field">
                   <i class="fa-solid fa-circle-user fa-lg"></i>
-                  <input type="text" name="apellido" placeholder="Ingrese su apellido"  value="<%= lastName && lastName %>" />
+                  <input type="text" name="lastName" placeholder="Ingrese su apellido"  value="<%= lastName && lastName %>" />
                 </div>
                 <small class="text-validations"><%= locals.errors && (errors.apellido && errors.apellido.msg); %></small>
-                <!-- div email -->
+               
                 <div class="main__form__input-field">
                   <i class="far fa-envelope"></i>
                   <input type="email" name="email" placeholder="Email" value="<%= email && email %>" />
                 </div>
                 <small class="text-validations"><%= locals.errors && (errors.email && errors.email.msg); %></small>
-                <!-- fin -->
-                 <!-- div carga avatar -->               
+                          
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
                   <input type="file" id="image" name="image"/>
                 </div>
-              </div>
+              </div> 
               
               <div class="primary__button">
                 <button id="signUp" type="submit">Actualizar perfil</button>

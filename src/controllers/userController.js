@@ -84,26 +84,28 @@ module.exports={
     },
 
     updateProfile: (req,res)=>{
-        return res.send(req.body)
-/*         const users = readJSON('users.json')
-        
-        const { nombre, apellido, email } = req.body;
-        
+         const users = readJSON('users.json');
+         const user = users.find((user) => user.id === req.params.id);
+        const { firstName, lastName, email } = req.body;
+        if(req.file){
+          existsSync(`./public/images/users/${user.image}`) &&
+        unlinkSync(`./public/images/users/${user.image}`);  
+        }
         const userModify = users.map(user => {
 
         if (user.id === req.params.id) {
-            user.firstName = nombre.trim()
-            user.lastName = apellido.trim()
+            user.firstName = firstName.trim()
+            user.lastName = lastName.trim()
             user.email= email.trim();
-             user.image = req.files.image ? req.files.image[0].filename : user.image        
-            }
+            user.image = req.file ? req.file.filename : user.image        
+             }
 
         return user
         })
 
     writeJSON(userModify, 'users.json')
 
-    return res.redirect('/') */
+    return res.redirect('/') 
     },
 
     logout :(req,res) => {
