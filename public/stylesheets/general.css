@@ -23,3 +23,11 @@ li {
     background-color: var(--backgroundColor);
     padding: 2em;
 }
+.main__search{
+display: flex;
+flex-wrap: wrap;
+    justify-content: space-between; 
+}
+.main__search .card--content{
+  margin: 0.8em 0px;
+}

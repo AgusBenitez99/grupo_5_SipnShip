@@ -6,7 +6,6 @@ const checkUserAdmin = require('../middlewares/checkUserAdmin');
 /* / */
 router.get('/', index);
 router.get('/admin',checkUserAdmin, admin);
-router.get('/list', list);
 router.get('/search', search); 
 router.get('/logout',logout)
 

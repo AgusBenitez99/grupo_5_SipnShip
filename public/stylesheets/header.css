@@ -105,9 +105,9 @@
     padding: 10px;
   }
   .home__header__nav--links {
-    width: 500px;
+    width: 100%;
     align-items: center;
-    gap: 50px;
+    padding: 0;
     margin-top: 10px;
   }
   .home__header__nav--links li {
