@@ -2,11 +2,11 @@ const {check, body} = require('express-validator');
 const {readJSON} = require('../data');
 
 module.exports = [
-    check("nombre")
+    check("firstName")
         .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail(),
        /*  .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),      */   
 
-    check("apellido")
+    check("lastName")
     .isLength({min:2}).withMessage("Debe tener como minimo 2 letras").bail()
     .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),  
 

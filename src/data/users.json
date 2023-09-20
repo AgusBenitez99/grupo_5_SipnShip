@@ -1,38 +1,52 @@
 [
    {
-      "id": "617aed2f-f74e-4b60-aabb-6d2da7e0na01",
+      "id": "85028ed5-9155-4172-80f9-81b45dc54357",
       "firstName": "Agustin",
       "lastName": "Benitez",
-      "email": "agustinBenitez@gmail.com",
-      "password": 12345678,
-      "rol": "admin",
-      "image": "1694997705044_user_.webp"
+      "email": "abenitez@gmail.com",
+      "image": null,
+      "password": "$2a$10$LkHKTo8j7E5xNCkOPFKvjeXeEYEFNwiOTLbfj0IqSoT2NFLk6Rp7e",
+      "birthdate": "1999-01-18",
+      "rol": "admin"
    },
    {
-      "id": "617aed2f-f74e-4b60-aabb-6d2da7e0na02",
+      "id": "61fca771-bdec-464e-af19-28ffd8464cf7",
       "firstName": "Rodrigo",
       "lastName": "Alvarez",
-      "email": "rodrigoalvarez@gmail.com",
-      "password": 456,
-      "rol": "usuario",
-      "image": null
+      "email": "ralvarez@gmail.com",
+      "image": null,
+      "password": "$2a$10$7YTNfUqlwKp2Sa/jxMSsvOsv6wdiPzKMoHp7dHAiVMFB6KEospXZK",
+      "birthdate": "",
+      "rol": "admin"
    },
    {
-      "id": "617aed2f-f74e-4b60-aabb-6d2da7e0na03",
+      "id": "892412a1-80ac-4d51-a209-f8b8d2dd586d",
       "firstName": "Gonzalo",
       "lastName": "Armoa",
-      "email": "gonzaloarmoa@gmail.com",
-      "password": 123,
-      "rol": "admin",
-      "image": null
+      "email": "garmoa@gmail.com",
+      "image": null,
+      "password": "$2a$10$l2LKE4LTT2VTuL375uuS1er2D5LDzRxoRK..aeQxqJjl1Vvk3JWDC",
+      "birthdate": "",
+      "rol": "admin"
    },
    {
-      "id": "617aed2f-f74e-4b60-aabb-6d2da7e0na04",
+      "id": "7b706e3d-ea45-43b1-af20-90bf5fcd54e8",
       "firstName": "Mauro",
       "lastName": "Bustos",
-      "email": "maurobustos@gmail.com",
-      "password": 78901234,
-      "rol": "admin",
-      "image": null
+      "email": "mbustos@gmail.com",
+      "image": null,
+      "password": "$2a$10$3Eqbu.G58TUvEzRq2IedxeZQreo2w6qowwgezikcyDapm6TnS1sMa",
+      "birthdate": "",
+      "rol": "admin"
+   },
+   {
+      "id": "8bc0f9cd-66c5-4bfd-96f1-3e960665d919",
+      "firstName": "user",
+      "lastName": "user",
+      "email": "user@gmail.com",
+      "image": null,
+      "password": "$2a$10$WGg9NBLzgfC8V/jbUH4wtOkQi53/057E4RpbopKp9uc6XzJLgsLPe",
+      "birthdate": "",
+      "rol": "usuario"
    }
 ]

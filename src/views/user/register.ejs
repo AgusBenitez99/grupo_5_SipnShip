@@ -17,13 +17,13 @@
                 <i class="fa-solid fa-circle-user  fa-lg"></i>
                 <input type="text" name="firstName" placeholder="Ingrese su nombre" />
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
+              <small class="text-validations"><%= locals.errors && (errors.firstName && errors.firstName.msg); %></small>
               <!-- div apellido -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user fa-lg"></i>
                 <input type="text" name="lastName" placeholder="Ingrese su apellido" />
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.apellido && errors.apellido.msg); %></small>
+              <small class="text-validations"><%= locals.errors && (errors.lastName && errors.lastName.msg); %></small>
               <!-- div email -->
               <div class="main__form__input-field">
                 <i class="far fa-envelope"></i>
@@ -54,7 +54,7 @@
               <!-- div fecha -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-calendar-days"></i>
-                <input type="date"  placeholder="Ingrese su fecha de nacimiento" />
+                <input type="date" name="birthdate" placeholder="Ingrese su fecha de nacimiento" />
               </div>
               <!-- fin -->
               <!-- checj -->
