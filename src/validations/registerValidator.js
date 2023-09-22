@@ -7,11 +7,12 @@ module.exports = [
        /*  .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),      */   
 
     check("lastName")
+    .notEmpty().withMessage("Pone un apellido").bail()
     .isLength({min:2}).withMessage("Debe tener como minimo 2 letras").bail()
     .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),  
 
     check("email")
-        .notEmpty().withMessage("Pone un email gato").bail()
+        .notEmpty().withMessage("Pone un email").bail()
         .isEmail().withMessage("Email invalido").bail()
         .custom((value) =>{
             const users = readJSON('users.json');
