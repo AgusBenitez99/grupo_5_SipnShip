@@ -41,8 +41,8 @@
    },
    {
       "id": "8bc0f9cd-66c5-4bfd-96f1-3e960665d919",
-      "firstName": "user",
-      "lastName": "user",
+      "firstName": "Nombre User",
+      "lastName": "Apellido User",
       "email": "user@gmail.com",
       "image": null,
       "password": "$2a$10$WGg9NBLzgfC8V/jbUH4wtOkQi53/057E4RpbopKp9uc6XzJLgsLPe",
