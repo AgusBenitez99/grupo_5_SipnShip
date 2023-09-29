@@ -109,5 +109,16 @@
       "mainImage": "1694384688838_products_.jpg",
       "images": [],
       "created": "2023-09-10T22:24:48.850Z"
+   },
+   {
+      "id": "6ed1d243-112c-4bf9-bb30-61d366b27b33",
+      "name": "Amarula",
+      "brand": "Aperitivo",
+      "price": 6000,
+      "size": "375",
+      "description": "CREMA DE LICOR QUE SE ELABORA EN SUDÁFRICA. SE HACE CON AZÚCAR, CREMA Y EL FRUTO DEL ÁRBOL AFRICANO MARULA (SCLEROCARYA BIRREA), TAMBIÉN LLAMADO LOCALMENTE ÁRBOL DEL ELEFANTE.",
+      "mainImage": "1696019484848_products_.jpg",
+      "images": [],
+      "created": "2023-09-29T20:31:24.851Z"
    }
 ]
