@@ -120,5 +120,16 @@
       "mainImage": "1696019484848_products_.jpg",
       "images": [],
       "created": "2023-09-29T20:31:24.851Z"
+   },
+   {
+      "id": "2e7c5815-072f-4934-8ea6-5ad255d5d608",
+      "name": "Prueba 1",
+      "brand": "Vino",
+      "price": 200000,
+      "size": "750ml",
+      "description": "aasdasdasd",
+      "mainImage": null,
+      "images": [],
+      "created": "2023-09-29T23:36:33.960Z"
    }
 ]

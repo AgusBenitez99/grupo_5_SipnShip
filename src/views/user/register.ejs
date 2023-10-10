@@ -34,16 +34,16 @@
               <!-- div contraseña -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="password" placeholder="Contraseña" />
-                <i class="fa-regular fa-eye-slash"></i>
+                <input type="password" name="password" placeholder="Contraseña" id="password" />
+                <i class="fa-solid fa-eye"></i>
               </div>
               <small class="text-validations"><%= locals.errors && (errors.password && errors.password.msg); %></small>
               <!-- fin -->
               <!-- div confirmar contraseña -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="password2" placeholder="Confirmar contraseña" />
-                <i class="fa-regular fa-eye-slash"></i>
+                <input type="password" name="password2" placeholder="Confirmar contraseña" id="password" />
+                <i class="fa-solid fa-eye"></i>
               </div>
               <small class="text-validations"><%= locals.errors && (errors.password2 && errors.password2.msg); %></small>
               <!-- fin -->
