@@ -1,14 +1,16 @@
 const { readJSON } = require("../data");
-const products = readJSON("products.json");
 module.exports = {
   index: (req, res) => {
+    const products = readJSON("products.json");
     return res.render("index", { products });
   },
   admin: (req, res) => {
+    const products = readJSON("products.json");
     return res.render("admin", { products });
   },
   search: (req, res) => {
     const keywords = req.query.keywords;
+    const products = readJSON("products.json");
     if (keywords) {
       const product = products.filter((product) => {
         return product.name.toLowerCase().includes(keywords.toLowerCase());

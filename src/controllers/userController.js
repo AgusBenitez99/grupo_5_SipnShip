@@ -84,28 +84,40 @@ module.exports={
     },
 
     updateProfile: (req,res)=>{
-         const users = readJSON('users.json');
-         const user = users.find((user) => user.id === req.params.id);
-        const { firstName, lastName, email } = req.body;
-        if(req.file){
-          existsSync(`./public/images/users/${user.image}`) &&
-        unlinkSync(`./public/images/users/${user.image}`);  
-        }
-        const userModify = users.map(user => {
+        let errors = validationResult(req);
 
-        if (user.id === req.params.id) {
-            user.firstName = firstName.trim()
-            user.lastName = lastName.trim()
-            user.email= email.trim();
-            user.image = req.file ? req.file.filename : user.image        
-             }
-
-        return user
-        })
-
-    writeJSON(userModify, 'users.json')
-
-    return res.redirect('/') 
+        if(errors.isEmpty()){
+            const users = readJSON('users.json');
+            const user = users.find((user) => user.id === req.params.id);
+           const { firstName, lastName, email } = req.body;
+           if(req.file){
+             existsSync(`./public/images/users/${user.image}`) &&
+           unlinkSync(`./public/images/users/${user.image}`);  
+           }
+           const userModify = users.map(user => {
+   
+           if (user.id === req.params.id) {
+               user.firstName = firstName.trim()
+               user.lastName = lastName.trim()
+               user.email= email.trim();
+               user.image = req.file ? req.file.filename : user.image        
+                }
+   
+           return user
+           })
+   
+       writeJSON(userModify, 'users.json')
+   
+       return res.redirect('/') 
+        }else{
+            const users = readJSON('users.json');
+            const user = users.find((user) => user.id === req.params.id);
+            res.render('user/profile',{
+                
+                ...user,
+                errors: errors.mapped()
+            })
+        }     
     },
 
     logout :(req,res) => {

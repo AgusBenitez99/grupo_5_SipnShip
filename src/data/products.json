@@ -109,5 +109,27 @@
       "mainImage": "1694384688838_products_.jpg",
       "images": [],
       "created": "2023-09-10T22:24:48.850Z"
+   },
+   {
+      "id": "6ed1d243-112c-4bf9-bb30-61d366b27b33",
+      "name": "Amarula",
+      "brand": "Aperitivo",
+      "price": 6000,
+      "size": "375",
+      "description": "CREMA DE LICOR QUE SE ELABORA EN SUDÁFRICA. SE HACE CON AZÚCAR, CREMA Y EL FRUTO DEL ÁRBOL AFRICANO MARULA (SCLEROCARYA BIRREA), TAMBIÉN LLAMADO LOCALMENTE ÁRBOL DEL ELEFANTE.",
+      "mainImage": "1696019484848_products_.jpg",
+      "images": [],
+      "created": "2023-09-29T20:31:24.851Z"
+   },
+   {
+      "id": "1f56d2d1-675f-408c-ab02-8fa8797aecb1",
+      "name": "Tekila Jose Cuervo",
+      "brand": "Vodka",
+      "price": 18000,
+      "size": "750 cc",
+      "description": "Tekilasooo buen sabor.",
+      "mainImage": "1696021224480_products_.jpg",
+      "images": [],
+      "created": "2023-09-29T21:00:24.484Z"
    }
 ]
