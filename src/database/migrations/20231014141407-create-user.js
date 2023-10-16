@@ -15,6 +15,9 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
+      birthdate: {
+        type: Sequelize.DATEONLY
+      },
       avatar: {
         type: Sequelize.STRING
       },
