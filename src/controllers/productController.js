@@ -1,6 +1,7 @@
 const { readJSON, writeJSON } = require("../data");
 const { unlinkSync, existsSync } = require("fs");
 const Product = require("../data/Product");
+const db = require('../database/models')
 const { validationResult } = require('express-validator')
 
 module.exports = {
@@ -75,16 +76,26 @@ module.exports = {
   },
   detail: (req, res) => {
 
-    const products = readJSON("products.json");
+    const id = req.params.id
+        
+   const product = db.Product.findByPk(req.params.id,{
+    include : ['brand','section','category']
+  })
 
-    const id = req.params.id;
-    const product = products.find((product) => product.id === id);
-    return res.render("product/detail", {
-      products,
-      ...product
+   const products = db.Product.findAll({
+    include : ['brand','section','category']
+})
 
-    });
+    Promise.all([product, products])
+      .then(([product, products]) => {
+        return res.render("product/detail", {
+          products,
+          ...product.dataValues,
+      });
+      })
+      .catch(error => console.log(error))
   },
+
   trolley: (req, res) => {
     return res.render('product/trolley')
   },

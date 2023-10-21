@@ -2,6 +2,7 @@ const { readJSON, writeJSON } = require('../data');
 const { unlinkSync, existsSync } = require("fs");
 const {validationResult} = require('express-validator');
 const User = require("../data/User")
+const db = require('../database/models')
 
 module.exports={
     register:(req,res)=>{
@@ -12,13 +13,13 @@ module.exports={
     },
     profile:(req,res)=>{
 
-        const users = readJSON("users.json");
-
-        const id = req.params.id;
-        const user = users.find((user) => user.id === id);
-        return res.render("user/profile", {
-          ...user
-        });     
+        db.User.findByPk(req.session.userData.id)
+        .then(user => {
+            return res.render("user/profile", {
+                ...user.dataValues,
+            })
+        })
+        .catch(error => console.log(error))
     },
 
     logout:(req,res)=>{
@@ -31,25 +32,29 @@ module.exports={
     
         if(errors.isEmpty()){
 
-            
-            const users = readJSON('users.json');
             const {email, remember} = req.body
-            const user = users.find(user => user.email === req.body.email);
-            const {id, firstName, rol} = user;
-           
-            req.session.userData = {
-                id,
-                firstName,
-                rol
-            }
+
+            db.User.findOne({
+                where : {
+                    email
+                }
+            })
+            .then(user => {
+                req.session.userData = {
+                    id : user.id,
+                    firstName : user.name,
+                    rol : user.rolId
+                }
+            
 
             remember !== undefined &&
                res.cookie('remember', req.session.userData, {
                 maxAge : 1000 * 60
             }) 
-            
 
             return res.redirect('/');
+        })
+        .catch(error => console.log(error))
 
         } else {  
             return res.render( 'user/login', {errors : errors.mapped()} )

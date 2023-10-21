@@ -11,14 +11,14 @@
           <div class="main__form">
             <h1 id="title">Mi Perfil</h1>
             <div>
-              <img src="/images/users/<%= image || 'default.png' %>" alt="" style="max-width: 100px;">
+              <img src="/images/users/<%= avatar || 'default.png' %>" alt="" style="max-width: 100px;">
             </div>
             <form action="/user/profile/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
               <div class="main__form__input-group">
                 
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-circle-user  fa-lg"></i>
-                  <input type="text" name="firstName" placeholder="Ingrese su nombre"  value="<%= firstName && firstName %>" />
+                  <input type="text" name="firstName" placeholder="Ingrese su nombre"  value="<%= name && name %>" />
                 </div>
                 <small class="text-validations"><%= locals.errors && (errors.firstName && errors.firstName.msg); %></small>
                 
