@@ -1,10 +1,9 @@
 const {check, body} = require('express-validator');
-const {readJSON} = require('../data');
+const db = require('../database/models');
 
 module.exports = [
     check("firstName")
         .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail(),
-       /*  .isAlpha('es-ES').withMessage("Solo se permiten caracteres alfabeticos"),      */   
 
     check("lastName")
     .notEmpty().withMessage("Pone un apellido").bail()
@@ -14,15 +13,19 @@ module.exports = [
     check("email")
         .notEmpty().withMessage("Pone un email").bail()
         .isEmail().withMessage("Email invalido").bail()
-        .custom((value) =>{
-            const users = readJSON('users.json');
-            const user = users.find(user => user.email === value)
-            if(user){
-                return false
-            }else{
-                return true
-            }
-        }).withMessage("El email ya se encuentra registrado"),
+        .custom((value) => {        
+            return db.User.findOne({
+              where : {
+                email : value
+              }
+            })
+              .then(user => {
+                if(user){
+                  return Promise.reject()
+              }
+              })
+              .catch(() => Promise.reject('El email ya se encuentra registrado'))           
+    }),
 
     check("password")
         .isLength({min:6, max:12 }).withMessage("Debe tener entre 6 y 12 caracteres"),
