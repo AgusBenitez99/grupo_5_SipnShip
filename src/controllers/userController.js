@@ -21,7 +21,6 @@ module.exports={
         })
         .catch(error => console.log(error))
     },
-
     logout:(req,res)=>{
         return res.redirect('/')
     },
