@@ -2,16 +2,23 @@ const { readJSON, writeJSON } = require("../data");
 const { unlinkSync, existsSync } = require("fs");
 const Product = require("../data/Product");
 const db = require('../database/models')
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+
 
 module.exports = {
   edit: (req, res) => {
     const products = readJSON('products.json')
-    const product = products.find(product => product.id === req.params.id)
-    return res.render('product/edit', {
-      ...product,
+  
+    db.Product.findByPk(req.params.id,{
+      include : ['brand','section','category']
+    })
+    .then(product=>{
+      return res.render('product/edit', {
+      ...product.dataValues,
       products
     })
+    })
+    
   },
   update: (req, res) => {
     const products = readJSON('products.json')
