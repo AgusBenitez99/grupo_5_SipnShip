@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
         as: 'cart',
         foreignKey: 'productId'
       });
+      Product.hasMany(models.Image, {
+        as : 'images',
+        foreignKey : 'productId'
+      })
     }
   }
   Product.init({

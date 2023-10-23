@@ -1,64 +1,88 @@
 const { readJSON, writeJSON } = require("../data");
 const { unlinkSync, existsSync } = require("fs");
-const Product = require("../data/Product");
 const db = require('../database/models')
 const { validationResult } = require('express-validator');
 
 
 module.exports = {
   edit: (req, res) => {
-    const products = readJSON('products.json')
   
-    db.Product.findByPk(req.params.id,{
+    const product=db.Product.findByPk(req.params.id,{
       include : ['brand','section','category']
     })
-    .then(product=>{
+    const section=db.Section.findAll({order : ['name']})
+    const category=db.Category.findAll({order : ['name']})
+    Promise.all([product, category,section])
+    .then(([product, category,section])=>{
       return res.render('product/edit', {
       ...product.dataValues,
-      products
+      category,
+      section
     })
-    })
+    }).catch((error) => console.log(error));
     
   },
   update: (req, res) => {
-    const products = readJSON('products.json')
-    const product = products.find((product) => product.id === req.params.id);
-    const { name, price, size, description, brand, } = req.body;
+   
+  const { name, brand,category, section, description, price, discount,size } = req.body;
 
-    // una imagen
-    if (req.files.mainImage) {
-      existsSync(`./public/images/${product.mainImage}`) &&
-        unlinkSync(`./public/images/${product.mainImage}`);
+  db.Product.findByPk(req.params.id, {
+    include: ["images"],
+  })
+    .then((product) => {
+      req.files.image &&
+        existsSync(`./public/images/${product.image}`) &&
+        unlinkSync(`./public/images/${product.image}`);
 
+      db.Product.update(
+        {
+          name: name.trim(),
+          price,
+          size,
+          discount,
+          //brandId: brand,
+          sectionId: section,
+          categoryId:category,
+          //stock
+          description: description.trim(),
+          mainImage: req.files.image ? req.files.image[0].filename : product.image,
+        },
+        {
+          where: {
+            id:req.params.id,
+          },
+        }
+      ).then(() => {
+        if (req.files.images) {
+          product.images.forEach((image) => {
+            existsSync(`./public/images/${image.file}`) &&
+              unlinkSync(`./public/images/${image.file}`);
+          });
 
-    }
-    //varias imagenes
-    if (req.files.images) {
-      product.images.forEach((image) => {
-        existsSync(`./public/images/${image}`) &&
-          unlinkSync(`./public/images/${image}`);
+          db.Image.destroy({
+            where: {
+              productId: req.params.id,
+            },
+          }).then(() => {
+            const images = req.files.images.map((file) => {
+              return {
+                file: file.filename,
+                main: false,
+                productId: product.id,
+              };
+            });
+            db.Image.bulkCreate(images, {
+              validate: true,
+            }).then((response) => {
+              return res.redirect("/admin");
+            });
+          });
+        } else {
+          return res.redirect("/admin");
+        }
       });
-    }
-    const productModify = products.map(product => {
-
-      if (product.id === req.params.id) {
-        product.name = name.trim()
-        product.price = +price
-        product.size = size
-        product.brand = brand
-        product.description = description.trim()
-        product.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : product.mainImage
-        product.images = req.files.images
-          ? req.files.images.map((file) => file.filename)
-          : product.images;
-      }
-
-      return product
     })
-
-    writeJSON(productModify, 'products.json')
-
-    return res.redirect('/admin')
+    .catch((error) => console.log(error));
   },
   new: (req, res) => {
     return res.render('product/new')
@@ -86,7 +110,7 @@ module.exports = {
     const id = req.params.id
         
    const product = db.Product.findByPk(req.params.id,{
-    include : ['brand','section','category']
+    include : ['brand','section','category','images']
   })
 
    const products = db.Product.findAll({
