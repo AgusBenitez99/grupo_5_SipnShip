@@ -1,12 +1,12 @@
 const {check} = require('express-validator');
 
 module.exports = [
-    check("firstName")
-        .notEmpty().withMessage("Pone un nombre por favor").bail()
+    check("name")
+        .notEmpty().withMessage("El campo es requerido").bail()
         .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail(),
 
     check("lastName")
-    .notEmpty().withMessage("Pone un apellido").bail()
+    .notEmpty().withMessage("El campo es requerido").bail()
     .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail(),  
 
     check("email")

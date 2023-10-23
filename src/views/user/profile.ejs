@@ -18,7 +18,7 @@
                 
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-circle-user  fa-lg"></i>
-                  <input type="text" name="firstName" placeholder="Ingrese su nombre"  value="<%= name && name %>" />
+                  <input type="text" name="name" placeholder="Ingrese su nombre"  value="<%= name && name %>" />
                 </div>
                 <small class="text-validations"><%= locals.errors && (errors.firstName && errors.firstName.msg); %></small>
                 
@@ -36,7 +36,7 @@
                           
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
-                  <input type="file" id="image" name="image"/>
+                  <input type="file" id="avatar" name="avatar"/>
                 </div>
               </div> 
               
