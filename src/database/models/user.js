@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey : 'rolId'
       });
 
-      User.belongsTo(models.Address, {
+/*       User.belongsTo(models.Address, {
         as : 'addresses',
         foreignKey : 'userId'
       });
@@ -24,12 +24,13 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Order, {
         as : 'order',
         foreignKey : 'userId'
-      });
+      }); */
     }
   }
   User.init({
     name: DataTypes.STRING,
     lastName: DataTypes.STRING,
+    birthdate: DataTypes.DATE,
     avatar: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,

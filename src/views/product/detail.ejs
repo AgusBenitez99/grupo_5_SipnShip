@@ -20,10 +20,10 @@
                   <div class="prodetail__collage-images">
                           <% if (images) { %>
                            <% images.forEach(imagen => { %>
-                            <img width="100%" src="/images/<%= imagen || 'default-image.jpg' %>" alt="">
+                             <img width="100%" src="/images/<%= imagen.file || 'default-image.jpg' %>" alt=""> 
                           <% }) %>
                           <% }else{  %>
-                            <img width="100%" src="/images/default-image.jpg" alt="">
+                             <img width="100%" src="/images/default-image.jpg" alt=""> 
                           <% } %>
                          
 
@@ -65,11 +65,6 @@
     
     <%- include('../partials/footer') %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!--  <script src="/js/carousel_swiper.js"></script> -->
-    <script src="/javascripts/carousel_swiper2.js"></script>
+    <%- include('../partials/script') %>
   </body>
 </html>
