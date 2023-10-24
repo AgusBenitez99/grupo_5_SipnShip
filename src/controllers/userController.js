@@ -2,6 +2,7 @@ const { readJSON, writeJSON } = require("../data");
 const { unlinkSync, existsSync } = require("fs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
+const { hashSync } = require('bcryptjs');
 
 module.exports = {
   register: (req, res) => {
@@ -57,34 +58,38 @@ module.exports = {
   processRegister: (req, res) => {
     let errors = validationResult(req);
 
-    if (errors.isEmpty()) {
-      const users = readJSON("users.json");
+    if(errors.isEmpty()){
+      const {name, lastName, email, password, birthdate} = req.body
+  
+      db.User.create({
+          name: name.trim(),
+          lastName: lastName.trim(),
+          email,
+          password : hashSync(password,10),
+          birthdate,
+          avatar: req.file ? req.file.filename : 'default.png',
+          rolId: 2
+      })
+          .then(user => {
+              console.log(user);
+              return res.redirect('/user/login')
+          })
+          .catch(error => console.log(error))
 
-      const data = {
-        ...req.body,
-        image: req.file ? req.file.filename : null,
-      };
-
-      let newUser = new User(data);
-
-      users.push(newUser);
-
-      writeJSON(users, "users.json");
-
-      return res.redirect("/");
     } else {
       res.render("user/register", {
         old: req.body,
         errors: errors.mapped(),
       });
     }
+
   },
 
   updateProfile: (req, res) => {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      const { name, lastName, email } = req.body;
+      const { name, lastName, email} = req.body;
       db.User.findByPk(req.session.userData.id)
         .then((user) => {
           req.file &&
