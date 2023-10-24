@@ -2,7 +2,7 @@ const {check, body} = require('express-validator');
 const db = require('../database/models');
 
 module.exports = [
-    check("firstName")
+    check("name")
         .isLength({min:3}).withMessage("Debe tener como minimo 3 letras").bail(),
 
     check("lastName")
