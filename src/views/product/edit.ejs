@@ -29,7 +29,7 @@
                 </select>
               </div>
               <div class="main__form__input2">
-                <label for="categoria">Seccion</label>
+                <label for="section">Seccion</label>
                 <select name="section">
                    <% section.forEach(item => { %>
                     <option <%= item.id === sectionId ? "selected" : null %> value="<%= item.id %>"><%= item.name %> </option>
