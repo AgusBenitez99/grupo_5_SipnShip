@@ -93,12 +93,14 @@ module.exports = {
 
     if (errors.isEmpty()) {
 
-      const { name, price, size, description, category, brand, mainImage } = req.body
+      const { name, price, size, description, category, discount, section, brand, mainImage } = req.body
 
       db.Product.create({
         name: name.trim(),
         price,
         size,
+        discount,
+        sectionId: section,
         description: description.trim(),
         categoryId: category,
         //brandId : brand,
