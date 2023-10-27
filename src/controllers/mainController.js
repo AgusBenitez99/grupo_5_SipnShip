@@ -13,11 +13,15 @@ module.exports = {
   },
 
   admin: (req, res) => {
-    db.Product.findAll({
+    const products=db.Product.findAll({
       include : ['brand','section','category']
   })
-  .then(products => {
-    return res.render("admin", { products });
+  const users=db.User.findAll({
+    include : ['rol']
+})
+  Promise.all([products,users])
+  .then(([products,users]) => {
+    return res.render("admin", { products,users });
   });
   },
 
