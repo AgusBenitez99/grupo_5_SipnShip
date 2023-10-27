@@ -4,6 +4,7 @@ const db = require('../database/models')
 const { validationResult } = require('express-validator');
 
 
+
 module.exports = {
   edit: (req, res) => {
 
@@ -87,14 +88,14 @@ module.exports = {
   new: (req, res) => {
     const section = db.Section.findAll({ order: ['name'] })
     const category = db.Category.findAll({ order: ['name'] })
-    Promise.all([ category, section])
-    .then(([ category, section]) => {
-      return res.render('product/new', {
-        category,
-        section
-      })
-    }).catch((error) => console.log(error));
-    
+    Promise.all([category, section])
+      .then(([category, section]) => {
+        return res.render('product/new', {
+          category,
+          section
+        })
+      }).catch((error) => console.log(error));
+
   },
   create: (req, res) => {
 
@@ -116,7 +117,6 @@ module.exports = {
         mainImage: req.files.mainImage ? req.files.mainImage[0].filename : null
       })
         .then(product => {
-
 
           if (req.files.images) {
             const images = req.files.images.map((file) => {
@@ -188,21 +188,43 @@ module.exports = {
     return res.render('product/trolley')
   },
   remove: (req, res) => {
+    const namesImages = db.Image.findOne({
+      where: {
+        productId: req.params.id
+      },
+      attributes: ['file'],
+    })
+    Promise.all([namesImages])
+      .then(([image]) => {
+        existsSync(`./public/images/${image.file}`) &&
+          unlinkSync(`./public/images/${image.file}`)
+      }).then(() => {
+        const nameMainImage = db.Product.findOne({
+          where: {
+            id: req.params.id
+          },
+          attributes: ['mainImage'],
+        });
+        Promise.all([nameMainImage])
+          .then(([product]) => {
+            existsSync(`./public/images/${product.mainImage}`) &&
+              unlinkSync(`./public/images/${product.mainImage}`)
+          })
+      }).catch(error => console.log(error))
+
     db.Image.destroy({
       where: {
         productId: req.params.id
       }
-    })
-      .then(() => {
-        db.Product.destroy({
-          where: {
-            id: req.params.id
-          }
-        }).then(() => {
-          return res.redirect('/admin')
-        })
+    }).then(() => {
+      db.Product.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(() => {
+        return res.redirect('/admin')
       })
+    })
       .catch(error => console.log(error));
-
   }
 }
