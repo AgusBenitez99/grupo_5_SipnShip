@@ -85,7 +85,16 @@ module.exports = {
       .catch((error) => console.log(error));
   },
   new: (req, res) => {
-    return res.render('product/new')
+    const section = db.Section.findAll({ order: ['name'] })
+    const category = db.Category.findAll({ order: ['name'] })
+    Promise.all([ category, section])
+    .then(([ category, section]) => {
+      return res.render('product/new', {
+        category,
+        section
+      })
+    }).catch((error) => console.log(error));
+    
   },
   create: (req, res) => {
 
