@@ -3,3 +3,103 @@ main h2{
     text-align: center;
 }
 
+
+
+
+.home__categorias{
+display: none;
+}
+
+#AllProducts {
+    display: none;
+}
+
+/* SECCION DE CATEGORIAS  */
+/* DESKTOP */
+@media (min-width:1350px) {
+
+.home__categorias{display: flex;width: 100%;flex-wrap: wrap;gap: 10px;justify-content: center;text-align: center;margin-bottom: 10px;margin-top: -20px;}
+.home__categorias-center {
+  display: flex;
+  height: 80px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+}
+.categorias-center--btn-2 {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+.categorias-center--btn-2 a {
+  text-decoration: none;
+  padding: 15px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+span {
+  position: relative;
+  /* z-index coz when we put bg to before and after this span text will not be visible */
+  z-index: 3;
+}
+.categorias-center--btn-2 a:hover::before {
+  transform: scaleY(0);
+}
+.categorias-center--btn-2 a:hover::after {
+  transform: scaleX(0);
+}
+
+/* Button 2 styles */
+.categorias-center--btn-2 a {
+  color: #ffffff;
+  width: 100%;
+  transition: all 0.45s ease-in-out;
+  text-align: center;
+}
+.categorias-center--btn-2 a:hover {
+  color: #fff;
+  transition: all 0.45s ease-in-out;
+  border: #000 2px solid;
+  border-radius: 7px;
+  background-color: #ed7b1e;
+}
+.categorias-center--btn-2 a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+.categorias-center--btn-2 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+  transform: scaleX(1);
+}
+
+#AllProducts{
+    display: inline-block;
+    font-size: 10px;
+    line-height: 0;
+    text-align: center;
+    margin-left: 44.5%;
+}
+
+
+
+}

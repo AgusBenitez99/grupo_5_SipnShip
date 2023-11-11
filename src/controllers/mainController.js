@@ -3,14 +3,18 @@ const db = require('../database/models');
 module.exports = {
 
   index: (req, res) => {
+    const categories = db.Category.findAll();
 
-    db.Product.findAll({
+    const products = db.Product.findAll({
       include : ['brand','section','category']
   })
-  .then(products => {
-    return res.render("index", { products });
+
+  Promise.all([categories, products])
+  .then(([categories,products]) => {
+    return res.render("index", { categories, products });
   });
   },
+
 
   admin: (req, res) => {
     const products=db.Product.findAll({
