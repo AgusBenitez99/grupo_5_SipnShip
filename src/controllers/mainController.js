@@ -8,7 +8,10 @@ module.exports = {
       include : ['brand','section','category']
   })
   .then(products => {
-    return res.render("index", { products });
+    return res.render("index", { products,
+      novelty:products.filter(x=>x.section.id===1),
+      offers:products.filter(x=>x.section.id===2),
+      bent:products.filter(x=>x.section.id===3),  });
   });
   },
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head', { title: 'HOME' }) %>
-
   <body class="home">
     <%- include('./partials/header') %>
 
@@ -63,41 +62,40 @@
     </div>
 
     <main class="main">
-      <h2>Productos Destacados</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+      <div class="main-container-card">
+        <div class="swiper-container-card">
+          <h2>Novedades</h2>
+          <div class="swiper-wrapper">
+            <% novelty.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('./partials/cards',{product}) %>
+            </div>
+            <% }) %>
           </div>
-          <% }) %>
+        </div>
+        <div class="swiper-container-card">
+          <h2>Ofertas</h2>
+          <div class="swiper-wrapper">
+            <% offers.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('./partials/cards',{product}) %>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+        <div class="swiper-container-card">
+          <h2>Combos</h2>
+          <div class="swiper-wrapper">
+            <% bent.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('./partials/cards',{product}) %>
+            </div>
+            <% }) %>
+          </div>
         </div>
       </div>
-      <h2>Ofertas</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
-          </div>
-          <% }) %>
-        </div>
-      </div>
-
-      <h2>Combos Especiales</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
-          </div>
-          <% }) %>
-        </div>
-      </div>
-
     </main>
     <!-- footer -->
-    <%- include('./partials/footer') %>
-    <%- include('./partials/script') %>
+    <%- include('./partials/footer') %> <%- include('./partials/script') %>
   </body>
 </html>
