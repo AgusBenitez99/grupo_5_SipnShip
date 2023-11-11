@@ -62,6 +62,22 @@
     </div>
 
     <main class="main">
+                   <!-- SECCION DE CATEGORIAS PARA FILTRO  -->
+    <section class="home__categorias">
+      <% categories.forEach(categoria => { %>
+        <div class="home__categorias-center">
+          <div class="categorias-center--btn-2">
+            <a href="/"><span><%= categoria.name %></span></a>
+          </div>
+        </div>
+      <% }) %>
+    </section>
+    <div class="home__categorias-center" id="AllProducts">
+      <div class="categorias-center--btn-2">
+        <a href="/search"><span>Todos los productos</span></a>
+      </div>
+    </div>
+    
       <div class="main-container-card">
         <div class="swiper-container-card">
           <h2>Novedades</h2>
@@ -94,21 +110,7 @@
           </div>
         </div>
       </div>
-             <!-- SECCION DE CATEGORIAS PARA FILTRO  -->
-    <section class="home__categorias">
-      <% categories.forEach(categoria => { %>
-        <div class="home__categorias-center">
-          <div class="categorias-center--btn-2">
-            <a href="/"><span><%= categoria.name %></span></a>
-          </div>
-        </div>
-      <% }) %>
-    </section>
-    <div class="home__categorias-center" id="AllProducts">
-      <div class="categorias-center--btn-2">
-        <a href="/search"><span>Todos los productos</span></a>
-      </div>
-    </div>
+
     </main>
     <!-- footer -->
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
