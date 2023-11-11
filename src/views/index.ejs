@@ -67,7 +67,7 @@
       <% categories.forEach(categoria => { %>
         <div class="home__categorias-center">
           <div class="categorias-center--btn-2">
-            <a href="/"><span><%= categoria.name %></span></a>
+            <a href="/search/<%= categoria.id %>"><span><%= categoria.name %></span></a>
           </div>
         </div>
       <% }) %>
