@@ -3,17 +3,21 @@ const db = require('../database/models');
 module.exports = {
 
   index: (req, res) => {
+    const categories = db.Category.findAll();
 
-    db.Product.findAll({
+    const products = db.Product.findAll({
       include : ['brand','section','category']
   })
-  .then(products => {
-    return res.render("index", { products,
+
+  Promise.all([categories, products])
+  .then(([categories,products]) => {
+    return res.render("index", { categories, products,
       novelty:products.filter(x=>x.section.id===1),
       offers:products.filter(x=>x.section.id===2),
       bent:products.filter(x=>x.section.id===3),  });
   });
   },
+
 
   admin: (req, res) => {
     const products=db.Product.findAll({
