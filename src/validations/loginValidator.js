@@ -1,6 +1,6 @@
 const {check,body} = require ("express-validator")
-const {readJSON} = require ('../data');
 const {compareSync} = require('bcryptjs')
+const db = require('../database/models');
 
 module.exports = [
     check('email')
@@ -10,13 +10,16 @@ module.exports = [
         .notEmpty().withMessage('Se requiere una constraseña').bail()
 
         .custom((value, {req}) => {
-            const users = readJSON('users.json');
-            const user = users.find(user => user.email === req.body.email);
-
-            if(!compareSync(value, user.password) ) {
-                return false
-            }
-                return true
-        }).withMessage ('Credenciales invalidas')
+            return db.User.findOne({
+                where : {
+                            email : req.body.email
+                        }
+            })
+                .then(user => {
+                    if (!user || !compareSync(value, user.password)) {
+                        return Promise.reject('Credenciales inválidas');
+                    }
+                })
+        })
 
 ]

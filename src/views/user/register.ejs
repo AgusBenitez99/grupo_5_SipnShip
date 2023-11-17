@@ -15,9 +15,9 @@
               <!-- div nombre -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user  fa-lg"></i>
-                <input type="text" name="firstName" placeholder="Ingrese su nombre" />
+                <input type="text" name="name" placeholder="Ingrese su nombre" />
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.firstName && errors.firstName.msg); %></small>
+              <small class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
               <!-- div apellido -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user fa-lg"></i>
@@ -78,6 +78,7 @@
       </main>
 
       <%- include('../partials/footer') %>
+      <%- include('../partials/script') %>
     
   </body>
 

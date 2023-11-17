@@ -23,9 +23,17 @@
             
               <div class="main__form__input2">
                 <label for="categoria">Categoría</label>
-                <select name="brand">
-                   <% products.forEach(item => { %>
-                    <option <%= item.brand === brand ? "selected" : null %> value="<%= item.brand %>"><%= item.brand %> </option>
+                <select name="category">
+                   <% category.forEach(item => { %>
+                    <option <%= item.id === categoryId ? "selected" : null %> value="<%= item.id %>"><%= item.name %> </option>
+                   <% }) %>
+                </select>
+              </div>
+              <div class="main__form__input2">
+                <label for="section">Seccion</label>
+                <select name="section">
+                   <% section.forEach(item => { %>
+                    <option <%= item.id === sectionId ? "selected" : null %> value="<%= item.id %>"><%= item.name %> </option>
                    <% }) %>
                 </select>
                 <small id="msgError-name" class="ms-2 text-danger"><%= locals.errors && (errors.brand && errors.brand.msg) %></small>
@@ -45,7 +53,15 @@
               <small id="msgError-price" class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
               </div>
             
-            
+              <div class="main__form__input2">
+                <label for="price">Descuento</label>
+                <input
+                  type="number"
+                  id="discount"
+                  name="discount"
+                  value=<%= discount %>
+                />
+              </div>
               <div class="main__form__input2">
                 <label for="size">Tamaño</label>
                 <input
@@ -93,5 +109,6 @@
       </div>
     </main>
     <%- include('../partials/footer') %>
+    <%- include('../partials/script') %>
   </body>
 </html>

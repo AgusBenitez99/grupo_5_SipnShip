@@ -11,16 +11,16 @@
           <div class="main__form">
             <h1 id="title">Mi Perfil</h1>
             <div>
-              <img src="/images/users/<%= image || 'default.png' %>" alt="" style="max-width: 100px;">
+              <img src="/images/users/<%= avatar || 'default.png' %>" alt="" style="max-width: 100px;">
             </div>
             <form action="/user/profile/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
               <div class="main__form__input-group">
                 
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-circle-user  fa-lg"></i>
-                  <input type="text" name="firstName" placeholder="Ingrese su nombre"  value="<%= firstName && firstName %>" />
+                  <input type="text" name="name" placeholder="Ingrese su nombre"  value="<%= name && name %>" />
                 </div>
-                <small class="text-validations"><%= locals.errors && (errors.firstName && errors.firstName.msg); %></small>
+                <small class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
                 
                  <div class="main__form__input-field">
                   <i class="fa-solid fa-circle-user fa-lg"></i>
@@ -36,7 +36,7 @@
                           
                 <div class="main__form__input-field">
                   <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
-                  <input type="file" id="image" name="image"/>
+                  <input type="file" id="avatar" name="avatar"/>
                 </div>
               </div> 
               
@@ -48,6 +48,7 @@
           </div>
         </main>
       <%- include('../partials/footer') %>
+      <%- include('../partials/script') %>
     
   </body>
 

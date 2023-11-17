@@ -15,6 +15,12 @@
                 <li data-target="div3">
                     <p>Productos</p>
                 </li>
+                <li data-target="div4">
+                    <p>Categorias</p>
+                </li>
+                <li data-target="div5">
+                    <p>Secciones</p>
+                </li>
                 <li>
                     <p>Favoritos</p>
                 </li>
@@ -37,18 +43,31 @@
 
             </header>
             <div id="div3" class="table__container-oculto">
+                <div class="table__container">
                 <div class="table__container-header">
-                    <h2 class="lista__title">Tabla de Productos</h2>
+                    <div>
+                        <h2 class="lista__title">Tabla de Productos</h2>
                     <a href="/product/new">Agregar producto</a>
+                    </div>
+                    <h4>Filtros</h4>
+                    <div>
+                       
+                       
+                        <input type="text">
+                        <input type="text">
+                    </div>
                 </div>
                 <table>
 
                     <tr>
                         <th>#</th>
                         <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
+                        <th>Nombre</th>   
                         <th>Categoria</th>
+                        <th>Precio</th>
+                        <th>Descuento</th>
+                        <th>Precio final</th>
+                     
                         <th></th>
                     </tr>
                     <% products.forEach((product,index)=> { %>
@@ -60,9 +79,15 @@
                             <td>
                                 <%= product.name %>
                             </td>
-                            <td><strong>$<%= product.price %></strong></td>
                             <td>
-                                <%= product.brand %>
+                                <%= product.category.name %>
+                            </td>
+                            <td>$<%= product.price %></td>
+                            <td>
+                                <%= product.discount+'%' %>
+                            </td>
+                            <td>
+                                <strong><%= `$${product.price-(product.price*product.discount/100)}` %></strong>
                             </td>
                             <td>
                                 <div class="actions">
@@ -110,58 +135,52 @@
                         <% }) %>
 
                 </table>
-
+                </div>
             </div>
             <div id="div2" class="table__container-oculto">
-                <h2 class="lista__title">Tabla de Usuarios</h2>
-                <table>
-
-                    <tr>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>permisos</th>
-                        <th>lala</th>
-                    </tr>
-                    <% products.forEach(product=> { %>
+                <div class="table__container">
+                    <h2 class="lista__title">Tabla de Usuarios</h2>
+                    <table>
+    
                         <tr>
-                            <td><img class="product-image" src="/images/fernet.png" alt="Producto 1"></td>
-                            <td>
-                                <%= product.name %>
-                            </td>
-                            <td><strong>$<%= product.price %></strong></td>
-                            <td>
-                                <%= product.brand %>
-                            </td>
+                            <th>#</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
                         </tr>
-                        <% }) %>
-
-                </table>
+                        <% users.forEach((item,index)=> { %>
+                            <tr>
+                                <td>
+                                    <%= index + 1 %>
+                                </td>
+                                <td><img class="product-image" src="/images/users/<%= item.avatar || 'default.png'%>" alt="user img"></td>
+                                <td>
+                                    <%= `${item.name}  ${item.lastName}` %>
+                                </td>
+                                <td>
+                                    <%= item.email %>
+                                </td>
+                                <td>
+                                    <%= item.rol.name %>
+                                </td>
+                            </tr>
+                            <% }) %>
+    
+                    </table>
+                </div>
+               
 
             </div>
+            <div id="div1" class="table__container-oculto"  >
+                <div style="display: flex;">
+                       <div id="miGrafico" style="width: 600px; height: 400px;"></div>
+                <div id="grafico2" style="width: 600px; height: 400px;"></div>
+                </div>
+             
+            </div>
         </main>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                var opciones = document.getElementById("opciones").getElementsByTagName("li");
-                for (var i = 0; i < opciones.length; i++) {
-                    opciones[i].addEventListener("click", function () {
-                        var targetDivId = this.getAttribute("data-target");
-                        var targetDiv = document.getElementById(targetDivId);
-
-                        // Oculta todos los divs
-                        var divs = document.querySelectorAll("div");
-                        divs.forEach(function (div) {
-                            div.classList.remove("table__container-vista");
-                        });
-
-                        // Muestra el div seleccionado
-                        targetDiv.classList.add("table__container-vista");
-                    });
-                }
-            });
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        <%- include('partials/script') %>
     </body>
 
 </html>
