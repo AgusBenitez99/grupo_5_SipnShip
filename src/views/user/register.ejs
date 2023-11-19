@@ -79,8 +79,13 @@
               <!-- div fecha -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-calendar-days"></i>
-                <input type="date" name="birthdate" placeholder="Ingrese su fecha de nacimiento" />
+                <input 
+                type="date" 
+                id="birthdate"
+                name="birthdate" 
+                placeholder="Ingrese su fecha de nacimiento" />
               </div>
+              <small id='msgError-birthdate' class="text-validations"></small>
               <!-- fin -->
 
               <div class="main__form__input-field">
@@ -102,6 +107,7 @@
               <button><i class="fab fa-facebook"></i></button>
             </div>
             <small  id="msgError-empty"  class="ms-2 text-danger"></small>
+            
             <div class="primary__button">
               <button id="signUp" type="submit">Registrarse</button>
             </div>
@@ -112,7 +118,14 @@
 
       <%- include('../partials/footer') %>
       <%- include('../partials/script') %>
+    
+        <!--  IMPLEMENTACION DE MOMENT -->
+      <script src="/javascripts/moment.js"></script>
+
+        <!-- VALIDACION FRONTEND -->
       <script src="/javascripts/validationRegister.js"></script>
+
+      
   </body>
 
 </html>

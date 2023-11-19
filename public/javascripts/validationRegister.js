@@ -147,6 +147,35 @@ window.onload = function() {
         }
     });
 
+             /* VALIDACION CAMPO BIRTHDATE */
+    $('birthdate').addEventListener('focus', function(e){
+        $('msgError-birthdate').innerHTML = 'Seleccione su edad'
+        $('msgError-birthdate').style.color = 'green'
+    })
+    $('birthdate').addEventListener('blur', function(e){
+        const birthdate = moment(this.value);
+        const minDate = moment().subtract(100,'years');
+        const currentDate = moment().add(18, 'years');
+
+        switch (true) {
+            case !this.value.trim():
+                $('msgError-birthdate').innerHTML = "Debes colocar tu edad"
+                $('msgError-birthdate').style.color = 'red'   
+                break;
+            case birthdate.isBefore(minDate):
+                $('msgError-birthdate').innerHTML = "La edad supera el maximo permitido";
+                $('msgError-birthdate').style.color = 'red' 
+                break
+            case birthdate.isAfter(currentDate):
+                $('msgError-birthdate').innerHTML = "Debes tener mas de 18 años";
+                $('msgError-birthdate').style.color = 'red' 
+                break
+            default:
+                $('msgError-birthdate').innerHTML = null;
+                break;
+        }
+    });
+
          /* VALIDACION FORMULARO  -- NO SE ENVIA SI HAY ERRORES */
     $('formRegister').addEventListener('submit', function(event) {
         event.preventDefault();
