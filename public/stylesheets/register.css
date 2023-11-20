@@ -78,7 +78,7 @@
 }
 
 .text-validations {
-  color: palevioletred;
+  color: red;
   font-size: 12px;
 }
 
@@ -98,5 +98,9 @@
   }
   .main__form form {
     width: 60%;
+  }
+  .text-validations {
+    
+    font-size: 15px;
   }
 }

@@ -4,6 +4,7 @@ const router = express.Router();
 const upload = require('../middlewares/upload');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
+const productAddValidator = require('../validations/productAddValidator');
 /* /product */
 
 router.get('/edit/:id',checkUserAdmin, productController.edit);
@@ -13,7 +14,7 @@ router.post('/created', upload.fields([{
 },
 {
   name: "images",
-},]), productController.create)
+},]),productAddValidator, productController.create)
 
 router.get('/detail/:id', productController.detail);
 router.get('/trolley', checkUserLogin,productController.trolley);
