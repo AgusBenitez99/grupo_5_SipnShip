@@ -7,8 +7,9 @@
   </div>
 
   <nav>
-    <form action="/search" method="get" class="home__header--search">
-      <input type="search" name="keywords" id="buscador" placeholder="Buscar productos..." />
+    <form action="/search" method="get" id="search" class="home__header--search">
+      <input type="search" name="keywords"  placeholder="Buscar productos..." />
+      <small id="msgError-search" class="text-validations"></small>
     </form>
     <ul class="home__header__nav--links">
       <li><a href="/search">Todos los productos</a></li>
