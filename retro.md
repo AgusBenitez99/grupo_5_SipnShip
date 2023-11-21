@@ -129,6 +129,30 @@
 - Postergar para ultimo momento los trabajos del sprint.
 - Entregar el Sprint fuera de Terminó.
 - No abandonar.
+  
+# Sprint 7:
+
+**Hacer más:**
+- Mantener la comunicacón.  
+- Terminar el Sprint unos dias antes de la entrega, y realizar el testing correspondiente
+
+**Seguir haciendo:**  
+- Ayudarnos entre nosotros.
+- Distribución de tareas apenas se lanza el Sprint.
+- Asignacion y movimientos de tarjetas apenas se lanza el Sprint.
+- Estar al día con las tarjetas en el Trello.
+- Ser transparentes con los problemas que surjen a nivel personal y del proyecto.
+- Trabajar en el sprint con tiempo, mejorar la organizacón con los tiempos..
+
+**Empezar a hacer:**
+- Reuniones más seguidas con todos los integrantes del grupo. 
+- Sacarnos las dudas en clase o con los profesores.
+
+**Dejar de hacer:**
+- Dejar para el final del sprint los problemas que surjan con el código.
+- Postergar para ultimo momento los trabajos del sprint.
+- No abandonar.
+
 
 
 
