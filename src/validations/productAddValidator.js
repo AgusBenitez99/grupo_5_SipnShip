@@ -2,21 +2,25 @@ const {check, body} = require('express-validator');
 
 module.exports = [
     check('name')
-        .notEmpty().withMessage('El nombre del producto es obligatorio'),
+        .notEmpty().withMessage('El campo es requerido').bail(),
     check('section')
-        .notEmpty().withMessage('La sección es requerida'),
+        .notEmpty().withMessage('El campo es requerido').bail(),
+    check('category')
+        .notEmpty().withMessage('El campo es requerido').bail(),
+        check('size')
+        .notEmpty().withMessage('El campo es requerido').bail(),
     check('price')
-        .notEmpty().withMessage('Debes indicar el precio').bail()
+        .notEmpty().withMessage('El campo es requerido').bail()
         .isDecimal().withMessage('El precio debe ser un número'),
     check('description')
-        .notEmpty().withMessage('La descripción es requerida').bail()
+        .notEmpty().withMessage('El campo es requerido').bail()
         .isLength({
-            min : 20,
-            max : 800
-        }).withMessage('La descripción debe tener entre 20 y 500 caracteres'),
-    body('images')
+            min : 10,
+            max : 500
+        }).withMessage('La descripción debe tener entre 10 y 500 caracteres'),
+    body('mainImage')
         .custom((value, {req}) => {
-           if(req.files.image){
+           if(req.files.mainImage){
                 return true
            }
            return false

@@ -146,14 +146,17 @@ module.exports = {
         });
       }
 
-      const sections = db.Section.findAll({
+      const section = db.Section.findAll({
         order: ['name']
       });
-
-      Promise.all([sections])
-        .then(([sections]) => {
+      const category = db.Category.findAll({
+        order: ['name']
+      });
+      Promise.all([section,category])
+        .then(([section,category]) => {
           return res.render("product/new", {
-            sections,
+            section,
+            category,
             errors: errors.mapped(),
             old: req.body
           });

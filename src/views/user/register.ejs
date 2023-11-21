@@ -10,65 +10,104 @@
       <main class="main">
         <div class="main__form">
           <h1 id="title">Registro</h1>
-          <form action="/user/register" method="POST" enctype="multipart/form-data" >
+          <form id='formRegister' action="/user/register" method="POST" enctype="multipart/form-data" >
             <div class="main__form__input-group">
+
               <!-- div nombre -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user  fa-lg"></i>
-                <input type="text" name="name" placeholder="Ingrese su nombre" />
+                <input 
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ingrese su nombre"
+                value="<%= locals.old && (old.name && old.name) %>" />
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
+              <small id="msgError-name" class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
+              <!-- fin -->
+
               <!-- div apellido -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-circle-user fa-lg"></i>
-                <input type="text" name="lastName" placeholder="Ingrese su apellido" />
+                <input
+                 type="text"
+                 id="lastName"
+                 name="lastName" 
+                 placeholder="Ingrese su apellido" />
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.lastName && errors.lastName.msg); %></small>
+              <small id="msgError-lastName" class="text-validations"><%= locals.errors && (errors.lastName && errors.lastName.msg); %></small>
+              <!-- fin -->
+
               <!-- div email -->
               <div class="main__form__input-field">
                 <i class="far fa-envelope"></i>
-                <input type="email" name="email" placeholder="Email" />
+                <input 
+                type="email"
+                 id="email"
+                 name="email"
+                 placeholder="Email" />
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.email && errors.email.msg); %></small>
+              <small id="msgError-email" class="text-validations"><%= locals.errors && (errors.email && errors.email.msg); %></small>
               <!-- fin -->
+
               <!-- div contraseña -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="password" placeholder="Contraseña" id="password" />
+                <input 
+                type="password" 
+                id="password"
+                name="password" 
+                placeholder="Contraseña" />
                 <i class="fa-solid fa-eye"></i>
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.password && errors.password.msg); %></small>
+              <small id="msgError-password" class="text-validations"><%= locals.errors && (errors.password && errors.password.msg); %></small>
               <!-- fin -->
+
               <!-- div confirmar contraseña -->
               <div class="main__form__input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="password2" placeholder="Confirmar contraseña" id="password" />
+                <input
+                type="password" 
+                id="password2"
+                name="password2" 
+                placeholder="Confirmar contraseña" />
                 <i class="fa-solid fa-eye"></i>
               </div>
-              <small class="text-validations"><%= locals.errors && (errors.password2 && errors.password2.msg); %></small>
+              <small id="msgError-password2" class="text-validations"><%= locals.errors && (errors.password2 && errors.password2.msg); %></small>
               <!-- fin -->
+              
+              <!-- div fecha -->
+              <div class="main__form__input-field">
+                <i class="fa-solid fa-calendar-days"></i>
+                <input 
+                type="date" 
+                id="birthdate"
+                name="birthdate" 
+                placeholder="Ingrese su fecha de nacimiento" />
+              </div>
+              <small id='msgError-birthdate' class="text-validations"></small>
+              <!-- fin -->
+
               <div class="main__form__input-field">
                 <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
                 <input type="file" id="image" name="image"/>
               </div>
-              <!-- div fecha -->
-              <div class="main__form__input-field">
-                <i class="fa-solid fa-calendar-days"></i>
-                <input type="date" name="birthdate" placeholder="Ingrese su fecha de nacimiento" />
-              </div>
-              <!-- fin -->
-              <!-- checj -->
+
+              <!-- check -->
               <div class="main__form__checkbox">
                 <input type="checkbox" />
                 <p>Confirma que es mayor de edad?</p>
               </div>
               <!-- fin -->
+
             </div>
             <p>O ingresar con</p>
             <div class="main__form__links">
               <button><i class="fab fa-google"></i></button>
               <button><i class="fab fa-facebook"></i></button>
             </div>
+            <small  id="msgError-empty"  class="ms-2 text-danger"></small>
+            
             <div class="primary__button">
               <button id="signUp" type="submit">Registrarse</button>
             </div>
@@ -80,6 +119,13 @@
       <%- include('../partials/footer') %>
       <%- include('../partials/script') %>
     
+        <!--  IMPLEMENTACION DE MOMENT -->
+      <script src="/javascripts/moment.js"></script>
+
+        <!-- VALIDACION FRONTEND -->
+      <script src="/javascripts/validationRegister.js"></script>
+
+      
   </body>
 
 </html>
