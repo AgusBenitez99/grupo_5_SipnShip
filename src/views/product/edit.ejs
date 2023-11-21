@@ -7,8 +7,10 @@
     <main class="main">
       <div class="main__form">
         <h1>Editar Producto</h1>
-        <form action="/product/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="editForm">
+        <form id="editForm" action="/product/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+          <small id="msgError-empty" class="text-validations"></small>
           <div class="main__form__body">
+            <!-- nombre producto -->
             <div class="main__form__input2">
               <label for="name">Nombre de Producto</label>
               <input
@@ -20,15 +22,16 @@
               />
               <small id="msgError-name" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
             </div>
-            
+              <!-- categoria -->
               <div class="main__form__input2">
                 <label for="categoria">Categoría</label>
-                <select name="category">
+                <select id="category" name="category">
                    <% category.forEach(item => { %>
                     <option <%= item.id === categoryId ? "selected" : null %> value="<%= item.id %>"><%= item.name %> </option>
                    <% }) %>
                 </select>
               </div>
+              <!-- seccion -->
               <div class="main__form__input2">
                 <label for="section">Seccion</label>
                 <select name="section">
@@ -36,10 +39,10 @@
                     <option <%= item.id === sectionId ? "selected" : null %> value="<%= item.id %>"><%= item.name %> </option>
                    <% }) %>
                 </select>
-                <small id="msgError-name" class="ms-2 text-danger"><%= locals.errors && (errors.brand && errors.brand.msg) %></small>
+                <small id="msgError-category" class="ms-2 text-danger"><%= locals.errors && (errors.brand && errors.brand.msg) %></small>
               </div>
 
-
+              <!-- precio -->
               <div class="main__form__input2">
                 <label for="price">Precio</label>
                 <input
@@ -52,7 +55,7 @@
                 />
               <small id="msgError-price" class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
               </div>
-            
+            <!-- descuento -->
               <div class="main__form__input2">
                 <label for="price">Descuento</label>
                 <input
@@ -62,6 +65,7 @@
                   value=<%= discount %>
                 />
               </div>
+              <!-- tamaño -->
               <div class="main__form__input2">
                 <label for="size">Tamaño</label>
                 <input
@@ -75,39 +79,43 @@
                   <small id="msgError-size" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
               </div>
  
-            
+            <!-- imagen principla -->
               <div class="main__form__input2">
                 <label for="mainImage">Imagen principal</label>
                 <input type="file" id="mainImage" name="mainImage" />
-                <small id="msgError-name" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
+                <small id="msgError-mainImage" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
               </div>
+              <!-- imagenes secundarias -->
             <div class="main__form__input2">
               <label for="images">Imagenes</label>
               <input multiple type="file" id="images" name="images" />
             </div>
+            <!-- descripcion -->
               <div class="main__form__input2">
                 <label for="description">Descripción</label>
                 <textarea 
                   name="description"
-                  id="descripcion"
+                  id="description"
                   cols="22"
                   rows="2"
                 ><%= description %></textarea>
+                <small id="msgError-description" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
               </div>
            
             <div class="main__form__links">
              
-                <button type="submit">Cancelar</button>
+                <button type="button">Cancelar</button>
               
              
                 <button type="submit">Guardar</button>
-                <small  id="msgError-empty"  class="ms-2 text-danger"></small>
+             <!--    <small  id="msgError-empty"  class="ms-2 text-danger"></small> -->
             </div>
           </div>
         </form>
       </div>
     </main>
     <script src="/javascripts/editValidation.js"></script>
+    <!-- <script src="/javascripts/productValidator.js"></script> -->
     <%- include('../partials/footer') %>
     <%- include('../partials/script') %>
   </body>
