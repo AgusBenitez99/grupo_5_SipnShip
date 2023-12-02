@@ -20,6 +20,14 @@ module.exports = {
           }
         }
       },
+      statusesId: {
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName:'Statuses'
+          }
+        }
+      },
       date: {
         type: Sequelize.DATE
       },
