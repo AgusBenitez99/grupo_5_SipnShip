@@ -7,10 +7,10 @@
   /* flex: 1; */
   background-color: var(--text);
   padding-bottom: 5px;
-  border: 2px solid var(--darkColor);
-  border-radius: 10px;
+  /* border: 3px solid var(--darkColor); */
+  border-radius: 18px;
   transition: all 0.3s ease;
-  width: 250px !important;
+  width: 250px;
   height: 440px;
   text-align: center;
 }

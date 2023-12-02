@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head', { title: 'HOME' }) %>
-
   <body class="home">
     <%- include('./partials/header') %>
 
@@ -23,21 +22,21 @@
         <div class="carousel-item active">
           <img
             class="d-block w-100"
-            src="/images/1692578924225_products_.webp"
+            src="/images/banner/bannerPrincipal.png"
             alt="First slide"
           />
         </div>
         <div class="carousel-item">
           <img
             class="d-block w-100"
-            src="/images/1692577099081_products_.jpg"
+            src="/images/banner/banner1.avif"
             alt="Second slide"
           />
         </div>
         <div class="carousel-item">
           <img
             class="d-block w-100"
-            src="/images/1692578048169_products_.jpg"
+            src="/public/images/banner/banner2.jpg"
             alt="Third slide"
           />
         </div>
@@ -63,35 +62,52 @@
     </div>
 
     <main class="main">
-      <h2>Productos Destacados</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+                   <!-- SECCION DE CATEGORIAS PARA FILTRO  -->
+    <section class="home__categorias">
+      <% categories.forEach(categoria => { %>
+        <div class="home__categorias-center">
+          <div class="categorias-center--btn-2">
+            <a href="/"><span><%= categoria.name %></span></a>
           </div>
-          <% }) %>
         </div>
+      <% }) %>
+    </section>
+    <div class="home__categorias-center" id="AllProducts">
+      <div class="categorias-center--btn-2">
+        <a href="/search"><span>Todos los productos</span></a>
       </div>
-      <h2>Ofertas</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+    </div>
+    
+      <div class="main-container-card">
+        <div class="swiper-container-card">
+          <h2>Novedades</h2>
+          <div class="swiper-wrapper">
+            <% novelty.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('./partials/cards',{product}) %>
+            </div>
+            <% }) %>
           </div>
-          <% }) %>
         </div>
-      </div>
-
-      <h2>Combos Especiales</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+        <div class="swiper-container-card">
+          <h2>Ofertas</h2>
+          <div class="swiper-wrapper">
+            <% offers.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('./partials/cards',{product}) %>
+            </div>
+            <% }) %>
           </div>
-          <% }) %>
+        </div>
+        <div class="swiper-container-card">
+          <h2>Combos</h2>
+          <div class="swiper-wrapper">
+            <% bent.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('./partials/cards',{product}) %>
+            </div>
+            <% }) %>
+          </div>
         </div>
       </div>
 
