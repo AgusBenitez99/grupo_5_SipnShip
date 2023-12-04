@@ -5,5 +5,5 @@
   <h3><%= product.name %></h3>
   <p>$<%= product.price %></p>
   <p><%= product.size %></p>
-  <a href="/product/detail/<%= product.id %>">agregar</a>
+  <a onclick="addItemToCart(1,'<%=product.id%>')">agregar</a>
 </div>

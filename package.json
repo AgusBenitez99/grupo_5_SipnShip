@@ -30,7 +30,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "src/data/*.json"
+      "src/data/*.json",
+      "public/javascripts/*"
     ]
   }
 }
