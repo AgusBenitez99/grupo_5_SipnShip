@@ -3,6 +3,7 @@ const { unlinkSync, existsSync } = require("fs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const { hashSync } = require('bcryptjs');
+const product = require("../database/models/product");
 
 module.exports = {
   register: (req, res) => {
@@ -40,14 +41,64 @@ module.exports = {
             id: user.id,
             firstName: user.name,
             rol: user.rolId,
-          };
+          }
 
           remember !== undefined &&
             res.cookie("remember", req.session.userData, {
               maxAge: 1000 * 60,
             });
 
-          return res.redirect("/");
+            /* CARRITO */
+            db.Order.findOne({
+              where : {
+                userId : user.id,
+                statusesId : 1
+              },
+              include : [
+                {
+                  association : 'carts',
+                  include : {
+                    association : 'product',
+                  }
+                }
+              ]
+            }).then(order => {
+                if(order){
+                  req.session.cart = {
+                    orderId : order.id,
+
+                    products : order.carts.map(({amount,product: {id, name, image, price, discount}}) => {
+                      return {
+                        id,
+                        name,
+                        image,
+                        price,
+                        discount,
+                        amount
+                      }
+                    }),
+                    total : order.carts.map(cart => cart.product.price * cart.amount).reduce((a,b) => a+b, 0)
+                  }
+                  console.log(req.session.cart)
+                  return res.redirect("/");
+
+                } else {
+                  db.Order.create({
+                    total : 0,
+                    userId : user.id,
+                    statusesId : 1,
+                  }).then(order => {
+                    req.session.cart = {
+                      orderId : order.id,
+                      products : [],
+                      total : 0
+                    }
+                    console.log(req.session.cart)
+                    return res.redirect("/");
+                  })
+                }
+
+            })
         })
         .catch((error) => console.log(error));
     } else {

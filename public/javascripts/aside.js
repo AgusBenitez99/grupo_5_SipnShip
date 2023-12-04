@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var opciones = document.getElementById("opciones").getElementsByTagName("li");
+    var opciones = document.getElementById("opciones") && document.getElementById("opciones").getElementsByTagName("li");
     for (var i = 0; i < opciones.length; i++) {
         opciones[i].addEventListener("click", function() {
             var targetDivId = this.getAttribute("data-target");
