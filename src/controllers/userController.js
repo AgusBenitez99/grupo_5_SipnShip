@@ -67,11 +67,11 @@ module.exports = {
                   req.session.cart = {
                     orderId : order.id,
 
-                    products : order.carts.map(({amount,product: {id, name, image, price, discount}}) => {
+                    products : order.carts.map(({amount,product: {id, name, mainImage, price, discount}}) => {
                       return {
                         id,
                         name,
-                        image,
+                        mainImage,
                         price,
                         discount,
                         amount

@@ -41,16 +41,29 @@ module.exports = {
 
             const {amount, product: id} = req.body;
 
-            const {name, image, price, discount} = await db.Product.findByPk(id)
+            const {name, mainImage, price, discount} = await db.Product.findByPk(id)
 
-            req.session.cart.products.push({
-                id,
-                name,
-                image,
-                price,
-                discount,
-                amount
-            });
+
+            if(req.session.cart.products.map(product => product.id).includes(id)){
+
+                req.session.cart.products = req.session.cart.products.map(product => {
+                    if(product.id === id){
+                        ++product.amount
+                    }
+                    return product
+                });
+
+            } else {
+                req.session.cart.products.push({
+                    id,
+                    name,
+                    mainImage,
+                    price,
+                    discount,
+                    amount
+                }); 
+            }
+
 
             req.session.cart.total = req.session.cart.products.map(product => product.price * amount).reduce((a,b) => a+b, 0)
             

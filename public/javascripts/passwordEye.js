@@ -1,7 +1,7 @@
 const pass = document.getElementById("password"),
-icon = document.querySelector(".fa-eye")
+icon = document.querySelector(".fa-eye") 
 
-icon.addEventListener("click", e => {
+icon && icon.addEventListener("click", e => {
     if (pass.type === "password") {
         pass.type = "text";
         icon.classList.remove('fa-eye')
