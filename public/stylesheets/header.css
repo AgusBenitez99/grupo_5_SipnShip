@@ -45,6 +45,8 @@
 
 .home__header__nav--menu ul {
   background-color: var(--primaryColor);
+
+  
 }
 /*tablet*/
 @media (min-width: 481px) {

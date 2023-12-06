@@ -33,9 +33,12 @@
   <% } else { %>
     <!-- Si el usuario SI estalogueado -->  
  <li class="home__header__nav--menu  nav-item dropdown">
-    <a id="btn-cart" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <a id="btn-cart" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="position-relative">
       <i class="fa-solid fa-cart-shopping"></i>
-    </button>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" id="show-count-cart" hidden>
+        0
+       </span>
+    </a>
     <a role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <i class="fa-solid fa-gear "></i></a>
     <ul class="dropdown-menu">
@@ -52,23 +55,21 @@
 
 </header>
 
-<!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
   <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: var(--backgroundColor);">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Mi carrito</h1>
+        <h1 class="modal-title fs-5" style="color:white" id="exampleModalLabel">Mi carrito</h1>
       </div>
       <div class="modal-body"  id="cart-body">
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vaciar carrito</button>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Seguir comprando</button>
-        <button type="button" class="btn btn-primary">Finalizar compra</button>
+      <div class="modal-footer primary__button">
+        <button type="button" style="flex-basis: 30%" onclick="emptyCart()" id="btn-empty-cart" hidden>Vaciar carrito</button>
+        <button type="button" style="flex-basis: 30%" data-bs-dismiss="modal">Seguir comprando</button>
+        <button onclick="window.location.href='/product/trolley'" id="btn-buy-cart" hidden type="button" style="flex-basis: 30%">Finalizar compra</button>
       </div>
     </div>
   </div>
