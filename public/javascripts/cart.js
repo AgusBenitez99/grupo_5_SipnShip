@@ -203,7 +203,7 @@ window.onload = function () {
     console.log(cart)
     $("cart-body").innerHTML = `
             
-    <table class="table" >
+    <table class="table">
         <thead>
             <tr>
             <th scope="col">Imagen</th>
@@ -235,7 +235,7 @@ window.onload = function () {
           if (cart.products.length) {
             $("cart-body").innerHTML = `
             
-                    <table class="table">
+                    <table class="table" >
                         <thead>
                             <tr>
                             <th scope="col">Imagen</th>

@@ -67,6 +67,17 @@ border-radius: 15px;
         color: var(--primaryColor);
     }
 
+    .table>:not(caption)>*>* {
+        background-color: var(--backgroundColor);
+        color : #ffff;
+        text-align: center  
+    }
+
+    .table>:not(caption)>*>*  img{
+       border-radius: 10%;
+       
+    }
+
     
 
 /* TABLET */
