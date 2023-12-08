@@ -12,7 +12,7 @@ const showProductInCart = (products, total) => {
                         <td>${name}</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <buttonn onclick="removeItemToCart(${id})" class="btn btn-sm btn-danger"><i class="fa-solid fa-minus"></i></buttonn>
+                                <buttonn onclick="removeItemToCart(${id})" class="btn btn-sm btn-danger ${amount === 1 && 'disabled'}"><i class="fa-solid fa-minus"></i></buttonn>
                                 <input type="text" value="${amount}" style="width:30px;text-align:center" />
                                 <buttonn onclick="addItemToCart(1,${id})" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i></buttonn>
                             </div>                           
@@ -94,14 +94,10 @@ const addItemToCart = async (amount, product) => {
 
 
   } catch (error) {
+    console.log(error)
     Swal.fire({
       title: "Upps",
-      html: `
-            ${error.message} 
-            <br><br><a 
-            style="color: blue; text-decoration: underline;" 
-            href="/user/login">Ir a la página de inicio de sesión</a>
-            `,
+      html:error.message,
       icon: "error",
     });
   }
@@ -127,6 +123,7 @@ const removeItemToCart = async (id) => {
           showMessageInfo(message)
 
     } catch (error) {
+      console.log(error)
         Swal.fire({
           title: "Upps",
           html: error.message,
@@ -154,6 +151,7 @@ const removeAllItem = async (id) => {
           showMessageInfo(message)
 
     } catch (error) {
+      console.log(error)
         Swal.fire({
           title: "Upps",
           html: error.message,
@@ -181,6 +179,7 @@ const emptyCart = async () => {
       showMessageInfo(message)
     
   } catch (error) {
+    console.log(error)
     Swal.fire({
       title: "Upps",
       html: error.message,
@@ -188,7 +187,6 @@ const emptyCart = async () => {
     });  
     
   }
-
 
 }
 
@@ -268,6 +266,7 @@ window.onload = function () {
           throw new Error(message);
         }
       } catch (error) {
+        console.log(error)
         Swal.fire({
           title: "Upps",
           html: error.message,

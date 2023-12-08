@@ -6,7 +6,12 @@ module.exports = {
 
             if(!req.session.cart) {
                 let error = new Error()
-                error.message = 'Debes loguearte'
+                error.message = `
+                Debes iniciar sesión<br><br>
+                <a style="color: blue; text-decoration: underline;" href="/user/login">
+                    Ir a la página de inicio de sesión
+                </a>
+            `;
                 error.status = 404;
                 throw error
             }
@@ -33,7 +38,12 @@ module.exports = {
 
             if(!req.session.cart) {
                 let error = new Error()
-                error.message = 'Debes loguearte'
+                error.message = `
+                Debes iniciar sesión<br><br>
+                <a style="color: blue; text-decoration: underline;" href="/user/login">
+                    Ir a la página de inicio de sesión
+                </a>
+            `;
                 error.status = 404;
                 throw error
             }
@@ -52,6 +62,23 @@ module.exports = {
                     return product
                 });
 
+
+     /* BASE DE DATOS  */
+     await db.Cart.update(
+        {
+            amount : req.session.cart.products.find(product => product.id === +id).amount
+
+        },
+        {
+            where : {
+                orderId : req.session.cart.orderId,
+                productId : id
+            }
+        }
+     )
+        /* -------- */
+
+
             } else {
                 req.session.cart.products.push({
                     id,
@@ -61,8 +88,16 @@ module.exports = {
                     discount,
                     amount
                 }); 
-            }
 
+     /* BASE DE DATOS  */
+    await db.Cart.create({
+        amount : 1,
+        orderId : req.session.cart.orderId,
+        productId : id
+    })
+    /* -------- */
+
+    }
 
             req.session.cart.total = req.session.cart.products.map(product => product.price * product.amount).reduce((a,b) => a+b, 0)
             
@@ -74,6 +109,7 @@ module.exports = {
 
             
         } catch (error) {
+            console.log(error)
             return res.status(error.status || 500).json({
                 ok : false,
                 cart : null,
@@ -98,9 +134,24 @@ module.exports = {
             req.session.cart.products = req.session.cart.products.map(product => {
                 if(product.id === +id && product.amount > 1){
                     --product.amount
-                }
+            }
                 return product
             });
+
+         /* BASE DE DATOS  */
+            await db.Cart.update(
+                    {
+                        amount : req.session.cart.products.find(product => product.id === +id).amount
+                    },
+                    {
+                        where : {
+                            orderId : req.session.cart.orderId,
+                            productId : id
+                        }
+                    }
+                )
+        /* -------- */
+        
 
             req.session.cart.total = req.session.cart.products.map(product => product.price * product.amount).reduce((a,b) => a+b, 0)
 
@@ -112,6 +163,7 @@ module.exports = {
 
 
         } catch (error) {
+            console.log(error)
             return res.status(error.status || 500).json({
                 ok : false,
                 cart : null,
@@ -136,6 +188,17 @@ module.exports = {
 
             req.session.cart.products = req.session.cart.products.filter(product => product.id !== +id);
             
+         /* BASE DE DATOS  */
+         await db.Cart.destroy(
+            {
+                where : {
+                    orderId : req.session.cart.orderId,
+                    productId : id
+                }
+            }
+        )
+        /* -------- */
+
             req.session.cart.total = req.session.cart.products.map(product => product.price * product.amount).reduce((a,b) => a+b, 0)
 
             return res.status(200).json({
@@ -145,6 +208,7 @@ module.exports = {
             })
 
         } catch (error) {
+            console.log(error)
             return res.status(error.status || 500).json({
                 ok : false,
                 cart : null,
@@ -172,6 +236,16 @@ module.exports = {
                 total : 0
               }
 
+        /* BASE DE DATOS  */
+         await db.Cart.destroy(
+            {
+                where : {
+                    orderId : req.session.cart.orderId,
+                }
+            }
+        )
+        /* -------- */
+
             return res.status(200).json({
                 ok : true,
                 cart : req.session.cart,
@@ -179,6 +253,7 @@ module.exports = {
             })
             
         } catch (error) {
+            console.log(error)
             return res.status(error.status || 500).json({
                 ok : false,
                 cart : null,
