@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head', { title: 'HOME' }) %>
+<%- include('partials/head', { title: 'HOME' }) %>
 
   <body class="home">
     <%- include('./partials/header') %>
 
-    <div
+      <!--  <div
       id="carouselExampleIndicators"
       class="carousel slide"
       data-ride="carousel"
@@ -60,45 +60,80 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
+    </div> -->
 
-    <main class="main">
-      <h2>Productos Destacados</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+           <img
+            class="d-block w-100"
+            src="/images/1692577099081_products_.jpg"
+            alt="Second slide"
+          />
           </div>
-          <% }) %>
-        </div>
-      </div>
-      <h2>Ofertas</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+          <div class="carousel-item">
+           <img
+            class="d-block w-100"
+            src="/images/1692577923953_products_.jpg"
+            alt="Second slide"
+          />
           </div>
-          <% }) %>
+          <div class="carousel-item">
+           <img
+            class="d-block w-100"
+            src="/images/1692578622683_products_.png"
+            alt="Second slide"
+          />
+          </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
-      <h2>Combos Especiales</h2>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper">
-          <% products.forEach(product => { %>
-          <div class="swiper-slide">
-            <%- include('./partials/cards',{product}) %>
+      <main class="main">
+        <h2>Productos Destacados</h2>
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <% products.forEach(product=> { %>
+              <div class="swiper-slide">
+                <%- include('./partials/cards',{product}) %>
+              </div>
+              <% }) %>
           </div>
-          <% }) %>
         </div>
-      </div>
+        <h2>Ofertas</h2>
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <% products.forEach(product=> { %>
+              <div class="swiper-slide">
+                <%- include('./partials/cards',{product}) %>
+              </div>
+              <% }) %>
+          </div>
+        </div>
 
-    </main>
-    <!-- footer -->
-    <script src="/javascripts/search.js"></script>
-    <%- include('./partials/footer') %>
-    <%- include('./partials/script') %>
+        <h2>Combos Especiales</h2>
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <% products.forEach(product=> { %>
+              <div class="swiper-slide">
+                <%- include('./partials/cards',{product}) %>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+
+      </main>
+      <!-- footer -->
+      <script src="/javascripts/search.js"></script>
+      <%- include('./partials/footer') %>
+        <%- include('./partials/script') %>
   </body>
+
 </html>
