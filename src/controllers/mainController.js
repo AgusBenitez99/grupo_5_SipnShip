@@ -45,6 +45,13 @@ module.exports = {
       });
       res.render("results", { products: product, keywords });
     }
+    if(req.params.id){
+      const product = products.filter((product) => {
+        return product.category.id===Number(req.params.id);
+      });
+      res.render("results", { products: product, keywords });
+    }
+    
 
     res.render("results", { products });
   })

@@ -10,7 +10,10 @@
   <%- include('./partials/header') %>
 
   <main class="main">
-    <h2>Resultado de busqueda: <%= locals.keywords?keywords:null %></h2>
+    <% if (locals.keywords) { %>
+      <h2>Resultado de busqueda: <%= locals.keywords?keywords:null %></h2>
+    <% } %>
+   
     <div class="main__search">
        <% products.forEach(product => { %>
      
