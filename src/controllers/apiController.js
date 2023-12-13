@@ -28,6 +28,21 @@ const checkEmail = async (req,res) => {
     }
 }
 
+const addFavorite = async (req, res) => {
+
+    const productId = req.query.id
+    
+    try {
+        
+    } catch (error) {
+        return res.status(error.status || 500).json({
+            ok : false,
+            msg : error.message || 'Upss, hubo un error'
+        })        
+    }
+}
+
 module.exports = {
-    checkEmail
+    checkEmail,
+    addFavorite
 }
