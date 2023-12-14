@@ -84,7 +84,7 @@ border-radius: 15px;
 @media (min-width: 481px) {
     .home__prodetail{width: 60%;margin: 0px auto;border: 1px solid gray;border-radius: 7px;}
     
-    .prodetail__collage{padding: 15px 0;width: 60%;margin-top: 40px;}
+    .prodetail__collage{padding: 15px 0;width: 70%;margin-top: 40px;}
     
     .prodetail__collage-images{
 }
@@ -105,8 +105,7 @@ border-radius: 15px;
     }
 
     .prodetail__description {
-
-    }
+}
 
     .prodetail__description h5 {
         
@@ -151,6 +150,8 @@ border-radius: 15px;
         flex-direction: row;
         justify-content: center;
         gap: 10%;
+        margin-top: 12px;
+        margin-bottom: 30px;
         }
     
     .prodetail__collage-images img{width: 100%;}

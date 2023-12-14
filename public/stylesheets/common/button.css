@@ -16,3 +16,11 @@
   transition: background 1s;
   margin: 25px auto;
 }
+
+a:not([href]):not([class]){
+  color: white;
+}
+a:not([href]):not([class]):hover {
+  color: var(--primaryColor);
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@ main h2{
     color: white;
     text-align: center;
     width: 100%;
+    margin-top: 25px;
 }
 .main-container-card{
     display: flex;
@@ -106,6 +107,7 @@ span {
     line-height: 0;
     text-align: center;
     margin-left: 44.5%;
+    margin-bottom: -40px;
 }
 
 
