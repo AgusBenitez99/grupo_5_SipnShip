@@ -5,6 +5,7 @@ const upload = require('../middlewares/upload');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 const productAddValidator = require('../validations/productAddValidator');
+
 /* /product */
 
 router.get('/edit/:id',checkUserAdmin, productController.edit);

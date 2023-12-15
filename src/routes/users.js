@@ -8,7 +8,8 @@ const {
     processLogin,
     logout,
     processRegister,
-    updateProfile
+    updateProfile,
+    favorites
 } = require('../controllers/userController');//requiere usercontroller
 
 const loginValidator = require('../validations/loginValidator');
@@ -25,8 +26,9 @@ router.get('/register', checkNotUserLogin, register);
 router.post('/register',upload.single("image"),registerValidator, processRegister)
 router.get('/login', checkNotUserLogin, login);
 router.post('/login', loginValidator, processLogin)
-router.get('/profile/:id',checkUserLogin,  profile)
+router.get('/profile/:id',checkUserLogin, profile)
 router.put('/profile/:id',upload.single("avatar"),profileValidator, checkUserLogin,  updateProfile)
 router.get('/logout', logout)
+router.get('/favorites', checkUserLogin, favorites)
 
 module.exports = router;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', {
+  title: 'Busqueda'
+}) %>
+
+<body class="home">
+    
+  <%- include('./partials/header') %>
+
+  <main class="main">
+      <h2>Mis favoritos</h2>
+
+    <div class="main__search">
+      <% if (userData.favorites.length) { %>
+        <% userData.favorites.forEach(product => { %>
+     
+          <%- include('./partials/cards',{product}) %>
+       
+        <% }) %>
+       
+      <% } else { %>
+        <p class="alert alert-warning">Aun no has agregado Favoritos</p>
+        <% }  %>
+ 
+    </div>
+   
+    
+  
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+      
+  </main>
+  <%- include('./partials/script') %>
+</body>
+
+</html>

@@ -35,12 +35,14 @@ module.exports = {
         where: {
           email,
         },
+        include : ['favorites']
       })
         .then((user) => {
           req.session.userData = {
             id: user.id,
             firstName: user.name,
             rol: user.rolId,
+            favorites : user.favorites
           }
 
           remember !== undefined &&
@@ -175,6 +177,12 @@ module.exports = {
         })
         .catch((error) => console.log(error));
     }
+  },
+
+  favorites : (req, res) => {
+    return res.render('favorites', {
+      favorites : req.session.userData.favorites
+    })
   },
 
   logout: (req, res) => {

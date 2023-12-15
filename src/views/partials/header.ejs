@@ -44,7 +44,9 @@
     <ul class="dropdown-menu">
       <li> <a href="#" class="dropdown-item">Hola! .. <%= userData.firstName %></a></li>
       <li><a class="dropdown-item" href="/user/profile/<%= userData.id %>">Mi perfil</a></li>  
-        <% if (userData.rol === 1) { %>
+      <li><a class="dropdown-item" href="/user/favorites">Mis Favoritos</a></li>  
+
+      <% if (userData.rol === 1) { %>
           <li><a class="dropdown-item" href="/admin">Menu ADMIN</a></li>
       <% } %>
       <li><hr class="dropdown-divider"></li>

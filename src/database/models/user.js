@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         as : 'rol',
         foreignKey : 'rolId'
       });
+      User.belongsToMany(models.Product, {
+        as : 'favorites',
+        foreignKey : 'UserId',
+        otherKey : 'productId',
+        through : 'Favorites'
+      });
 
 /*       User.belongsTo(models.Address, {
         as : 'addresses',

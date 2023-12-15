@@ -1,6 +1,6 @@
-<div class="card--content position-relative">
+<div class="card--content position-relative" id="card">
   <% if (locals.userData) { %>
-    <span class="text-danger position-absolute top-0 end-0 mt-3 me-4 mlh-1" p><i class="far fa-heart "></i></span>
+    <span class="text-danger position-absolute top-0 end-0 mt-3 me-4 mlh-1" id="heart-span"><i class="far fa-heart" id="card-heart" onclick="alert('ALERTA')"></i></span>
     <% } %>
   <figure>
     <img src="../../images/<%= product.mainImage || 'default-image.jpg' %>" alt="" />
