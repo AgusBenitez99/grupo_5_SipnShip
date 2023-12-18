@@ -9,7 +9,7 @@ main h2{
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 10em;
+    flex-wrap: wrap;
 }
 
 
@@ -110,6 +110,15 @@ span {
     margin-bottom: -40px;
 }
 
-
+.main-container-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10em;
+  flex-wrap: nowrap;
+}
 
 }
+
+

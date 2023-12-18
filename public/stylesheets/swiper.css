@@ -15,7 +15,7 @@
 /*style swiper card*/
 .swiper-container-card {
   width: 250px;
-  height: 50%;
+  height: 10%;
 }
 .swiper-container-card .swiper-wrapper{
  width: 100%;
@@ -23,14 +23,11 @@
 }
 .swiper-container-card .swiper-slide {
   display: flex;
- justify-content: center;
-
-width: 100%;
-height: auto;
-font-size: 22px;
+  justify-content: center;
+  height: auto;
+  font-size: 22px;
   border-radius: 18px;
   background-color: white;
-  
 }
 /*style swiper card*/
 
