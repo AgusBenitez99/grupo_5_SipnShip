@@ -169,9 +169,37 @@
     
                     </table>
                 </div>
-               
-
             </div>
+            <div id="div4" class="table__container-oculto">
+                    <div class="table__container">
+                        <h2 class="lista__title">Tabla de Categorias</h2>
+                        <table>
+        
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Cantidad de Productos</th>
+                            </tr>
+                            <% categories.forEach((categoria,index)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= index + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= categoria.name %>
+                                    </td>
+                                    <td>
+                                        <%= categoria.products.length  %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+        
+                        </table>
+                    </div>
+
+
+                </div>
+
             <div id="div1" class="table__container-oculto"  >
                 <div style="display: flex;">
                        <div id="miGrafico" style="width: 600px; height: 400px;"></div>
@@ -179,6 +207,7 @@
                 </div>
              
             </div>
+
         </main>
         <%- include('partials/script') %>
     </body>

@@ -117,6 +117,7 @@ span {
   width: 100%;
   gap: 10em;
   flex-wrap: nowrap;
+  gap: 250px;
 }
 
 }

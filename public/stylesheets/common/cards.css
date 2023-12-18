@@ -20,7 +20,7 @@
   background: var(--primaryColor);
 }
 
-.card--content:hover a {
+.card--content:hover button {
   border-color: var(--text);
   background: var(--text);
   color: var(--primaryColor);
@@ -45,15 +45,17 @@ figure img {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
 }
 
 .card--content p {
+  color: #000;
   font-size: 15px;
   margin: 0;
   width: 50%;
 }
 
-.card--content a {
+.card--content button {
   margin: 0;
   background: var(--darkColor);
   color: white;

@@ -26,9 +26,18 @@ module.exports = {
   const users=db.User.findAll({
     include : ['rol']
 })
-  Promise.all([products,users])
-  .then(([products,users]) => {
-    return res.render("admin", { products,users });
+const categories = db.Category.findAll({
+  include : [
+    {
+      association : 'products',
+      attributes : ["id"]
+    }
+  ]
+});
+
+  Promise.all([products,users, categories])
+  .then(([products,users, categories]) => {
+    return res.render("admin", { products,users,categories });
   });
   },
 

@@ -1,18 +1,19 @@
 
-    const favoriteChange = async () => {
+    const favoriteChange = async function (e, userId, productId) {
+      e.preventDefault()
         try {
-            const response = await fetch(`http://localhost:3000/toggle-favorite?userId=3&productId=5`)
+            const response = await fetch(`http://localhost:3000/toggle-favorite?userId=${userId}&productId=${productId}`)
             
             const { ok, message } = await response.json();
     
              if (ok) {
 
-                if (this.classList.contains("far fa-heart")) {
-                    this.classList.remove("far fa-heart")
-                    this.classList.add("fa-solid fa-heart")
+                if (e.target.classList.contains("far")) {
+                    e.target.classList.remove("far")
+                    e.target.classList.add("fa-solid")
                 } else {
-                    this.classList.remove("fa-solid fa-heart")
-                    this.classList.add("far fa-heart")
+                    e.target.classList.remove("fa-solid")
+                    e.target.classList.add("far")
                 }
                 
               } else {

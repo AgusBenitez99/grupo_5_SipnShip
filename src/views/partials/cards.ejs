@@ -1,6 +1,6 @@
-<div class="card--content position-relative" id="card" onclick="window.location.href='/product/detail/<%= product.id %>'">
+<a href="/product/detail/<%= product.id %>" class="card--content position-relative" id="card">
   <% if (locals.userData) { %>
-    <span class="text-danger position-absolute top-0 end-0 mt-3 me-4 mlh-1" id="heart-span"><i class="far fa-heart" id="card-icon" onclick="favoriteChange()"></i></span>
+    <span class="text-danger position-absolute top-0 end-0 mt-3 me-4 mlh-1" id="heart-span"><i class="far fa-heart" id="card-icon" onclick="favoriteChange(event, '<%= userData.id %>', '<%= product.id %>' )"></i></span>
     <% } %>
   <figure>
     <img src="../../images/<%= product.mainImage || 'default-image.jpg' %>" alt="" />
@@ -8,6 +8,8 @@
   <h3><%= product.name %></h3>
   <p>$<%= product.price %></p>
   <p><%= product.size %></p>
-  <a onclick="addItemToCart(1,'<%=product.id%>')">agregar</a>
+  <div class="primary__button">
+  <button onclick="addItemToCart(event, 1,'<%=product.id%>')">agregar</button>
 </div>
+</a>
 

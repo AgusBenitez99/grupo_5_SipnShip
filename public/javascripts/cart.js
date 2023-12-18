@@ -66,7 +66,8 @@ const showMessageInfo = (message) => {
 }
 
 
-const addItemToCart = async (amount, product) => {
+const addItemToCart = async (e, amount, product) => {
+   e.preventDefault()
   try {
     const response = await fetch("/cart", {
       method: "POST",
