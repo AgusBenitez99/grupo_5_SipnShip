@@ -16,21 +16,10 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page"  href="/search">Todos Nuestros Productos</a> </li>
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a onclick="showCategories()" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Categorias  </a>
-               <ul class="dropdown-menu dropdown-menu-dark">
-              <!--     <1% categories.forEach(categoria => { %>
-                    <div class="home__categorias-center">
-                      <div class="categorias-center--btn-2">
-                        <a href="/search/<1%= categoria.id %>"><span><1%= categoria.name %></span></a> 
-                         crear api que solicite las categorias, despues consumir 
-                        dentro del scrip un envento windows on load, y dentro colocar el pedido por fecth...
-                        capturar UL 
-                        usar iner htlm + para incorporar la estructura..
-                      
-                      </div>
-                    </div>
-                  <1% }) %> -->
+               <ul id="headers-categories" class="dropdown-menu dropdown-menu-dark">
+
                 </ul>
                 </li>
          

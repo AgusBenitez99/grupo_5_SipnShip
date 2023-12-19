@@ -14,7 +14,7 @@ const showProductInCart = (products, total) => {
                             <div class="d-flex gap-2">
                                 <buttonn onclick="removeItemToCart(${id})" class="btn btn-sm btn-danger ${amount === 1 && 'disabled'}"><i class="fa-solid fa-minus"></i></buttonn>
                                 <input type="text" value="${amount}" style="width:30px;text-align:center" />
-                                <buttonn onclick="addItemToCart(1,${id})" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i></buttonn>
+                                <buttonn onclick="addItemToCart(event, 1,${id})" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i></buttonn>
                             </div>                           
                         </td>
                         <td>${price * amount}</td>
@@ -95,7 +95,7 @@ const addItemToCart = async (e, amount, product) => {
 
 
   } catch (error) {
-    console.log(error)
+    console.log(error, "sdgdf aca !")
     Swal.fire({
       title: "Upps",
       html:error.message,
@@ -190,7 +190,6 @@ const emptyCart = async () => {
   }
 
 }
-
 
 window.onload = function () {
   sessionStorage.setItem('countCart', sessionStorage.getItem('countCart') || 0);

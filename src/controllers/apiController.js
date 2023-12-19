@@ -79,7 +79,32 @@ const toggleFavorite = async (req, res) => {
     }
 }
 
+
+const showCategories = async (req, res) => {
+  
+    try {
+        const categories = await db.Category.findAll();
+
+
+        return res.status(200).json({
+            ok : true,
+            data : categories
+        })
+
+        
+    } catch (error) {
+        return res.status(error.status || 500).json({
+            ok : false,
+            msg : error.message || 'Upss, hubo un error'
+        })        
+    }
+}
+
+
+
 module.exports = {
     checkEmail,
-    toggleFavorite
+    toggleFavorite,
+    showCategories
+    
 }
