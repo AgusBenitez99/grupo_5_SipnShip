@@ -13,8 +13,8 @@
       <h2>Mis favoritos</h2>
 
     <div class="main__search">
-      <% if (userData.favorites.length) { %>
-        <% userData.favorites.forEach(product => { %>
+      <% if (products.length) { %>
+        <% products.forEach(product => { %>
      
           <%- include('./partials/cards',{product}) %>
        

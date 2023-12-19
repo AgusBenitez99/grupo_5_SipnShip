@@ -180,8 +180,23 @@ module.exports = {
   },
 
   favorites : (req, res) => {
-    return res.render('favorites', {
-      favorites : req.session.userData.favorites
+    db.Favorite.findAll({
+      where : {
+        userId : req.session.userData.id
+      },
+      include : [ 'product' ]
+    }).then((favorites) => {
+      const products = favorites.map(favorite => {
+        return favorite.product
+
+      })
+          return res.render('favorites', {
+            products
+          })
+        }).catch((error) => {
+          console.error("Error:", error);
+
+          res.status(500).send("Internal Server Error");
     })
   },
 
@@ -191,3 +206,5 @@ module.exports = {
     return res.redirect("/");
   },
 };
+
+

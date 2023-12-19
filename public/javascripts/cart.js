@@ -198,7 +198,6 @@ window.onload = function () {
 
   if(sessionStorage.getItem('cart')){
     const cart = JSON.parse(sessionStorage.getItem('cart'))
-    console.log(cart)
     $("cart-body").innerHTML = `
             
     <table class="table">
