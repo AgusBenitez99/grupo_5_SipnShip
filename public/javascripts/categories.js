@@ -2,9 +2,18 @@ const showCategories = async function () {
 
     try {
         const response = await fetch ('http://localhost:3000/apis/categories')
-        const { ok, message, data } = await response.json();
-
-        console.log(data)
+        const { ok, message, data:categories } = await response.json();
+      console.log(categories)
+      $('headers-categories').innerHTML = ""
+        categories.forEach(
+          ({ id, name}) => {
+            $('headers-categories').innerHTML += `   
+                <div class="home__categorias-center">
+                  <div class="categorias-center--btn-2">
+                    <a href="/search/${id}"> <span>${name}</span>  </a>        
+                  </div>
+                </div>`
+            })
 
     } catch (error) {
         console.log(error)
@@ -14,20 +23,4 @@ const showCategories = async function () {
           icon: "error",
         });
     }
-
-window.onload = function () {
-    $('headers-categories').innerHTML += `
-    <% categories.forEach(categoria => { %>
-        <div class="home__categorias-center">
-          <div class="categorias-center--btn-2">
-            <a href="/search/<1%= categoria.id %>"><span><1%= categoria.name %></span></a> 
-            
-          
-          </div>
-        </div>
-      <% }) %> 
-    }
-    )`
-
-}
 }
