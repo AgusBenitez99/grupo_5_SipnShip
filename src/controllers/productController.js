@@ -215,11 +215,27 @@ module.exports = {
           })
       }).catch(error => console.log(error))
 
-    db.Image.destroy({
+      const imageDelete = db.Image.destroy({
       where: {
         productId: req.params.id
       }
-    }).then(() => {
+    });
+
+      const favoriteDelete = db.Favorite.destroy({
+        where: {
+          productId: req.params.id
+        }
+      });
+
+      const cartDelete = db.Cart.destroy({
+        where: {
+          productId: req.params.id
+        }
+      });
+
+      Promise.all([imageDelete, favoriteDelete, cartDelete])
+    .then(([imageDelete, favoriteDelete, cartDelete]) => {
+  
       db.Product.destroy({
         where: {
           id: req.params.id
