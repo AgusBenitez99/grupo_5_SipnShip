@@ -12,7 +12,7 @@ const localsCheck = require('./middlewares/localsCheck');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-const apiRouter = require('./routes/apis');
+const apiRouter = require('./routes/API/api.js');
 const cartRouter = require('./routes/cart');
 
 const cookieCheck = require('./middlewares/cookieCheck');
@@ -43,7 +43,7 @@ app.use(localsCheck);
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/product', productsRouter);
-app.use('/apis', apiRouter);
+app.use('/api', apiRouter);
 app.use('/cart', cartRouter);
 
 
