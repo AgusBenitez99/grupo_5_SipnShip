@@ -2,72 +2,86 @@
 <html lang="en">
 
 <%- include('../partials/head', { title: 'PROFILE' }) %>
+<style>
+  #img {
+  border-radius: 50%;
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover; 
+}
+</style>
 
   <body>
 
     <%- include('../partials/header') %>
 
       <main class="main">
-          <div class="main__form">
-            <h1 id="title">Mi Perfil</h1>
-            <div>
-              <img src="/images/users/<%= avatar || 'default.png' %>" alt="" style="max-width: 100px;">
-            </div>
-            <form id='formProfile' action="/user/profile/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
-              <div class="main__form__input-group">
-                
-                <div class="main__form__input-field">
-                  <i class="fa-solid fa-circle-user  fa-lg"></i>
-                  <input 
-                  type="text" 
-                  id="name"
-                  name="name" 
-                  placeholder="Ingrese su nombre"  
-                  value="<%= name && name %>" />
-                </div>
-                <small id="msgError-name" class="text-validations"><%= locals.errors && (errors.name && errors.name.msg); %></small>
-                
-                 <div class="main__form__input-field">
-                  <i class="fa-solid fa-circle-user fa-lg"></i>
-                  <input 
-                  type="text" 
-                  id="lastName"
-                  name="lastName" 
-                  placeholder="Ingrese su apellido"  
-                  value="<%= lastName && lastName %>" />
-                </div>
-                <small id="msgError-lastName" class="text-validations"><%= locals.errors && (errors.lastName && errors.lastName.msg); %></small>
-                  
-                <div class="main__form__input-field">
-                  <i class="far fa-envelope"></i>
-                  <input 
-                  type="email" 
-                  id="email"
-                  name="email" 
-                  placeholder="Email" 
-                  value="<%= email && email %>" />
-                </div>
-                <small id="msgError-email" class="text-validations"><%= locals.errors && (errors.email && errors.email.msg); %></small>
-                          
-                <div class="main__form__input-field">
-                  <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
-                  <input type="file" id="avatar" name="avatar"/>
-                </div>
-              </div> 
-              <small  id="msgError-empty"  class="ms-2 text-danger"></small>
-
-              <div class="primary__button">
-                <button id="signUp" type="submit">Actualizar perfil</button>
-              </div>
-              
-            </form>
+        <div class="main__form">
+          <h1 id="title">Mi Perfil</h1>
+          <div>
+            <img src="/images/users/<%= avatar || 'default.png' %>" id="img" alt="" style="max-width: 100px;">
           </div>
-        </main>
+          <form id='formProfile' action="/user/profile/<%= id %>?_method=PUT" method="POST"
+            enctype="multipart/form-data">
+            <div class="main__form__input-group">
+
+              <div class="main__form__input-field">
+                <i class="fa-solid fa-circle-user  fa-lg"></i>
+                <input type="text" id="name" name="name" placeholder="Ingrese su nombre" value="<%= name && name %>" />
+              </div>
+              <small id="msgError-name" class="text-validations">
+                <%= locals.errors && (errors.name && errors.name.msg); %>
+              </small>
+
+              <div class="main__form__input-field">
+                <i class="fa-solid fa-circle-user fa-lg"></i>
+                <input type="text" id="lastName" name="lastName" placeholder="Ingrese su apellido"
+                  value="<%= lastName && lastName %>" />
+              </div>
+              <small id="msgError-lastName" class="text-validations">
+                <%= locals.errors && (errors.lastName && errors.lastName.msg); %>
+              </small>
+
+              <div class="main__form__input-field">
+                <i class="far fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Email" value="<%= email && email %>" />
+              </div>
+              <small id="msgError-email" class="text-validations">
+                <%= locals.errors && (errors.email && errors.email.msg); %>
+              </small>
+
+              <div class="main__form__input-field">
+                <i class="fa-solid fa-file-arrow-up fa-bounce fa-lg"></i>
+                <input type="file" id="avatar" name="avatar" />
+              </div>
+            </div>
+            <small id="msgError-empty" class="ms-2 text-danger"></small>
+
+            <div class="primary__button">
+              <button id="signUp" type="submit">Actualizar perfil</button>
+            </div>
+
+          </form>
+        </div>
+      </main>
       <%- include('../partials/footer') %>
-      <%- include('../partials/script') %>
-    
-              <!-- VALIDACION FRONTEND -->
-              <script src="/javascripts/validationProfile.js"></script>
+        <%- include('../partials/script') %>
+
+          <!-- VALIDACION FRONTEND -->
+          <script src="/javascripts/validationProfile.js"></script>
+          <script>
+           const file = document.getElementById('avatar');
+           const img = document.getElementById('img');
+           file.addEventListener('change', e=> {
+            if(e.target.files[0]){
+              const reader = new FileReader();
+              reader.onload = function(e){
+                img.src= e.target.result
+              }
+              reader.readAsDataURL(e.target.files[0])
+            }
+           })
+          </script>
   </body>
 
 </html>
