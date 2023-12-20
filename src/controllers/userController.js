@@ -162,7 +162,7 @@ module.exports = {
               },
             }
           ).then((response) => {
-            return res.redirect("/admin");
+            return res.redirect("user");
           });
         }).catch((error) => console.log(error));
 

@@ -69,8 +69,8 @@ font-weight: 300;
 
 .container{
     max-width: 100%;
-    margin: 0 auto;
-    padding: 80px 0;
+    margin: auto;
+    padding: 80px 0 10px;
 }
 
 .footer{
@@ -80,7 +80,8 @@ font-weight: 300;
 .footer-row{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
 }
 .footer-links ul {
     margin-top: 0;
@@ -93,7 +94,7 @@ font-weight: 300;
 }
 
 .footer-links h4{
-    font-size: 20px;
+    font-size: 27px;
     color: var(--text);
     margin-bottom: 25px;
     font-weight: 500;

@@ -19,7 +19,7 @@
         <div class="main__form">
           <h1 id="title">Mi Perfil</h1>
           <div>
-            <img src="/images/users/<%= avatar || 'default.png' %>" id="img" alt="" style="max-width: 100px;">
+            <img src="/images/users/<%= avatar || '/images/users/default.png' %>" id="img" alt="" style="max-width: 100px;">
           </div>
           <form id='formProfile' action="/user/profile/<%= id %>?_method=PUT" method="POST"
             enctype="multipart/form-data">
