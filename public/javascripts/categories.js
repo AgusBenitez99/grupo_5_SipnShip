@@ -1,7 +1,7 @@
 const showCategories = async function () {
 
     try {
-        const response = await fetch ('http://localhost:3000/apis/categories')
+        const response = await fetch ('http://localhost:3000/api/categoriesMenu')
         const { ok, message, data:categories } = await response.json();
       console.log(categories)
       $('headers-categories').innerHTML = ""

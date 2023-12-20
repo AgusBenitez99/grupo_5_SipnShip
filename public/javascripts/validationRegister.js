@@ -86,7 +86,7 @@ window.onload = function() {
 
         try {
 
-            const response = await fetch(`/apis/check-email?email=${this.value.trim()}`)
+            const response = await fetch(`/api/check-email?email=${this.value.trim()}`)
             const result = await response.json()
 
             if(result.data) {

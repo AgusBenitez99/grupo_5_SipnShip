@@ -7,7 +7,7 @@ const router = express.Router();
 
 /* /api */
 router.get('/check-email', checkEmail);
-//router.get('/categories', showCategories);
+router.get('/categoriesMenu', showCategories);
 
 router.get('/products',getAllProducts)
 router.get('/product/:id',getDetailProduct)
