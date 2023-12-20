@@ -15,11 +15,11 @@ const location = useLocation()
     <button onClick={() => setShow(-250)} className="btn btn-outline-light border-0" style={{"width":"40px"}}><i className="fas fa-times"></i></button>
     </div>
     
-      <div className="p-4">
+      <div className="">
         <img
           className="w-100"
           src="/images/logo.png"
-          alt="Logo Sip n' Ship"
+          alt="Logo Craftsy"
         />
       </div>
 
@@ -28,7 +28,7 @@ const location = useLocation()
     <li className="nav-item">
       <a className="nav-link" href="/">
         <i className="fas fa-fw fa-tachometer-alt"></i>
-        <span>Ship n´ Ship - Dashboard</span>
+        <span>Sip n' Ship - Dashboard</span>
       </a>
     </li>
 

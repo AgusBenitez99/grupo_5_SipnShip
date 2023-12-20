@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export const TopBar = ({setShow}) => {
   return (
-    <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <nav className="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
       <button className="btn btn-outline-dark border-0" onClick={() => setShow(0)}><i className="fas fa-bars"></i></button>
       <ul className="navbar-nav ml-auto">
         <li className="nav-item dropdown no-arrow mx-1">
@@ -20,7 +20,7 @@ export const TopBar = ({setShow}) => {
             id="messagesDropdown"
           >
             <i className="fas fa-envelope fa-fw"></i>
-            wit
+            
             <span className="badge badge-danger badge-counter">7</span>
           </a>
         </li>
@@ -30,12 +30,12 @@ export const TopBar = ({setShow}) => {
         <li className="nav-item dropdown no-arrow">
           <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
             <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-              Jordan Walke
+              Bienvenido!      Usuario Administrador
             </span>
             <img
               className="img-profile rounded-circle"
-              src="/images/jordan-walke.png"
-              alt="Jordan Walke - Creador de React"
+              src="/images/1698096405184_user_.png"
+              alt="Imagen de Usuario Administrador"
               width="60"
             />
           </a>

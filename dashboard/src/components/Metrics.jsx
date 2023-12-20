@@ -6,21 +6,21 @@ const data = [
       color: "primary",
       title: "Productos en almacen",
       value: 21,
-      icon: "fa-film",
+      icon: "fas fa-wine-bottle",
     },
     {
       id: crypto.randomUUID(),
       color: "success",
-      title: "Clientes registrados",
-      value: 79,
-      icon: "fa-award",
+      title: "Usuarios registrados",
+      value: 8,
+      icon: "fa-user",
     },
     {
       id: crypto.randomUUID(),
       color: "warning",
-      title: "Marcas comercializadas",
-      value: 49,
-      icon: "fa-user",
+      title: "Ventas Realizadas",
+      value: 36,
+      icon: "fas fa-shopping-cart",
     },
   ];
 
