@@ -15,7 +15,7 @@ export const Info = ({ name, description, category, section, size, mainImage }) 
             }
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">
-                        <label>Nombre:</label>
+                        <label>Nombre / Tamaño:</label>
                         <p className='m-0'><b>{name} - {size}</b></p>
                     </li>
                     <li className="list-group-item">
